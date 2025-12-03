@@ -195,7 +195,7 @@ export const PROJECTS = [
       "Fast and responsive performance",
     ],
     github: "https://github.com/SoroMoise/all-currency-converter",
-    // demo: "", // Add if available
+    demo: undefined as string | undefined,
     image: "/projects/currency-converter.png",
     category: "mobile",
     status: "completed",
@@ -219,7 +219,7 @@ export const PROJECTS = [
       "Search and filter functionality",
     ],
     github: "https://github.com/SoroMoise/simpli-code",
-    // demo: "", // Add if available
+    demo: undefined as string | undefined,
     image: "/projects/simpli-code.png",
     category: "mobile",
     status: "completed",
@@ -242,7 +242,7 @@ export const PROJECTS = [
       "French language support",
     ],
     github: "https://github.com/SoroMoise/Jargon-Informatique",
-    // demo: "", // Add if available
+    demo: undefined as string | undefined,
     image: "/projects/jargon-informatique.png",
     category: "mobile",
     status: "completed",

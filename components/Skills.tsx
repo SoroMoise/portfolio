@@ -64,7 +64,7 @@ export function Skills() {
         damping: 15,
       },
     },
-  };
+  } as const;
 
   const getLevelColor = (level: string) => {
     switch (level) {

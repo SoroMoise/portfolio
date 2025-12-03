@@ -92,7 +92,7 @@ export function Contact() {
         damping: 15,
       },
     },
-  };
+  } as const;
 
   return (
     <section

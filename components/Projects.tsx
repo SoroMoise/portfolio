@@ -49,7 +49,7 @@ export function Projects() {
         damping: 15,
       },
     },
-  };
+  } as const;
 
   // Merge featured projects with GitHub data
   const enrichedProjects = PROJECTS.map((project) => {

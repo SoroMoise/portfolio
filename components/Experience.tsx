@@ -30,7 +30,7 @@ export function Experience() {
         damping: 15,
       },
     },
-  };
+  } as const;
 
   return (
     <section
