@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://soromoise.vercel.app
+
+# Sitemaps
+Sitemap: https://soromoise.vercel.app/sitemap.xml
