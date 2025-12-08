@@ -126,20 +126,20 @@ export function Contact() {
         >
           {/* Contact Info */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <div className="glass dark:glass-dark rounded-3xl p-8 backdrop-blur-xl border-2 border-white/20 dark:border-white/10">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
 
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-linear-to-br from-purple-500/20 to-pink-500/20">
-                    <Mail className="w-5 h-5 text-purple-500" />
+                  <div className="p-3 rounded-xl bg-blue-100 dark:bg-blue-950/30">
+                    <Mail className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
                     <p className="text-sm text-foreground/60 mb-1">Email</p>
                     <a
                       href={`mailto:${PERSONAL_INFO.email}`}
-                      className="font-medium hover:text-purple-500 transition-colors"
+                      className="font-medium hover:text-blue-600 transition-colors"
                     >
                       {PERSONAL_INFO.email}
                     </a>
@@ -148,8 +148,8 @@ export function Contact() {
 
                 {/* Location */}
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-linear-to-br from-blue-500/20 to-cyan-500/20">
-                    <MapPin className="w-5 h-5 text-blue-500" />
+                  <div className="p-3 rounded-xl bg-cyan-100 dark:bg-cyan-950/30">
+                    <MapPin className="w-5 h-5 text-cyan-600" />
                   </div>
                   <div>
                     <p className="text-sm text-foreground/60 mb-1">Location</p>
@@ -159,8 +159,8 @@ export function Contact() {
 
                 {/* WhatsApp */}
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-linear-to-br from-green-500/20 to-emerald-500/20">
-                    <Phone className="w-5 h-5 text-green-500" />
+                  <div className="p-3 rounded-xl bg-green-100 dark:bg-green-950/30">
+                    <Phone className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
                     <p className="text-sm text-foreground/60 mb-1">WhatsApp</p>
@@ -168,7 +168,7 @@ export function Contact() {
                       href={PERSONAL_INFO.whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-medium hover:text-green-500 transition-colors"
+                      className="font-medium hover:text-green-600 transition-colors"
                     >
                       {PERSONAL_INFO.whatsapp}
                     </a>
@@ -178,7 +178,7 @@ export function Contact() {
             </div>
 
             {/* Social Links Card */}
-            <div className="glass dark:glass-dark rounded-3xl p-8 backdrop-blur-xl border-2 border-white/20 dark:border-white/10">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
               <h3 className="text-xl font-bold mb-6">Connect With Me</h3>
               <div className="flex gap-4">
                 {SOCIAL_LINKS.map((social) => {
@@ -195,7 +195,7 @@ export function Contact() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 p-4 rounded-xl glass dark:glass-dark glass-hover dark:glass-hover-dark flex flex-col items-center gap-2 transition-all duration-300"
+                      className="flex-1 p-4 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:bg-blue-50 dark:hover:bg-gray-600 hover:border-blue-500 flex flex-col items-center gap-2 transition-all duration-300"
                       whileHover={{ scale: 1.05, y: -5 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -208,15 +208,15 @@ export function Contact() {
             </div>
 
             {/* Availability Card */}
-            <div className="glass dark:glass-dark rounded-3xl p-8 backdrop-blur-xl border-2 border-white/20 dark:border-white/10">
+            <div className="bg-green-50 dark:bg-green-950/30 rounded-2xl p-8 shadow-lg border-2 border-green-500">
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                   <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping" />
                 </div>
                 <div>
-                  <p className="font-semibold">Available for Projects</p>
-                  <p className="text-sm text-foreground/60">
+                  <p className="font-semibold text-green-900 dark:text-green-100">Available for Projects</p>
+                  <p className="text-sm text-green-700 dark:text-green-300">
                     Open to freelance and full-time opportunities
                   </p>
                 </div>
@@ -228,7 +228,7 @@ export function Contact() {
           <motion.div variants={itemVariants}>
             <form
               onSubmit={handleSubmit}
-              className="glass dark:glass-dark rounded-3xl p-8 backdrop-blur-xl border-2 border-white/20 dark:border-white/10 h-full"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700 h-full"
             >
               <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
 
@@ -248,7 +248,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl glass dark:glass-dark border border-white/20 dark:border-white/10 focus:border-purple-500 focus:outline-none transition-colors bg-transparent"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all"
                     placeholder="John Doe"
                   />
                 </div>
@@ -268,7 +268,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl glass dark:glass-dark border border-white/20 dark:border-white/10 focus:border-purple-500 focus:outline-none transition-colors bg-transparent"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -288,7 +288,7 @@ export function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl glass dark:glass-dark border border-white/20 dark:border-white/10 focus:border-purple-500 focus:outline-none transition-colors bg-transparent"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all"
                     placeholder="Project Inquiry"
                   />
                 </div>
@@ -308,7 +308,7 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded-xl glass dark:glass-dark border border-white/20 dark:border-white/10 focus:border-purple-500 focus:outline-none transition-colors bg-transparent resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all resize-none"
                     placeholder="Tell me about your project..."
                   />
                 </div>
@@ -317,8 +317,8 @@ export function Contact() {
                 <motion.button
                   type="submit"
                   disabled={formStatus === "loading"}
-                  className="w-full px-6 py-4 rounded-xl bg-linear-to-r from-purple-500 to-pink-500 text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
-                  whileHover={formStatus !== "loading" ? { scale: 1.02 } : {}}
+                  className="w-full px-6 py-4 rounded-lg bg-gradient-primary text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={formStatus !== "loading" ? { scale: 1.02, y: -2 } : {}}
                   whileTap={formStatus !== "loading" ? { scale: 0.98 } : {}}
                 >
                   {formStatus === "loading" ? (
@@ -339,10 +339,10 @@ export function Contact() {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`flex items-center gap-2 p-4 rounded-xl ${
+                    className={`flex items-center gap-2 p-4 rounded-lg ${
                       formStatus === "success"
-                        ? "bg-green-500/20 border border-green-500/30 text-green-600 dark:text-green-400"
-                        : "bg-red-500/20 border border-red-500/30 text-red-600 dark:text-red-400"
+                        ? "bg-green-100 dark:bg-green-950/30 border border-green-500 text-green-700 dark:text-green-300"
+                        : "bg-red-100 dark:bg-red-950/30 border border-red-500 text-red-700 dark:text-red-300"
                     }`}
                   >
                     {formStatus === "success" ? (

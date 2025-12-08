@@ -69,11 +69,11 @@ export function Skills() {
   const getLevelColor = (level: string) => {
     switch (level) {
       case "expert":
-        return "from-purple-500 to-pink-500";
+        return "bg-blue-600";
       case "advanced":
-        return "from-blue-500 to-cyan-500";
+        return "bg-cyan-500";
       default:
-        return "from-green-500 to-emerald-500";
+        return "bg-blue-400";
     }
   };
 
@@ -105,7 +105,7 @@ export function Skills() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Skills & <span className="text-gradient">Technologies</span>
           </h2>
-          <div className="w-20 h-1 bg-linear-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mb-6" />
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             Technologies and tools I use to bring ideas to life
           </p>
@@ -133,8 +133,8 @@ export function Skills() {
               >
                 {/* Category Header */}
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 rounded-xl glass dark:glass-dark">
-                    <CategoryIcon className="w-6 h-6 text-purple-500" />
+                  <div className="p-3 rounded-xl bg-blue-100 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900">
+                    <CategoryIcon className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold">
@@ -160,15 +160,15 @@ export function Skills() {
                       <motion.div
                         key={skill.name}
                         variants={itemVariants}
-                        className="group relative"
-                        whileHover={{ scale: 1.02 }}
+                        className="group"
+                        whileHover={{ scale: 1.02, y: -4 }}
                       >
-                        <div className="glass dark:glass-dark rounded-2xl p-6 backdrop-blur-xl border-2 border-white/20 dark:border-white/10 hover:border-purple-500/50 dark:hover:border-purple-500/50 transition-all duration-300 h-full">
+                        <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 h-full">
                           {/* Skill Header */}
                           <div className="flex items-start justify-between mb-4">
                             <div className="flex items-center gap-3">
-                              <div className="p-2 rounded-lg bg-linear-to-br from-purple-500/20 to-pink-500/20">
-                                <SkillIcon className="w-5 h-5 text-purple-500" />
+                              <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-950/30">
+                                <SkillIcon className="w-5 h-5 text-blue-600" />
                               </div>
                               <div>
                                 <h4 className="font-semibold text-lg">
@@ -187,9 +187,9 @@ export function Skills() {
                           </p>
 
                           {/* Skill Level Bar */}
-                          <div className="relative h-2 bg-white/10 dark:bg-black/20 rounded-full overflow-hidden">
+                          <div className="relative h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                             <motion.div
-                              className={`h-full bg-linear-to-r ${getLevelColor(
+                              className={`h-full ${getLevelColor(
                                 skill.level
                               )} rounded-full`}
                               initial={{ width: 0 }}
@@ -206,9 +206,6 @@ export function Skills() {
                             />
                           </div>
                         </div>
-
-                        {/* Hover Glow Effect */}
-                        <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-300 pointer-events-none" />
                       </motion.div>
                     );
                   })}
@@ -223,7 +220,7 @@ export function Skills() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-16 glass dark:glass-dark rounded-3xl p-8 backdrop-blur-xl border-2 border-white/20 dark:border-white/10"
+          className="mt-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>

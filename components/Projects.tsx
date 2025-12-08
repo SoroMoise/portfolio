@@ -80,7 +80,7 @@ export function Projects() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-linear-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mb-6" />
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             A selection of projects I've built with passion and dedication
           </p>
@@ -97,26 +97,26 @@ export function Projects() {
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="group relative"
-              whileHover={{ scale: 1.02 }}
+              className="group"
+              whileHover={{ scale: 1.02, y: -4 }}
             >
-              <div className="glass dark:glass-dark rounded-3xl p-8 backdrop-blur-xl border-2 border-white/20 dark:border-white/10 hover:border-purple-500/50 dark:hover:border-purple-500/50 transition-all duration-300 h-full flex flex-col">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 h-full flex flex-col">
                 {/* Project Header */}
                 <div className="flex items-start justify-between mb-4">
-                  <div className="p-3 rounded-xl bg-linear-to-br from-purple-500/20 to-pink-500/20">
-                    <Code2 className="w-6 h-6 text-purple-500" />
+                  <div className="p-3 rounded-xl bg-blue-100 dark:bg-blue-950/30">
+                    <Code2 className="w-6 h-6 text-blue-600" />
                   </div>
                   <div className="flex gap-2">
                     {!loading && (
                       <>
                         {project.stars > 0 && (
-                          <div className="flex items-center gap-1 px-3 py-1 rounded-full glass dark:glass-dark text-xs">
-                            <Star className="w-3 h-3" />
+                          <div className="flex items-center gap-1 px-3 py-1 rounded-lg bg-yellow-100 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-900 text-xs">
+                            <Star className="w-3 h-3 text-yellow-600" />
                             <span>{project.stars}</span>
                           </div>
                         )}
                         {project.forks > 0 && (
-                          <div className="flex items-center gap-1 px-3 py-1 rounded-full glass dark:glass-dark text-xs">
+                          <div className="flex items-center gap-1 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-xs">
                             <GitFork className="w-3 h-3" />
                             <span>{project.forks}</span>
                           </div>
@@ -144,7 +144,7 @@ export function Projects() {
                           key={idx}
                           className="text-sm text-foreground/70 flex items-start gap-2"
                         >
-                          <span className="text-purple-500 mt-1">•</span>
+                          <span className="text-blue-600 mt-1">•</span>
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -157,7 +157,7 @@ export function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 rounded-full glass dark:glass-dark text-xs font-medium"
+                      className="px-3 py-1 rounded-lg bg-blue-100 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900 text-xs font-medium text-blue-700 dark:text-blue-300"
                     >
                       {tech}
                     </span>
@@ -170,7 +170,7 @@ export function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl glass dark:glass-dark glass-hover dark:glass-hover-dark font-medium transition-all duration-300"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 font-medium transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -182,7 +182,7 @@ export function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-linear-to-r from-purple-500 to-pink-500 text-white font-medium transition-all duration-300"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-primary text-white font-medium transition-all duration-300 hover:shadow-lg"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -194,14 +194,11 @@ export function Projects() {
 
                 {/* Year Badge */}
                 {project.year && (
-                  <div className="absolute top-6 right-6 px-3 py-1 rounded-full glass dark:glass-dark text-xs font-medium">
+                  <div className="absolute top-6 right-6 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-xs font-medium">
                     {project.year}
                   </div>
                 )}
               </div>
-
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-300 pointer-events-none" />
             </motion.div>
           ))}
         </motion.div>
@@ -217,7 +214,7 @@ export function Projects() {
             href={PERSONAL_INFO.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass dark:glass-dark glass-hover dark:glass-hover-dark font-medium transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white dark:bg-gray-800 border-2 border-blue-500 text-blue-600 dark:text-blue-400 font-semibold transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1"
           >
             <Github className="w-5 h-5" />
             <span>View More on GitHub</span>

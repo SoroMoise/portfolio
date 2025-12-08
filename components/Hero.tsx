@@ -40,46 +40,12 @@ export function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8"
     >
-      {/* Animated background circles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      </div>
-
       <motion.div
         className="max-w-5xl mx-auto text-center relative z-10"
         variants={container}
         initial="hidden"
         animate="show"
       >
-        {/* Greeting */}
-        <motion.div variants={item} className="mb-6">
-          <span className="inline-block px-4 py-2 rounded-full glass dark:glass-dark text-sm font-medium">
-            👋 Welcome to my portfolio
-          </span>
-        </motion.div>
 
         {/* Name */}
         <motion.h1
@@ -120,20 +86,16 @@ export function Hero() {
         >
           <button
             onClick={() => scrollToSection("projects")}
-            className="group relative px-8 py-4 rounded-full glass dark:glass-dark glass-hover dark:glass-hover-dark font-medium text-lg overflow-hidden transition-all duration-300 hover:scale-105"
+            className="px-8 py-4 rounded-lg bg-white dark:bg-gray-800 border-2 border-blue-500 text-blue-600 dark:text-blue-400 font-semibold text-lg transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1"
           >
-            <span className="relative z-10">View My Projects</span>
-            <motion.div
-              className="absolute inset-0 bg-linear-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 transition-opacity"
-              whileHover={{ scale: 1.05 }}
-            />
+            View My Projects
           </button>
 
           <button
             onClick={() => scrollToSection("contact")}
-            className="group relative px-8 py-4 rounded-full bg-linear-to-r from-purple-500 to-pink-500 text-white font-medium text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
+            className="px-8 py-4 rounded-lg bg-gradient-primary text-white font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1"
           >
-            <span className="relative z-10">Get In Touch</span>
+            Get In Touch
           </button>
         </motion.div>
 
@@ -150,7 +112,7 @@ export function Hero() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full glass dark:glass-dark glass-hover dark:glass-hover-dark flex items-center justify-center transition-all duration-300"
+                className="w-12 h-12 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:border-blue-500 hover:shadow-md"
                 whileHover={{ scale: 1.1, y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label={social.name}

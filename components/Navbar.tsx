@@ -38,7 +38,7 @@ export function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 py-4"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="glass dark:glass-dark rounded-2xl backdrop-blur-xl border-2 border-white/20 dark:border-white/10 px-6 py-4">
+          <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 px-6 py-4">
             <div className="flex items-center justify-between">
               {/* Logo */}
               <motion.a
@@ -64,11 +64,12 @@ export function Navbar() {
                       e.preventDefault();
                       scrollToSection(link.href);
                     }}
-                    className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors cursor-pointer"
-                    whileHover={{ scale: 1.05 }}
+                    className="relative text-sm font-medium text-foreground/70 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer group"
+                    whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {link.name}
+                    <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 group-hover:w-full" />
                   </motion.a>
                 ))}
               </div>
@@ -80,7 +81,7 @@ export function Navbar() {
                 {/* Mobile Menu Button */}
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="md:hidden w-10 h-10 rounded-full glass dark:glass-dark flex items-center justify-center"
+                  className="md:hidden w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                   aria-label="Toggle menu"
                 >
                   {isOpen ? (
@@ -119,7 +120,7 @@ export function Navbar() {
             x: isOpen ? 0 : "100%",
           }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="absolute top-0 right-0 bottom-0 w-64 glass dark:glass-dark backdrop-blur-xl border-l-2 border-white/20 dark:border-white/10 p-6"
+          className="absolute top-0 right-0 bottom-0 w-64 bg-white dark:bg-gray-900 border-l-2 border-gray-200 dark:border-gray-800 p-6 shadow-xl"
         >
           <div className="flex flex-col gap-6 mt-20">
             {NAV_LINKS.map((link, index) => (
@@ -130,7 +131,7 @@ export function Navbar() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="text-lg font-medium text-foreground/70 hover:text-foreground transition-colors cursor-pointer"
+                className="text-lg font-medium text-foreground/70 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{
                   opacity: isOpen ? 1 : 0,
