@@ -33,13 +33,13 @@ export function ThemeToggle() {
       aria-label="Toggle theme"
     >
       <motion.div
-        className="absolute inset-0 bg-linear-to-br from-yellow-400 to-orange-500"
+        className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-orange-500"
         initial={false}
         animate={{ opacity: isDark ? 0 : 0.2 }}
         transition={{ duration: 0.3 }}
       />
       <motion.div
-        className="absolute inset-0 bg-linear-to-br from-blue-500 to-purple-600"
+        className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600"
         initial={false}
         animate={{ opacity: isDark ? 0.2 : 0 }}
         transition={{ duration: 0.3 }}

@@ -81,6 +81,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="dark"
           enableSystem
+          storageKey="portfolio-theme"
           disableTransitionOnChange
         >
           {children}
