@@ -159,7 +159,9 @@ export function Contact() {
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                       Location
                     </p>
-                    <p className="font-medium text-gray-900 dark:text-gray-100">{PERSONAL_INFO.location}</p>
+                    <p className="font-medium text-gray-900 dark:text-gray-100">
+                      {PERSONAL_INFO.location}
+                    </p>
                   </div>
                 </div>
 

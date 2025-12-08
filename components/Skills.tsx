@@ -80,11 +80,11 @@ export function Skills() {
   const getLevelWidth = (level: string) => {
     switch (level) {
       case "expert":
-        return "w-11/12";
+        return "90%";
       case "advanced":
-        return "w-4/5";
+        return "75%";
       default:
-        return "w-3/5";
+        return "55%";
     }
   };
 
@@ -191,7 +191,7 @@ export function Skills() {
                             <motion.div
                               className={`h-full ${getLevelColor(
                                 skill.level
-                              )} rounded-full`}
+                              )} rounded-full bg-blue-600`}
                               initial={{ width: 0 }}
                               animate={
                                 isInView
@@ -227,23 +227,31 @@ export function Skills() {
               <div className="text-3xl font-bold text-gradient mb-2">
                 {SKILLS.length}+
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Technologies</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                Technologies
+              </div>
             </div>
             <div>
               <div className="text-3xl font-bold text-gradient mb-2">
                 {SKILL_CATEGORIES.length}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Categories</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                Categories
+              </div>
             </div>
             <div>
               <div className="text-3xl font-bold text-gradient mb-2">
                 {SKILLS.filter((s) => s.level === "expert").length}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Expert Level</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                Expert Level
+              </div>
             </div>
             <div>
               <div className="text-3xl font-bold text-gradient mb-2">∞</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Learning</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                Learning
+              </div>
             </div>
           </div>
         </motion.div>
