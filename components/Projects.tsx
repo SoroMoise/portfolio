@@ -110,13 +110,13 @@ export function Projects() {
                     {!loading && (
                       <>
                         {project.stars > 0 && (
-                          <div className="flex items-center gap-1 px-3 py-1 rounded-lg bg-yellow-100 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-900 text-xs">
+                          <div className="flex items-center gap-1 px-3 py-1 rounded-lg bg-yellow-100 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-900 text-xs text-yellow-900 dark:text-yellow-200">
                             <Star className="w-3 h-3 text-yellow-600" />
                             <span>{project.stars}</span>
                           </div>
                         )}
                         {project.forks > 0 && (
-                          <div className="flex items-center gap-1 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-xs">
+                          <div className="flex items-center gap-1 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-xs text-gray-900 dark:text-gray-100">
                             <GitFork className="w-3 h-3" />
                             <span>{project.forks}</span>
                           </div>
@@ -170,7 +170,7 @@ export function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 font-medium transition-all duration-300"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 font-medium text-gray-900 dark:text-gray-100 transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -194,7 +194,7 @@ export function Projects() {
 
                 {/* Year Badge */}
                 {project.year && (
-                  <div className="absolute top-6 right-6 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-xs font-medium">
+                  <div className="absolute top-6 right-6 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-xs font-medium text-gray-900 dark:text-gray-100">
                     {project.year}
                   </div>
                 )}

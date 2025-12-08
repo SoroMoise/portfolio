@@ -117,7 +117,7 @@ export function Hero() {
                 whileTap={{ scale: 0.95 }}
                 aria-label={social.name}
               >
-                <Icon className="w-5 h-5" />
+                <Icon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               </motion.a>
             );
           })}

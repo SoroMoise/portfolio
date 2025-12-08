@@ -143,7 +143,7 @@ export function Contact() {
                     </p>
                     <a
                       href={`mailto:${PERSONAL_INFO.email}`}
-                      className="font-medium hover:text-blue-600 transition-colors"
+                      className="font-medium text-gray-900 dark:text-gray-100 hover:text-blue-600 transition-colors"
                     >
                       {PERSONAL_INFO.email}
                     </a>
@@ -159,7 +159,7 @@ export function Contact() {
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                       Location
                     </p>
-                    <p className="font-medium">{PERSONAL_INFO.location}</p>
+                    <p className="font-medium text-gray-900 dark:text-gray-100">{PERSONAL_INFO.location}</p>
                   </div>
                 </div>
 
@@ -176,7 +176,7 @@ export function Contact() {
                       href={PERSONAL_INFO.whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-medium hover:text-green-600 transition-colors"
+                      className="font-medium text-gray-900 dark:text-gray-100 hover:text-green-600 transition-colors"
                     >
                       {PERSONAL_INFO.whatsapp}
                     </a>
@@ -209,8 +209,10 @@ export function Contact() {
                       whileHover={{ scale: 1.05, y: -5 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Icon className="w-6 h-6" />
-                      <span className="text-xs font-medium">{social.name}</span>
+                      <Icon className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+                      <span className="text-xs font-medium text-gray-900 dark:text-gray-100">
+                        {social.name}
+                      </span>
                     </motion.a>
                   );
                 })}
@@ -251,7 +253,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium mb-2"
+                    className="block text-sm font-medium mb-2 text-gray-900 dark:text-gray-100"
                   >
                     Your Name *
                   </label>
@@ -262,7 +264,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                     placeholder="John Doe"
                   />
                 </div>
@@ -271,7 +273,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium mb-2"
+                    className="block text-sm font-medium mb-2 text-gray-900 dark:text-gray-100"
                   >
                     Your Email *
                   </label>
@@ -282,7 +284,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -291,7 +293,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium mb-2"
+                    className="block text-sm font-medium mb-2 text-gray-900 dark:text-gray-100"
                   >
                     Subject *
                   </label>
@@ -302,7 +304,7 @@ export function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                     placeholder="Project Inquiry"
                   />
                 </div>
@@ -311,7 +313,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium mb-2"
+                    className="block text-sm font-medium mb-2 text-gray-900 dark:text-gray-100"
                   >
                     Message *
                   </label>
@@ -322,7 +324,7 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none transition-all resize-none text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                     placeholder="Tell me about your project..."
                   />
                 </div>
