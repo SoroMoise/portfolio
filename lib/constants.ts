@@ -246,7 +246,7 @@ export const PROJECTS = [
     image: "/projects/jargon-informatique.png",
     category: "mobile",
     status: "completed",
-    year: "2023",
+    year: new Date().getFullYear(),
   },
 ];
 
@@ -309,10 +309,10 @@ export const SOCIAL_LINKS = [
 ];
 
 export const NAV_LINKS = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Skills", href: "/skills" },
+  { name: "Projects", href: "/projects" },
+  { name: "Experience", href: "/experience" },
+  { name: "Contact", href: "/contact" },
 ];

@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 import { Briefcase, MapPin, Calendar, CheckCircle2 } from "lucide-react";
 import { EXPERIENCE } from "@/lib/constants";
 
@@ -128,7 +129,9 @@ export function Experience() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-700 dark:text-gray-300 mb-6">{exp.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 mb-6">
+                      {exp.description}
+                    </p>
 
                     {/* Responsibilities */}
                     {exp.responsibilities &&
@@ -206,12 +209,12 @@ export function Experience() {
         >
           <p className="text-gray-600 dark:text-gray-400">
             Want to work together?{" "}
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="text-gradient font-semibold hover:underline"
             >
               Let's connect!
-            </a>
+            </Link>
           </p>
         </motion.div>
       </div>

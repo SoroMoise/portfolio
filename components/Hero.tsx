@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowDown, Github, MessageCircle, Facebook } from "lucide-react";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "@/lib/constants";
 
@@ -21,11 +22,6 @@ const item = {
 };
 
 export function Hero() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const getSocialIcon = (iconName: string) => {
     const icons: { [key: string]: any } = {
       Github,
@@ -46,7 +42,6 @@ export function Hero() {
         initial="hidden"
         animate="show"
       >
-
         {/* Name */}
         <motion.h1
           variants={item}
@@ -84,19 +79,25 @@ export function Hero() {
           variants={item}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
         >
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="px-8 py-4 rounded-lg bg-white dark:bg-gray-800 border-2 border-blue-500 text-blue-600 dark:text-blue-400 font-semibold text-lg transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1"
-          >
-            View My Projects
-          </button>
+          <Link href="/projects">
+            <motion.button
+              className="px-8 py-4 rounded-lg bg-white dark:bg-gray-800 border-2 border-blue-500 text-blue-600 dark:text-blue-400 font-semibold text-lg transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View My Projects
+            </motion.button>
+          </Link>
 
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="px-8 py-4 rounded-lg bg-gradient-primary text-white font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1"
-          >
-            Get In Touch
-          </button>
+          <Link href="/contact">
+            <motion.button
+              className="px-8 py-4 rounded-lg bg-gradient-primary text-white font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get In Touch
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* Social Links */}
@@ -135,14 +136,17 @@ export function Hero() {
             ease: "easeInOut",
           }}
         >
-          <button
-            onClick={() => scrollToSection("about")}
-            className="flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
-            aria-label="Scroll to about section"
-          >
-            <span className="text-sm">Scroll Down</span>
-            <ArrowDown className="w-5 h-5" />
-          </button>
+          <Link href="/about">
+            <motion.button
+              className="flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+              aria-label="Go to about page"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="text-sm">Learn More</span>
+              <ArrowDown className="w-5 h-5" />
+            </motion.button>
+          </Link>
         </motion.div>
       </motion.div>
     </section>
