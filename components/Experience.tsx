@@ -46,7 +46,7 @@ export function Experience() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-100">
             Professional <span className="text-gradient">Experience</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mb-6" />
@@ -89,7 +89,7 @@ export function Experience() {
                           <Briefcase className="w-6 h-6 text-blue-600" />
                         </div>
                         <div>
-                          <h3 className="text-2xl font-bold mb-1">
+                          <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-gray-100">
                             {exp.position}
                           </h3>
                           <p className="text-lg text-gray-800 dark:text-gray-200 font-medium">
@@ -134,7 +134,7 @@ export function Experience() {
                     {exp.responsibilities &&
                       exp.responsibilities.length > 0 && (
                         <div className="mb-6">
-                          <h4 className="font-semibold mb-3 flex items-center gap-2">
+                          <h4 className="font-semibold mb-3 flex items-center gap-2 text-gray-900 dark:text-gray-100">
                             <CheckCircle2 className="w-4 h-4 text-blue-600" />
                             Key Responsibilities:
                           </h4>
@@ -155,7 +155,7 @@ export function Experience() {
                     {/* Achievements */}
                     {exp.achievements && exp.achievements.length > 0 && (
                       <div className="mb-6">
-                        <h4 className="font-semibold mb-3 text-gradient">
+                        <h4 className="font-semibold mb-3 text-gray-900 dark:text-gray-100">
                           Achievements:
                         </h4>
                         <ul className="space-y-2">

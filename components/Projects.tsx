@@ -77,7 +77,7 @@ export function Projects() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-100">
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mb-6" />
@@ -127,7 +127,7 @@ export function Projects() {
                 </div>
 
                 {/* Project Info */}
-                <h3 className="text-2xl font-bold mb-3">{project.name}</h3>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">{project.name}</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4 grow">
                   {project.description}
                 </p>

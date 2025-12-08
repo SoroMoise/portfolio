@@ -44,7 +44,7 @@ export function About() {
       >
         {/* Section Title */}
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-100">
             About <span className="text-gradient">Me</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
@@ -94,7 +94,7 @@ export function About() {
           {/* Right Column - Bio */}
           <motion.div variants={itemVariants} className="space-y-6">
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-              <h3 className="text-2xl font-bold mb-6 text-gradient">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">
                 Nice to meet you! 👋
               </h3>
 
@@ -148,7 +148,7 @@ export function About() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 1 }}
             >
-              <h4 className="font-semibold mb-4">Quick Facts</h4>
+              <h4 className="font-semibold mb-4 text-gray-900 dark:text-gray-100">Quick Facts</h4>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                 <li>🎯 Focusing on full-stack development</li>
                 <li>📱 Specialized in mobile app development</li>

@@ -108,7 +108,7 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-100">
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
@@ -127,7 +127,9 @@ export function Contact() {
           {/* Contact Info */}
           <motion.div variants={itemVariants} className="space-y-6">
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+                Contact Information
+              </h3>
 
               <div className="space-y-6">
                 {/* Email */}
@@ -185,7 +187,9 @@ export function Contact() {
 
             {/* Social Links Card */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-              <h3 className="text-xl font-bold mb-6">Connect With Me</h3>
+              <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+                Connect With Me
+              </h3>
               <div className="flex gap-4">
                 {SOCIAL_LINKS.map((social) => {
                   const Icon =
@@ -238,7 +242,9 @@ export function Contact() {
               onSubmit={handleSubmit}
               className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700 h-full"
             >
-              <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+                Send Me a Message
+              </h3>
 
               <div className="space-y-4">
                 {/* Name */}
