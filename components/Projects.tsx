@@ -80,7 +80,7 @@ export function Projects() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-linear-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             A selection of projects I've built with passion and dedication
           </p>
@@ -103,7 +103,7 @@ export function Projects() {
               <div className="glass dark:glass-dark rounded-3xl p-8 backdrop-blur-xl border-2 border-white/20 dark:border-white/10 hover:border-purple-500/50 dark:hover:border-purple-500/50 transition-all duration-300 h-full flex flex-col">
                 {/* Project Header */}
                 <div className="flex items-start justify-between mb-4">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20">
+                  <div className="p-3 rounded-xl bg-linear-to-br from-purple-500/20 to-pink-500/20">
                     <Code2 className="w-6 h-6 text-purple-500" />
                   </div>
                   <div className="flex gap-2">
@@ -128,7 +128,7 @@ export function Projects() {
 
                 {/* Project Info */}
                 <h3 className="text-2xl font-bold mb-3">{project.name}</h3>
-                <p className="text-foreground/70 mb-4 flex-grow">
+                <p className="text-foreground/70 mb-4 grow">
                   {project.description}
                 </p>
 
@@ -182,7 +182,7 @@ export function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium transition-all duration-300"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-linear-to-r from-purple-500 to-pink-500 text-white font-medium transition-all duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -201,7 +201,7 @@ export function Projects() {
               </div>
 
               {/* Hover Glow Effect */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-300 pointer-events-none" />
+              <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-300 pointer-events-none" />
             </motion.div>
           ))}
         </motion.div>

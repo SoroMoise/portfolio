@@ -124,14 +124,14 @@ export function Hero() {
           >
             <span className="relative z-10">View My Projects</span>
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 transition-opacity"
+              className="absolute inset-0 bg-linear-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 transition-opacity"
               whileHover={{ scale: 1.05 }}
             />
           </button>
 
           <button
             onClick={() => scrollToSection("contact")}
-            className="group relative px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
+            className="group relative px-8 py-4 rounded-full bg-linear-to-r from-purple-500 to-pink-500 text-white font-medium text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
           >
             <span className="relative z-10">Get In Touch</span>
           </button>

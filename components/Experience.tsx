@@ -49,7 +49,7 @@ export function Experience() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Professional <span className="text-gradient">Experience</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-linear-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             My journey as a developer and the experiences that shaped my career
           </p>
@@ -63,7 +63,7 @@ export function Experience() {
           animate={isInView ? "visible" : "hidden"}
         >
           {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-transparent hidden md:block" />
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-linear-to-b from-purple-500 via-pink-500 to-transparent hidden md:block" />
 
           {/* Experience Items */}
           <div className="space-y-8">
@@ -74,7 +74,7 @@ export function Experience() {
                 className="relative"
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-8 top-8 w-4 h-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 border-4 border-background hidden md:block transform -translate-x-[7px]" />
+                <div className="absolute left-8 top-8 w-4 h-4 rounded-full bg-linear-to-br from-purple-500 to-pink-500 border-4 border-background hidden md:block transform -translate-x-[7px]" />
 
                 {/* Content Card */}
                 <div className="md:ml-20">
@@ -85,7 +85,7 @@ export function Experience() {
                     {/* Header */}
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex-shrink-0">
+                        <div className="p-3 rounded-xl bg-linear-to-br from-purple-500/20 to-pink-500/20 shrink-0">
                           <Briefcase className="w-6 h-6 text-purple-500" />
                         </div>
                         <div>
@@ -100,7 +100,7 @@ export function Experience() {
 
                       {/* Date Badge */}
                       {exp.current ? (
-                        <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 w-fit">
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 w-fit">
                           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                           <span className="text-sm font-medium text-green-500">
                             Current

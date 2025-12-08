@@ -105,7 +105,7 @@ export function Skills() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Skills & <span className="text-gradient">Technologies</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-linear-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             Technologies and tools I use to bring ideas to life
           </p>
@@ -167,7 +167,7 @@ export function Skills() {
                           {/* Skill Header */}
                           <div className="flex items-start justify-between mb-4">
                             <div className="flex items-center gap-3">
-                              <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20">
+                              <div className="p-2 rounded-lg bg-linear-to-br from-purple-500/20 to-pink-500/20">
                                 <SkillIcon className="w-5 h-5 text-purple-500" />
                               </div>
                               <div>
@@ -189,7 +189,7 @@ export function Skills() {
                           {/* Skill Level Bar */}
                           <div className="relative h-2 bg-white/10 dark:bg-black/20 rounded-full overflow-hidden">
                             <motion.div
-                              className={`h-full bg-gradient-to-r ${getLevelColor(
+                              className={`h-full bg-linear-to-r ${getLevelColor(
                                 skill.level
                               )} rounded-full`}
                               initial={{ width: 0 }}
@@ -208,7 +208,7 @@ export function Skills() {
                         </div>
 
                         {/* Hover Glow Effect */}
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-300 pointer-events-none" />
+                        <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-300 pointer-events-none" />
                       </motion.div>
                     );
                   })}

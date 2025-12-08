@@ -47,7 +47,7 @@ export function About() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             About <span className="text-gradient">Me</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-linear-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 items-start">
@@ -56,7 +56,7 @@ export function About() {
             <div className="glass dark:glass-dark rounded-3xl p-8 backdrop-blur-xl border-2 border-white/20 dark:border-white/10 hover:border-white/30 dark:hover:border-white/20 transition-all duration-300">
               {/* Profile Image Placeholder */}
               <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-pulse" />
+                <div className="absolute inset-0 bg-linear-to-br from-purple-500 to-pink-500 rounded-full animate-pulse" />
                 <div className="absolute inset-2 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center">
                   <Code2 className="w-20 h-20 text-purple-500" />
                 </div>
@@ -65,7 +65,7 @@ export function About() {
               {/* Info Cards */}
               <div className="space-y-4">
                 <div className="flex items-center gap-3 p-4 rounded-2xl glass dark:glass-dark">
-                  <MapPin className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                  <MapPin className="w-5 h-5 text-purple-500 shrink-0" />
                   <div>
                     <p className="text-sm text-foreground/60">Location</p>
                     <p className="font-medium">{PERSONAL_INFO.location}</p>
@@ -73,7 +73,7 @@ export function About() {
                 </div>
 
                 <div className="flex items-center gap-3 p-4 rounded-2xl glass dark:glass-dark">
-                  <Building2 className="w-5 h-5 text-pink-500 flex-shrink-0" />
+                  <Building2 className="w-5 h-5 text-pink-500 shrink-0" />
                   <div>
                     <p className="text-sm text-foreground/60">Company</p>
                     <p className="font-medium">{PERSONAL_INFO.company}</p>
@@ -81,7 +81,7 @@ export function About() {
                 </div>
 
                 <div className="flex items-center gap-3 p-4 rounded-2xl glass dark:glass-dark">
-                  <Heart className="w-5 h-5 text-red-500 flex-shrink-0" />
+                  <Heart className="w-5 h-5 text-red-500 shrink-0" />
                   <div>
                     <p className="text-sm text-foreground/60">Status</p>
                     <p className="font-medium">Available for projects</p>

@@ -111,7 +111,7 @@ export function Contact() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Get In <span className="text-gradient">Touch</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-linear-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? Feel free to reach
             out!
@@ -132,7 +132,7 @@ export function Contact() {
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20">
+                  <div className="p-3 rounded-xl bg-linear-to-br from-purple-500/20 to-pink-500/20">
                     <Mail className="w-5 h-5 text-purple-500" />
                   </div>
                   <div>
@@ -148,7 +148,7 @@ export function Contact() {
 
                 {/* Location */}
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20">
+                  <div className="p-3 rounded-xl bg-linear-to-br from-blue-500/20 to-cyan-500/20">
                     <MapPin className="w-5 h-5 text-blue-500" />
                   </div>
                   <div>
@@ -159,7 +159,7 @@ export function Contact() {
 
                 {/* WhatsApp */}
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20">
+                  <div className="p-3 rounded-xl bg-linear-to-br from-green-500/20 to-emerald-500/20">
                     <Phone className="w-5 h-5 text-green-500" />
                   </div>
                   <div>
@@ -317,7 +317,7 @@ export function Contact() {
                 <motion.button
                   type="submit"
                   disabled={formStatus === "loading"}
-                  className="w-full px-6 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-6 py-4 rounded-xl bg-linear-to-r from-purple-500 to-pink-500 text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
                   whileHover={formStatus !== "loading" ? { scale: 1.02 } : {}}
                   whileTap={formStatus !== "loading" ? { scale: 0.98 } : {}}
                 >
@@ -346,9 +346,9 @@ export function Contact() {
                     }`}
                   >
                     {formStatus === "success" ? (
-                      <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 shrink-0" />
                     ) : (
-                      <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                      <AlertCircle className="w-5 h-5 shrink-0" />
                     )}
                     <span className="text-sm">{statusMessage}</span>
                   </motion.div>
