@@ -58,7 +58,7 @@ export function Hero() {
         {/* Title */}
         <motion.h2
           variants={item}
-          className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 text-foreground/90"
+          className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 text-gray-900 dark:text-gray-100"
         >
           {PERSONAL_INFO.title}
         </motion.h2>
@@ -66,7 +66,7 @@ export function Hero() {
         {/* Tagline */}
         <motion.p
           variants={item}
-          className="text-lg sm:text-xl md:text-2xl text-foreground/70 mb-8 max-w-3xl mx-auto"
+          className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
         >
           {PERSONAL_INFO.tagline}
         </motion.p>
@@ -74,7 +74,7 @@ export function Hero() {
         {/* Location & Company */}
         <motion.p
           variants={item}
-          className="text-base sm:text-lg text-foreground/60 mb-10"
+          className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-10"
         >
           📍 {PERSONAL_INFO.location} • 🏢 {PERSONAL_INFO.company}
         </motion.p>
@@ -137,7 +137,7 @@ export function Hero() {
         >
           <button
             onClick={() => scrollToSection("about")}
-            className="flex flex-col items-center gap-2 text-foreground/50 hover:text-foreground/80 transition-colors"
+            className="flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
             aria-label="Scroll to about section"
           >
             <span className="text-sm">Scroll Down</span>

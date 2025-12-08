@@ -50,7 +50,7 @@ export function Experience() {
             Professional <span className="text-gradient">Experience</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mb-6" />
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             My journey as a developer and the experiences that shaped my career
           </p>
         </motion.div>
@@ -92,7 +92,7 @@ export function Experience() {
                           <h3 className="text-2xl font-bold mb-1">
                             {exp.position}
                           </h3>
-                          <p className="text-lg text-foreground/80 font-medium">
+                          <p className="text-lg text-gray-800 dark:text-gray-200 font-medium">
                             {exp.company}
                           </p>
                         </div>
@@ -114,7 +114,7 @@ export function Experience() {
                     </div>
 
                     {/* Meta Info */}
-                    <div className="flex flex-wrap gap-4 mb-6 text-sm text-foreground/70">
+                    <div className="flex flex-wrap gap-4 mb-6 text-sm text-gray-700 dark:text-gray-300">
                       <div className="flex items-center gap-2">
                         <MapPin className="w-4 h-4" />
                         <span>{exp.location}</span>
@@ -128,7 +128,7 @@ export function Experience() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-foreground/70 mb-6">{exp.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 mb-6">{exp.description}</p>
 
                     {/* Responsibilities */}
                     {exp.responsibilities &&
@@ -142,7 +142,7 @@ export function Experience() {
                             {exp.responsibilities.map((resp, idx) => (
                               <li
                                 key={idx}
-                                className="text-sm text-foreground/70 flex items-start gap-2 pl-6"
+                                className="text-sm text-gray-700 dark:text-gray-300 flex items-start gap-2 pl-6"
                               >
                                 <span className="text-blue-600 mt-1">•</span>
                                 <span>{resp}</span>
@@ -162,7 +162,7 @@ export function Experience() {
                           {exp.achievements.map((achievement, idx) => (
                             <li
                               key={idx}
-                              className="text-sm text-foreground/70 flex items-start gap-2 pl-6"
+                              className="text-sm text-gray-700 dark:text-gray-300 flex items-start gap-2 pl-6"
                             >
                               <span className="text-cyan-500 mt-1">★</span>
                               <span>{achievement}</span>
@@ -175,7 +175,7 @@ export function Experience() {
                     {/* Technologies */}
                     {exp.technologies && exp.technologies.length > 0 && (
                       <div>
-                        <h4 className="font-semibold mb-3 text-sm text-foreground/60">
+                        <h4 className="font-semibold mb-3 text-sm text-gray-600 dark:text-gray-400">
                           Technologies Used:
                         </h4>
                         <div className="flex flex-wrap gap-2">
@@ -204,7 +204,7 @@ export function Experience() {
           transition={{ delay: 0.6, duration: 0.5 }}
           className="mt-12 text-center"
         >
-          <p className="text-foreground/60">
+          <p className="text-gray-600 dark:text-gray-400">
             Want to work together?{" "}
             <a
               href="#contact"

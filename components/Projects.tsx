@@ -81,7 +81,7 @@ export function Projects() {
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mb-6" />
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             A selection of projects I've built with passion and dedication
           </p>
         </motion.div>
@@ -128,21 +128,21 @@ export function Projects() {
 
                 {/* Project Info */}
                 <h3 className="text-2xl font-bold mb-3">{project.name}</h3>
-                <p className="text-foreground/70 mb-4 grow">
+                <p className="text-gray-700 dark:text-gray-300 mb-4 grow">
                   {project.description}
                 </p>
 
                 {/* Features List */}
                 {project.features && project.features.length > 0 && (
                   <div className="mb-6">
-                    <h4 className="text-sm font-semibold mb-2 text-foreground/60">
+                    <h4 className="text-sm font-semibold mb-2 text-gray-600 dark:text-gray-400">
                       Key Features:
                     </h4>
                     <ul className="space-y-1">
                       {project.features.slice(0, 3).map((feature, idx) => (
                         <li
                           key={idx}
-                          className="text-sm text-foreground/70 flex items-start gap-2"
+                          className="text-sm text-gray-700 dark:text-gray-300 flex items-start gap-2"
                         >
                           <span className="text-blue-600 mt-1">•</span>
                           <span>{feature}</span>

@@ -112,7 +112,7 @@ export function Contact() {
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-purple-500 to-pink-500 mx-auto rounded-full mb-6" />
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? Feel free to reach
             out!
           </p>
@@ -136,7 +136,9 @@ export function Contact() {
                     <Mail className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-foreground/60 mb-1">Email</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                      Email
+                    </p>
                     <a
                       href={`mailto:${PERSONAL_INFO.email}`}
                       className="font-medium hover:text-blue-600 transition-colors"
@@ -152,7 +154,9 @@ export function Contact() {
                     <MapPin className="w-5 h-5 text-cyan-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-foreground/60 mb-1">Location</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                      Location
+                    </p>
                     <p className="font-medium">{PERSONAL_INFO.location}</p>
                   </div>
                 </div>
@@ -163,7 +167,9 @@ export function Contact() {
                     <Phone className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-foreground/60 mb-1">WhatsApp</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                      WhatsApp
+                    </p>
                     <a
                       href={PERSONAL_INFO.whatsappLink}
                       target="_blank"
@@ -215,7 +221,9 @@ export function Contact() {
                   <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping" />
                 </div>
                 <div>
-                  <p className="font-semibold text-green-900 dark:text-green-100">Available for Projects</p>
+                  <p className="font-semibold text-green-900 dark:text-green-100">
+                    Available for Projects
+                  </p>
                   <p className="text-sm text-green-700 dark:text-green-300">
                     Open to freelance and full-time opportunities
                   </p>
@@ -318,7 +326,9 @@ export function Contact() {
                   type="submit"
                   disabled={formStatus === "loading"}
                   className="w-full px-6 py-4 rounded-lg bg-gradient-primary text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
-                  whileHover={formStatus !== "loading" ? { scale: 1.02, y: -2 } : {}}
+                  whileHover={
+                    formStatus !== "loading" ? { scale: 1.02, y: -2 } : {}
+                  }
                   whileTap={formStatus !== "loading" ? { scale: 0.98 } : {}}
                 >
                   {formStatus === "loading" ? (

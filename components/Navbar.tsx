@@ -64,7 +64,7 @@ export function Navbar() {
                       e.preventDefault();
                       scrollToSection(link.href);
                     }}
-                    className="relative text-sm font-medium text-foreground/70 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer group"
+                    className="relative text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer group"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -131,7 +131,7 @@ export function Navbar() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="text-lg font-medium text-foreground/70 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
+                className="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{
                   opacity: isOpen ? 1 : 0,

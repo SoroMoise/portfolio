@@ -106,7 +106,7 @@ export function Skills() {
             Skills & <span className="text-gradient">Technologies</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mb-6" />
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Technologies and tools I use to bring ideas to life
           </p>
         </motion.div>
@@ -140,7 +140,7 @@ export function Skills() {
                     <h3 className="text-xl sm:text-2xl font-bold">
                       {category.name}
                     </h3>
-                    <p className="text-sm text-foreground/60">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
                       {category.description}
                     </p>
                   </div>
@@ -174,7 +174,7 @@ export function Skills() {
                                 <h4 className="font-semibold text-lg">
                                   {skill.name}
                                 </h4>
-                                <p className="text-xs text-foreground/60 capitalize">
+                                <p className="text-xs text-gray-600 dark:text-gray-400 capitalize">
                                   {skill.level}
                                 </p>
                               </div>
@@ -182,7 +182,7 @@ export function Skills() {
                           </div>
 
                           {/* Description */}
-                          <p className="text-sm text-foreground/70 mb-4">
+                          <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
                             {skill.description}
                           </p>
 
@@ -227,23 +227,23 @@ export function Skills() {
               <div className="text-3xl font-bold text-gradient mb-2">
                 {SKILLS.length}+
               </div>
-              <div className="text-sm text-foreground/60">Technologies</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Technologies</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-gradient mb-2">
                 {SKILL_CATEGORIES.length}
               </div>
-              <div className="text-sm text-foreground/60">Categories</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Categories</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-gradient mb-2">
                 {SKILLS.filter((s) => s.level === "expert").length}
               </div>
-              <div className="text-sm text-foreground/60">Expert Level</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Expert Level</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-gradient mb-2">∞</div>
-              <div className="text-sm text-foreground/60">Learning</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Learning</div>
             </div>
           </div>
         </motion.div>

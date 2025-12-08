@@ -67,24 +67,24 @@ export function About() {
                 <div className="flex items-center gap-3 p-4 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900">
                   <MapPin className="w-5 h-5 text-blue-600 shrink-0" />
                   <div>
-                    <p className="text-sm text-foreground/60">Location</p>
-                    <p className="font-medium">{PERSONAL_INFO.location}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Location</p>
+                    <p className="font-medium text-gray-900 dark:text-gray-100">{PERSONAL_INFO.location}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 p-4 rounded-xl bg-cyan-50 dark:bg-cyan-950/30 border border-cyan-100 dark:border-cyan-900">
                   <Building2 className="w-5 h-5 text-cyan-600 shrink-0" />
                   <div>
-                    <p className="text-sm text-foreground/60">Company</p>
-                    <p className="font-medium">{PERSONAL_INFO.company}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Company</p>
+                    <p className="font-medium text-gray-900 dark:text-gray-100">{PERSONAL_INFO.company}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 p-4 rounded-xl bg-green-50 dark:bg-green-950/30 border border-green-100 dark:border-green-900">
                   <Heart className="w-5 h-5 text-green-600 shrink-0" />
                   <div>
-                    <p className="text-sm text-foreground/60">Status</p>
-                    <p className="font-medium">Available for projects</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Status</p>
+                    <p className="font-medium text-gray-900 dark:text-gray-100">Available for projects</p>
                   </div>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export function About() {
                 Nice to meet you! 👋
               </h3>
 
-              <div className="space-y-4 text-foreground/80 leading-relaxed">
+              <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
                 {PERSONAL_INFO.about.map((paragraph, index) => (
                   <motion.p
                     key={index}
@@ -124,17 +124,17 @@ export function About() {
               >
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gradient">3+</div>
-                  <div className="text-sm text-foreground/60 mt-1">Years</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">Years</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gradient">10+</div>
-                  <div className="text-sm text-foreground/60 mt-1">
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                     Projects
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gradient">8+</div>
-                  <div className="text-sm text-foreground/60 mt-1">
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                     Technologies
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export function About() {
               transition={{ delay: 1 }}
             >
               <h4 className="font-semibold mb-4">Quick Facts</h4>
-              <ul className="space-y-2 text-sm text-foreground/70">
+              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                 <li>🎯 Focusing on full-stack development</li>
                 <li>📱 Specialized in mobile app development</li>
                 <li>🌐 Building scalable web applications</li>
