@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowDown, Github, MessageCircle, Facebook } from "lucide-react";
+import { Github, MessageCircle, Facebook } from "lucide-react";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "@/lib/constants";
 
 const container = {
@@ -122,31 +122,6 @@ export function Hero() {
               </motion.a>
             );
           })}
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{
-            y: [0, 10, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <Link href="/about">
-            <motion.button
-              className="flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
-              aria-label="Go to about page"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="text-sm">Learn More</span>
-              <ArrowDown className="w-5 h-5" />
-            </motion.button>
-          </Link>
         </motion.div>
       </motion.div>
     </section>
