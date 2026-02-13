@@ -30,7 +30,7 @@ export function Contact() {
   const [statusMessage, setStatusMessage] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -52,7 +52,7 @@ export function Contact() {
       if (response.ok) {
         setFormStatus("success");
         setStatusMessage(
-          "Message sent successfully! I'll get back to you soon."
+          "Message sent successfully! I'll get back to you soon.",
         );
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
@@ -139,7 +139,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-                      Email
+                      Email ######
                     </p>
                     <a
                       href={`mailto:${PERSONAL_INFO.email}`}
@@ -198,8 +198,8 @@ export function Contact() {
                     social.name === "GitHub"
                       ? require("lucide-react").Github
                       : social.name === "WhatsApp"
-                      ? require("lucide-react").MessageCircle
-                      : require("lucide-react").Facebook;
+                        ? require("lucide-react").MessageCircle
+                        : require("lucide-react").Facebook;
 
                   return (
                     <motion.a
