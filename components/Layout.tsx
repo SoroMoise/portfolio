@@ -17,7 +17,7 @@ export function Layout({ children }: LayoutProps) {
       </div>
 
       <Navbar />
-      <main>{children}</main>
+      <main className="pt-24">{children}</main>
 
       {/* Footer */}
       <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 py-8 px-4 sm:px-6 lg:px-8">

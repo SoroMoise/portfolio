@@ -115,7 +115,7 @@ export function Skills() {
         <div className="space-y-12">
           {SKILL_CATEGORIES.map((category, categoryIndex) => {
             const categorySkills = SKILLS.filter(
-              (skill) => skill.category === category.id
+              (skill) => skill.category === category.id,
             );
 
             if (categorySkills.length === 0) return null;
@@ -190,7 +190,7 @@ export function Skills() {
                           <div className="relative h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                             <motion.div
                               className={`h-full ${getLevelColor(
-                                skill.level
+                                skill.level,
                               )} rounded-full bg-blue-600`}
                               initial={{ width: 0 }}
                               animate={
