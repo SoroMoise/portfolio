@@ -139,7 +139,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-                      Email ######
+                      Email
                     </p>
                     <a
                       href={`mailto:${PERSONAL_INFO.email}`}
