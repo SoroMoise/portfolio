@@ -81,7 +81,7 @@ export function Hero() {
         >
           <Link href="/projects">
             <motion.button
-              className="px-8 py-4 rounded-lg bg-white dark:bg-gray-800 border-2 border-blue-500 text-blue-600 dark:text-blue-400 font-semibold text-lg transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1"
+              className="cursor-pointer px-8 py-4 rounded-lg bg-white dark:bg-gray-800 border-2 border-blue-500 text-blue-600 dark:text-blue-400 font-semibold text-lg transition-all duration-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:shadow-lg hover:-translate-y-1"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -91,7 +91,7 @@ export function Hero() {
 
           <Link href="/contact">
             <motion.button
-              className="px-8 py-4 rounded-lg bg-gradient-primary text-white font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1"
+              className="cursor-pointer px-8 py-4 rounded-lg bg-gradient-primary text-white font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
