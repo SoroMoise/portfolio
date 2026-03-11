@@ -34,7 +34,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8"
+      className="min-h-[calc(100vh-181px)] flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8"
     >
       <motion.div
         className="max-w-5xl mx-auto text-center relative z-10"

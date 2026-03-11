@@ -92,7 +92,7 @@ export function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
+      className="min-h-[calc(100vh-181px)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Title */}

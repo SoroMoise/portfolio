@@ -15,7 +15,7 @@ export function Projects() {
   useEffect(() => {
     // Fetch GitHub repos
     fetch(
-      `https://api.github.com/users/${PERSONAL_INFO.githubUsername}/repos?sort=updated&per_page=10`
+      `https://api.github.com/users/${PERSONAL_INFO.githubUsername}/repos?sort=updated&per_page=10`,
     )
       .then((res) => res.json())
       .then((data) => {
@@ -67,7 +67,7 @@ export function Projects() {
     <section
       id="projects"
       ref={ref}
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
+      className="min-h-[calc(100vh-181px)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Title */}
@@ -127,7 +127,9 @@ export function Projects() {
                 </div>
 
                 {/* Project Info */}
-                <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">{project.name}</h3>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">
+                  {project.name}
+                </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4 grow">
                   {project.description}
                 </p>
