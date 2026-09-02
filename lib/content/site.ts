@@ -6,11 +6,13 @@ import type { Localized } from "@/lib/i18n/config";
  */
 
 /**
- * Canonical origin. Set `NEXT_PUBLIC_SITE_URL` in the deployment environment to
- * point the canonical tags, sitemap and OG images at the custom domain.
+ * Canonical origin for canonical tags, hreflang alternates, the sitemap and the
+ * OG images. `NEXT_PUBLIC_SITE_URL` overrides it — useful for preview
+ * deployments — but the default is the production domain so a missing
+ * environment variable cannot silently point the whole site at a stale host.
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://soromoise.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://codeurdivoire.com"
 ).replace(/\/+$/, "");
 
 export const profile = {

@@ -3,7 +3,7 @@
 Bilingual (FR/EN) portfolio for a full-stack developer in Abidjan. Dark-first
 editorial design, fully statically prerendered, no client-side data fetching.
 
-**Live:** https://soromoise.vercel.app
+**Live:** https://codeurdivoire.com
 
 ---
 
@@ -17,7 +17,7 @@ editorial design, fully statically prerendered, no client-side data fetching.
 | Theming      | `next-themes`, class strategy, light/dark/system           |
 | Icons        | `lucide-react` + two hand-drawn brand marks                |
 | Validation   | `zod`, one schema shared by the browser and the API route  |
-| Mail         | Resend REST API (no SDK)                                   |
+| Mail         | Your own mailbox over SMTP, or Resend — see below           |
 | Analytics    | `@vercel/analytics`                                        |
 
 No animation library. Motion is CSS: a load-time entrance for above-the-fold
@@ -99,15 +99,35 @@ pnpm typecheck  # tsc --noEmit
 
 All optional for local development; see `.env.example` for the annotated list.
 
-| Variable               | Purpose                                                        |
-| ---------------------- | -------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Canonical origin for canonical tags, hreflang, sitemap, OG      |
-| `RESEND_API_KEY`       | Contact form delivery. Without it the endpoint returns 502      |
-| `CONTACT_EMAIL`        | Where enquiries land                                            |
-| `CONTACT_FROM`         | Verified Resend sender                                          |
+| Variable                            | Purpose                                                   |
+| ----------------------------------- | --------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`              | Override the canonical origin (defaults to the live domain) |
+| `SMTP_HOST` `SMTP_USER` `SMTP_PASS` | Send from your own mailbox — see below                     |
+| `SMTP_PORT`                         | Optional, defaults to 465 (implicit TLS; use 587 for STARTTLS) |
+| `RESEND_API_KEY`                    | Alternative transport, if you prefer not to store a mailbox password |
+| `CONTACT_FROM`                      | Resend sender; ignored by the SMTP transport               |
+| `CONTACT_EMAIL`                     | Where enquiries land                                       |
 
-The contact endpoint deliberately fails loudly when mail is not configured. A
-form that silently drops messages is worse than one that admits it is broken.
+### Contact form delivery
+
+`lib/mail.ts` picks a transport from the environment at request time. SMTP wins
+when both are set, since it is the more direct route:
+
+- **SMTP** — set `SMTP_HOST` / `SMTP_USER` / `SMTP_PASS` and messages are sent
+  from your own mailbox into your own inbox, with the visitor's address in
+  `Reply-To`. No third party is involved. Gmail requires an *App Password*
+  (Google Account → Security → two-step verification, then App passwords), not
+  the account password.
+- **Resend** — set `RESEND_API_KEY` instead. One `fetch` call, no SDK.
+
+With neither configured the endpoint returns 502 and the form shows an error, on
+purpose: a form that silently drops messages is worse than one that admits it is
+broken.
+
+Neither option can be removed. A statically served site has nothing that can
+open an authenticated SMTP session, and mail sent from an unauthenticated host
+is refused or filed as spam by every large provider — so something has to hold
+a mailbox credential. The only real choice is whose mailbox it is.
 
 ---
 
@@ -122,9 +142,9 @@ form that silently drops messages is worse than one that admits it is broken.
 | Any UI string                 | `lib/i18n/dictionaries/{fr,en}.ts`          |
 | Colours, type scale, spacing  | the token blocks at the top of `app/globals.css` |
 
-**Adding a profile photo.** Drop a square image (≥ 800×800) at
-`public/moise-soro.jpg` and set `profile.portrait.available` to `true` in
-`lib/content/site.ts`. Until then the monogram is used.
+**Replacing the profile photo.** Drop a roughly square image (≥ 800×800) in
+`public/` and point `profile.portrait.src` at it in `lib/content/site.ts`.
+Setting `available` to `false` falls back to the monogram.
 
 **Adding project screenshots.** Put files in `public/projects/<slug>/` and list
 them in that project's `shots` array. The generated SVG artwork is used
@@ -147,7 +167,7 @@ Verified on the current build:
   (`Person`, `WebSite`, `BreadcrumbList`, `SoftwareApplication`)
 - Security headers: `X-Content-Type-Options`, `X-Frame-Options`,
   `Referrer-Policy`, `Permissions-Policy`, `Strict-Transport-Security`
-- Home page: ~26 KB gzipped HTML
+- Home page: ~26 KB gzipped HTML; no dictionary text in any client chunk
 
 ---
 
@@ -156,5 +176,6 @@ Verified on the current build:
 Vercel, framework preset auto-detected from `vercel.json`. `pnpm-workspace.yaml`
 carries `onlyBuiltDependencies` so `sharp` builds for image optimisation.
 
-Set `NEXT_PUBLIC_SITE_URL` to the production domain before going live, otherwise
-canonical URLs and the sitemap will point at the default host.
+`SITE_URL` defaults to the production domain, so no environment variable is
+needed for a normal deploy — set `NEXT_PUBLIC_SITE_URL` only for previews.
+Configure a mail transport (see above) or the contact form will return 502.
