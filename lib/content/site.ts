@@ -29,7 +29,10 @@ export const profile = {
   phoneE164: "+2250564796221",
   location: {
     city: "Abidjan",
-    country: { fr: "Côte d'Ivoire", en: "Ivory Coast" } satisfies Localized<string>,
+    country: {
+      fr: "Côte d'Ivoire",
+      en: "Ivory Coast",
+    } satisfies Localized<string>,
     countryCode: "CI",
     timeZone: "Africa/Abidjan",
     /** Abidjan is UTC+0 year-round — no daylight saving. */
@@ -43,12 +46,18 @@ export const profile = {
     {
       id: "fr",
       name: { fr: "Français", en: "French" } satisfies Localized<string>,
-      level: { fr: "Langue maternelle", en: "Native" } satisfies Localized<string>,
+      level: {
+        fr: "Langue maternelle",
+        en: "Native",
+      } satisfies Localized<string>,
     },
     {
       id: "en",
       name: { fr: "Anglais", en: "English" } satisfies Localized<string>,
-      level: { fr: "Intermédiaire (B1)", en: "Intermediate (B1)" } satisfies Localized<string>,
+      level: {
+        fr: "Intermédiaire (B1)",
+        en: "Intermediate (B1)",
+      } satisfies Localized<string>,
     },
   ],
   resume: {
@@ -67,8 +76,8 @@ export const profile = {
    * `available` to true — the monogram is used until then.
    */
   portrait: {
-    src: "/moise-soro.jpg",
-    available: false,
+    src: "/moise-soro.jpeg",
+    available: true,
   },
   availability: {
     open: true,
