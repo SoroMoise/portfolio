@@ -1,3 +1,5 @@
+import { errorStrings } from "../error-strings";
+
 export const fr = {
   nav: {
     home: "Accueil",
@@ -201,12 +203,8 @@ export const fr = {
     secondaryCta: "Voir les réalisations",
   },
 
-  error: {
-    title: "Une erreur est survenue",
-    body: "Le contenu n'a pas pu être chargé. Rechargez la page ; si le problème persiste, écrivez-moi à soromoise4@gmail.com",
-    retry: "Réessayer",
-    home: "Retour à l'accueil",
-  },
+  /** Defined in ../error-strings so the client boundary can import them alone. */
+  error: errorStrings.fr,
 
   footer: {
     tagline: "Développeur Full Stack Web & Mobile — Abidjan, Côte d'Ivoire",

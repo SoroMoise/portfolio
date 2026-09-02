@@ -1,4 +1,5 @@
 import type { Dictionary } from "./fr";
+import { errorStrings } from "../error-strings";
 
 export const en: Dictionary = {
   nav: {
@@ -200,12 +201,8 @@ export const en: Dictionary = {
     secondaryCta: "See the work",
   },
 
-  error: {
-    title: "Something went wrong",
-    body: "This content could not be loaded. Reload the page; if it keeps happening, email me at soromoise4@gmail.com",
-    retry: "Try again",
-    home: "Back to home",
-  },
+  /** Defined in ../error-strings so the client boundary can import them alone. */
+  error: errorStrings.en,
 
   footer: {
     tagline: "Full Stack Web & Mobile Developer — Abidjan, Ivory Coast",
