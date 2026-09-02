@@ -4,17 +4,19 @@ import { useId, useState } from "react";
 import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n";
-
-/** Only the contact strings are serialised into the page payload. */
-export type ContactStrings = Dictionary["contact"];
 import {
   MESSAGE_MAX,
   contactFields,
   contactSchema,
   type ContactFieldName,
 } from "@/lib/contact-schema";
+import { composeWhatsAppText, whatsappUrl } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
+
+/** Only the contact strings are serialised into the page payload. */
+export type ContactStrings = Dictionary["contact"];
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -25,7 +27,19 @@ const initial: Record<ContactFieldName, string> = {
   message: "",
 };
 
-export function ContactForm({ locale, strings }: { locale: Locale; strings: ContactStrings }) {
+export function ContactForm({
+  locale,
+  strings,
+  /** International number for the WhatsApp deep link. */
+  phone,
+  /** From `common.externalLink` — assistive-only hint that a link opens a tab. */
+  newTabLabel,
+}: {
+  locale: Locale;
+  strings: ContactStrings;
+  phone: string;
+  newTabLabel: string;
+}) {
   const formId = useId();
   const [values, setValues] = useState(initial);
   const [errors, setErrors] = useState<Partial<Record<ContactFieldName, string>>>({});
@@ -96,6 +110,21 @@ export function ContactForm({ locale, strings }: { locale: Locale; strings: Cont
   }
 
   const busy = status === "submitting";
+
+  /*
+   * Recomputed on every render from what is currently typed, so this stays a
+   * genuine href — copyable, middle-clickable — rather than a button that
+   * builds a URL in an onClick handler. It needs no backend, which makes it
+   * the one route that still works if mail delivery is misconfigured.
+   */
+  const whatsappHref = whatsappUrl(
+    phone,
+    composeWhatsAppText(values, {
+      intro: strings.whatsappIntro,
+      name: strings.fields.name,
+      subject: strings.fields.subject,
+    }),
+  );
 
   return (
     <form
@@ -208,6 +237,28 @@ export function ContactForm({ locale, strings }: { locale: Locale; strings: Cont
       </div>
 
       <p className="text-xs text-fg-subtle">{strings.responseNote}</p>
+
+      <div className="flex items-center gap-4" aria-hidden="true">
+        <span className="h-px flex-1 bg-line" />
+        <span className="font-mono text-micro uppercase text-fg-subtle">
+          {strings.orSeparator}
+        </span>
+        <span className="h-px flex-1 bg-line" />
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-md border border-line-strong bg-surface px-6 text-base font-medium text-fg transition-colors hover:border-accent-line hover:bg-surface-hover motion-safe:active:translate-y-px"
+        >
+          <WhatsAppIcon className="size-4" />
+          {strings.whatsappCta}
+          <span className="sr-only"> ({newTabLabel})</span>
+        </a>
+        <p className="text-xs text-fg-subtle">{strings.whatsappHint}</p>
+      </div>
     </form>
   );
 }

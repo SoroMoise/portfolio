@@ -191,6 +191,10 @@ export const en: Dictionary = {
       server: "Something went wrong on my side. Try again in a moment.",
     },
     responseNote: "Every message is read and answered by me, not by an autoresponder.",
+    orSeparator: "or",
+    whatsappCta: "Continue on WhatsApp",
+    whatsappHint: "Whatever you have filled in is carried over — just hit send.",
+    whatsappIntro: "Hello Moïse, I'm reaching out from codeurdivoire.com.",
   },
 
   notFound: {

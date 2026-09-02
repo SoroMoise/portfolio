@@ -129,6 +129,11 @@ open an authenticated SMTP session, and mail sent from an unauthenticated host
 is refused or filed as spam by every large provider — so something has to hold
 a mailbox credential. The only real choice is whose mailbox it is.
 
+**WhatsApp is the exception.** The contact form also renders a secondary
+"continue on WhatsApp" action whose `href` is recomposed from the live field
+values (`lib/whatsapp.ts`). It is a plain `wa.me` URL, so it needs no backend
+and no configuration — and it keeps working when mail delivery is broken.
+
 ---
 
 ## Editing the content

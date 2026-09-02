@@ -132,7 +132,12 @@ export default async function ContactPage({
               </Reveal>
             </div>
 
-            <ContactForm locale={locale} strings={dict.contact} />
+            <ContactForm
+              locale={locale}
+              strings={dict.contact}
+              phone={profile.phoneE164}
+              newTabLabel={dict.common.externalLink}
+            />
           </div>
         </Container>
       </Section>

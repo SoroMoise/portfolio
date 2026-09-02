@@ -193,6 +193,11 @@ export const fr = {
     },
     responseNote:
       "Chaque message est lu et reçoit une réponse écrite de ma main — aucun envoi automatique.",
+    orSeparator: "ou",
+    whatsappCta: "Continuer sur WhatsApp",
+    whatsappHint:
+      "Vos réponses sont reprises dans le message — il ne reste qu'à envoyer.",
+    whatsappIntro: "Bonjour Moïse, je vous écris depuis codeurdivoire.com.",
   },
 
   notFound: {
