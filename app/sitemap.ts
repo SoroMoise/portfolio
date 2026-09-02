@@ -1,44 +1,25 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+import { locales, localeTags, defaultLocale } from "@/lib/i18n/config";
+import { allPaths } from "@/lib/i18n/routes";
+import { projects } from "@/lib/content/projects";
+import { SITE_URL } from "@/lib/content/site";
 
+/**
+ * One entry per page, listed under the default locale with an hreflang
+ * alternate for every other language — the shape Google expects for a
+ * multilingual site.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://soromoise.vercel.app";
+  const paths = [...allPaths(), ...projects.map((p) => `/work/${p.slug}`)];
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
+  return paths.map((path) => ({
+    url: `${SITE_URL}/${defaultLocale}${path}`,
+    changeFrequency: path === "" ? "monthly" : "yearly",
+    priority: path === "" ? 1 : path === "/work" ? 0.9 : 0.7,
+    alternates: {
+      languages: Object.fromEntries(
+        locales.map((locale) => [localeTags[locale], `${SITE_URL}/${locale}${path}`]),
+      ),
     },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/skills`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/experience`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-  ];
+  }));
 }
