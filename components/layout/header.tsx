@@ -77,81 +77,91 @@ export function Header({
     target === href(locale, "home") ? pathname === target : pathname.startsWith(target);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-bg/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-gutter">
-        <Link
-          href={href(locale, "home")}
-          aria-label={nav.brandAria}
-          className="group flex items-baseline gap-2"
-        >
-          <span className="font-display text-xl leading-none text-fg">
-            {profile.shortName}
-          </span>
-          <span
-            aria-hidden="true"
-            className="hidden font-mono text-micro uppercase text-fg-subtle transition-colors group-hover:text-accent sm:inline"
+    <>
+      <header className="sticky top-0 z-40 border-b border-line bg-bg/80 backdrop-blur-md">
+        <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-gutter">
+          <Link
+            href={href(locale, "home")}
+            aria-label={nav.brandAria}
+            className="group flex items-baseline gap-2"
           >
-            {profile.brand}
-          </span>
-        </Link>
+            <span className="font-display text-xl leading-none text-fg">
+              {profile.shortName}
+            </span>
+            <span
+              aria-hidden="true"
+              className="hidden font-mono text-micro uppercase text-fg-subtle transition-colors group-hover:text-accent sm:inline"
+            >
+              {profile.brand}
+            </span>
+          </Link>
 
-        <nav aria-label={nav.primaryNavLabel} className="hidden md:block">
-          <ul className="flex items-center gap-1">
-            {items.map((item) => {
-              const active = isActive(item.href);
-              return (
-                <li key={item.key}>
-                  <Link
-                    href={item.href}
-                    aria-current={active ? "page" : undefined}
-                    className={cn(
-                      "relative rounded-md px-3 py-2 text-sm transition-colors",
-                      active ? "text-fg" : "text-fg-muted hover:text-fg",
-                    )}
-                  >
-                    {item.label}
-                    <span
-                      aria-hidden="true"
+          <nav aria-label={nav.primaryNavLabel} className="hidden md:block">
+            <ul className="flex items-center gap-1">
+              {items.map((item) => {
+                const active = isActive(item.href);
+                return (
+                  <li key={item.key}>
+                    <Link
+                      href={item.href}
+                      aria-current={active ? "page" : undefined}
                       className={cn(
-                        "absolute inset-x-3 -bottom-px h-px origin-left bg-accent transition-transform duration-300",
-                        active ? "scale-x-100" : "scale-x-0",
+                        "relative rounded-md px-3 py-2 text-sm transition-colors",
+                        active ? "text-fg" : "text-fg-muted hover:text-fg",
                       )}
-                    />
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+                    >
+                      {item.label}
+                      <span
+                        aria-hidden="true"
+                        className={cn(
+                          "absolute inset-x-3 -bottom-px h-px origin-left bg-accent transition-transform duration-300",
+                          active ? "scale-x-100" : "scale-x-0",
+                        )}
+                      />
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
 
-        <div className="flex items-center gap-2">
-          <a
-            href={profile.resume.href[locale]}
-            download={profile.resume.fileName[locale]}
-            className="hidden items-center gap-2 rounded-md border border-line-strong px-3 py-2 text-sm text-fg transition-colors hover:border-accent-line hover:bg-surface-hover lg:inline-flex"
-          >
-            <Download className="size-4" aria-hidden="true" />
-            {strings.downloadCv}
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href={profile.resume.href[locale]}
+              download={profile.resume.fileName[locale]}
+              className="hidden items-center gap-2 rounded-md border border-line-strong px-3 py-2 text-sm text-fg transition-colors hover:border-accent-line hover:bg-surface-hover lg:inline-flex"
+            >
+              <Download className="size-4" aria-hidden="true" />
+              {strings.downloadCv}
+            </a>
 
-          <LocaleSwitcher locale={locale} label={strings.localeLabel} className="hidden sm:flex" />
-          <ThemeToggle labels={strings.theme} />
+            <LocaleSwitcher locale={locale} label={strings.localeLabel} className="hidden sm:flex" />
+            <ThemeToggle labels={strings.theme} />
 
-          <button
-            ref={toggleRef}
-            type="button"
-            onClick={() => setOpen(true)}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            aria-label={nav.openMenu}
-            className="inline-flex size-9 items-center justify-center rounded-md border border-line text-fg-muted transition-colors hover:border-accent-line hover:text-fg md:hidden"
-          >
-            <Menu className="size-4" aria-hidden="true" />
-          </button>
+            <button
+              ref={toggleRef}
+              type="button"
+              onClick={() => setOpen(true)}
+              aria-expanded={open}
+              aria-controls="mobile-nav"
+              aria-label={nav.openMenu}
+              className="inline-flex size-9 items-center justify-center rounded-md border border-line text-fg-muted transition-colors hover:border-accent-line hover:text-fg md:hidden"
+            >
+              <Menu className="size-4" aria-hidden="true" />
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       {/*
+       * The drawer is a sibling of the banner, not a child of it: `backdrop-blur`
+       * on the header sets a `backdrop-filter`, and a filtered element becomes the
+       * containing block for its `fixed` descendants. Nested, `inset-0` would
+       * resolve against the 4rem header box instead of the viewport, leaving the
+       * panel a 4rem stub with its nav and footer spilling out untinted. It sorts
+       * above the banner on z-index alone (50 over 40), both being children of the
+       * same root stacking context.
+       *
        * `inert` (rather than unmounting) keeps the drawer out of the tab order
        * and the accessibility tree while closed, while still allowing the slide
        * transition to run in both directions.
@@ -237,6 +247,6 @@ export function Header({
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
