@@ -23,6 +23,8 @@ export const fr = {
     viewOnGithub: "Voir sur GitHub",
     getOnGooglePlay: "Disponible sur Google Play",
     googlePlayShort: "Google Play",
+    visitWebsite: "Voir le site de l'app",
+    websiteShort: "Site web",
     privateSource: "Projet client — confidentiel",
     backToWork: "Retour aux réalisations",
     viewAllProjects: "Voir tous les projets",

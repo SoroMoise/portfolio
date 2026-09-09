@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Globe } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n";
 import { projectHref } from "@/lib/i18n/routes";
@@ -15,8 +15,10 @@ import { cn } from "@/lib/utils";
  *
  * The whole card is one anchor rather than a card with a nested button, so
  * there is exactly one tab stop and one hit area per project. The Google Play
- * badge is decoration here; the store link lives on the detail page, where it
- * can sit beside the rest of the project's context.
+ * and website badges are decoration here — they say where the app can be
+ * found, so the grid is scannable — and stay non-interactive on purpose: the
+ * real outbound links live on the detail page, where each one can sit beside
+ * the rest of the project's context.
  */
 export function ProjectCard({
   project,
@@ -54,13 +56,18 @@ export function ProjectCard({
             />
           )}
 
-          {project.links.googlePlay && (
-            <div className="absolute left-4 top-4">
+          <div className="absolute left-4 top-4 flex flex-wrap items-center gap-2">
+            {project.links.googlePlay && (
               <Badge tone="accent" icon={GooglePlayIcon}>
                 {dict.common.googlePlayShort}
               </Badge>
-            </div>
-          )}
+            )}
+            {project.links.website && (
+              <Badge tone="muted" icon={Globe}>
+                {dict.common.websiteShort}
+              </Badge>
+            )}
+          </div>
         </div>
 
         <div className="flex flex-1 flex-col gap-4 p-6">
