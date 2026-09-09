@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Github, Globe } from "lucide-react";
 import { isLocale, locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n";
 import { href, projectHref } from "@/lib/i18n/routes";
 import { breadcrumbJsonLd, pageMetadata, softwareAppJsonLd } from "@/lib/seo";
 import { SITE_URL, profile } from "@/lib/content/site";
-import { getProject, nextProject, projects } from "@/lib/content/projects";
+import { getProject, nextProject, projects, type ProjectLinks } from "@/lib/content/projects";
 import { JsonLd } from "@/components/ui/json-ld";
 import { Container, Section } from "@/components/ui/layout";
-import { ExternalButtonLink } from "@/components/ui/button";
+import { ExternalButtonLink, type ButtonVariant } from "@/components/ui/button";
 import { Badge, TechTag } from "@/components/ui/badge";
-import { GooglePlayIcon } from "@/components/ui/icons";
+import { GooglePlayIcon, type IconComponent } from "@/components/ui/icons";
 import { ProjectArtwork } from "@/components/ui/project-artwork";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -71,6 +71,38 @@ export default async function ProjectPage({
     { label: dict.work.detail.publisher, value: profile.brand },
   ];
 
+  /*
+   * The outbound buttons, in display order: one row per `ProjectLinks` key,
+   * each rendered only when the project actually carries that URL. Giving an
+   * app a landing page is therefore a one-line edit in `projects.ts` — the
+   * button appears on its own, and the row order here is the visual order.
+   */
+  const ctas = [
+    {
+      key: "googlePlay",
+      label: dict.common.getOnGooglePlay,
+      icon: GooglePlayIcon,
+      variant: "primary",
+    },
+    {
+      key: "website",
+      label: dict.common.visitWebsite,
+      icon: Globe,
+      variant: "secondary",
+    },
+    {
+      key: "github",
+      label: dict.common.viewOnGithub,
+      icon: Github,
+      variant: "secondary",
+    },
+  ] satisfies Array<{
+    key: keyof ProjectLinks;
+    label: string;
+    icon: IconComponent;
+    variant: ButtonVariant;
+  }>;
+
   return (
     <>
       <JsonLd
@@ -87,6 +119,7 @@ export default async function ProjectPage({
           description: project.summary[locale],
           url: `${SITE_URL}/${locale}/work/${slug}`,
           downloadUrl: project.links.googlePlay,
+          sameAs: project.links.website,
         })}
       />
 
@@ -114,16 +147,22 @@ export default async function ProjectPage({
               <p className="max-w-2xl text-lead text-fg-muted">{project.summary[locale]}</p>
 
               <div className="mt-2 flex flex-wrap items-center gap-3">
-                {project.links.googlePlay && (
-                  <ExternalButtonLink
-                    href={project.links.googlePlay}
-                    variant="primary"
-                    newTabLabel={dict.common.externalLink}
-                  >
-                    <GooglePlayIcon className="size-4" />
-                    {dict.common.getOnGooglePlay}
-                  </ExternalButtonLink>
-                )}
+                {ctas.map(({ key, label, icon: Icon, variant }) => {
+                  const url = project.links[key];
+                  if (!url) return null;
+
+                  return (
+                    <ExternalButtonLink
+                      key={key}
+                      href={url}
+                      variant={variant}
+                      newTabLabel={dict.common.externalLink}
+                    >
+                      <Icon className="size-4" />
+                      {label}
+                    </ExternalButtonLink>
+                  );
+                })}
                 {!project.sourceAvailable && (
                   <Badge tone="muted">{dict.common.privateSource}</Badge>
                 )}

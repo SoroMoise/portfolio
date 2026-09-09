@@ -130,12 +130,19 @@ export function softwareAppJsonLd({
   description,
   url,
   downloadUrl,
+  /**
+   * The app's own landing page, when it has one. Declared as `sameAs` so
+   * crawlers treat this case study and that site as describing one app rather
+   * than two, and attribute the site to the same author.
+   */
+  sameAs,
 }: {
   locale: Locale;
   name: string;
   description: string;
   url: string;
   downloadUrl?: string;
+  sameAs?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -144,6 +151,7 @@ export function softwareAppJsonLd({
     description,
     url,
     ...(downloadUrl ? { downloadUrl, installUrl: downloadUrl } : {}),
+    ...(sameAs ? { sameAs } : {}),
     applicationCategory: "MobileApplication",
     operatingSystem: "Android",
     inLanguage: localeTags[locale],

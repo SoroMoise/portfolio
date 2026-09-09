@@ -1,5 +1,19 @@
 import type { Localized } from "@/lib/i18n/config";
 
+/**
+ * Every outbound link a project can have. All of them are optional and each one
+ * is rendered only when it is present, so a project's links are declarative:
+ * add the URL here and the button, the card marker and the structured data
+ * follow; delete it and they disappear. Nothing else has to change.
+ *
+ * - `googlePlay` — the store listing. Drives the primary download button and
+ *   the `downloadUrl` of the app's structured data.
+ * - `website` — the app's own landing page, when it has one. Drives the
+ *   secondary button on the case study, the "Website" marker on the card and
+ *   the `sameAs` of the structured data.
+ * - `github` — the repository, for a project that is open source. Reserved:
+ *   none of the published apps is, so no card currently renders it.
+ */
 export type ProjectLinks = {
   googlePlay?: string;
   github?: string;
@@ -87,6 +101,8 @@ export const projects: Project[] = [
     sourceAvailable: false,
     links: {
       googlePlay: "https://play.google.com/store/apps/details?id=com.codeurdivoire.bgremover",
+      // No landing page yet. Uncomment when it ships — nothing else to change.
+      // website: "https://bgremover.codeurdivoire.com",
     },
     hue: 292,
     shots: [],
@@ -158,6 +174,7 @@ export const projects: Project[] = [
     links: {
       googlePlay:
         "https://play.google.com/store/apps/details?id=com.codeurdivoire.allcurencyconverter",
+      website: "https://all-currency-converter.codeurdivoire.com",
     },
     hue: 168,
     shots: [],
@@ -228,6 +245,7 @@ export const projects: Project[] = [
     sourceAvailable: false,
     links: {
       googlePlay: "https://play.google.com/store/apps/details?id=com.codeurdivoire.simplicode",
+      website: "https://simplicode.codeurdivoire.com",
     },
     hue: 48,
     shots: [],

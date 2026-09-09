@@ -24,6 +24,8 @@ export const en: Dictionary = {
     viewOnGithub: "View on GitHub",
     getOnGooglePlay: "Get it on Google Play",
     googlePlayShort: "Google Play",
+    visitWebsite: "Visit the app site",
+    websiteShort: "Website",
     privateSource: "Private — client work",
     backToWork: "Back to work",
     viewAllProjects: "View all projects",

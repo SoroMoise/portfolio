@@ -155,6 +155,14 @@ Setting `available` to `false` falls back to the monogram.
 them in that project's `shots` array. The generated SVG artwork is used
 whenever `shots` is empty.
 
+**Linking an app's own landing page.** Set `links.website` on that project in
+`lib/content/projects.ts` — one line, nothing else. The secondary button on the
+case study, the "Website" badge on the card and the `sameAs` of the app's
+structured data all appear from it, and disappear again if it is removed.
+`links.github` behaves the same way for a project that is open source. Two of
+the three apps have a site today; Background Eraser has the line ready and
+commented out.
+
 **Adding a language.** Add the code to `lib/i18n/config.ts`, create the
 dictionary next to `fr.ts` and type it as `Dictionary`, then add the language's
 strings to every `Localized<T>` in `lib/content/`. TypeScript will list them.
