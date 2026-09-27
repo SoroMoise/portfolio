@@ -3,9 +3,9 @@ import type { NextConfig } from "next";
 /**
  * Security headers.
  *
- * No CSP here: the site loads Vercel Analytics and Next's own inline bootstrap
- * scripts, and a hand-maintained `script-src` would either break on the next
- * Next.js release or be so permissive it protects nothing. The headers below
+ * No CSP here: the site loads Vercel Analytics, AdSense and Next's own inline
+ * bootstrap scripts, and a hand-maintained `script-src` would either break on
+ * the next Next.js release or be so permissive it protects nothing. The headers below
  * are the ones that are unambiguously correct for a static marketing site.
  */
 const securityHeaders = [

@@ -6,7 +6,12 @@ import "../globals.css";
 
 import { isLocale, locales, localeTags, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n";
-import { SITE_URL, profile } from "@/lib/content/site";
+import {
+  SITE_URL,
+  adsenseClientId,
+  adsenseScriptUrl,
+  profile,
+} from "@/lib/content/site";
 import { alternates } from "@/lib/seo";
 import { abidjanYear } from "@/lib/time";
 import { ThemeProvider } from "@/components/layout/theme-provider";
@@ -88,6 +93,8 @@ export async function generateMetadata({
       },
     },
     formatDetection: { telephone: false, address: false, email: false },
+    // AdSense site ownership — the meta-tag counterpart of the script below.
+    other: { "google-adsense-account": adsenseClientId },
   };
 }
 
@@ -125,6 +132,15 @@ export default async function LocaleLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${instrumentSerif.variable} ${geistMono.variable}`}
     >
+      <head>
+        {/*
+         * AdSense Auto ads. A plain `<script>` rather than `next/script`: Google
+         * wants the tag in the server-rendered `<head>` to verify the site, and
+         * `adsbygoogle.js` warns about the `data-nscript` attribute Next adds.
+         * React 19 hoists and dedupes async scripts, so this stays one request.
+         */}
+        <script async src={adsenseScriptUrl} crossOrigin="anonymous" />
+      </head>
       <body className="min-h-dvh antialiased">
         <ThemeProvider
           attribute="class"
