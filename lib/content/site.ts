@@ -152,3 +152,11 @@ export const sameAs = [
   profile.brandUrl,
   ...socials.filter((s) => s.sameAs).map((s) => s.href),
 ];
+
+/**
+ * AdSense publisher ID. Must match the `pub-…` entry in `public/ads.txt` and
+ * `public/app-ads.txt`, or Google flags the inventory as unauthorised.
+ */
+export const adsenseClientId = "ca-pub-1484915286810219";
+
+export const adsenseScriptUrl = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`;
