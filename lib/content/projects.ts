@@ -304,7 +304,7 @@ export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
 
-/** The project after `slug`, wrapping around; powers the "next project" link. */
+/** The project after `slug`, wrapping around. It powers the "next project" link. */
 export function nextProject(slug: string): Project {
   const index = projects.findIndex((p) => p.slug === slug);
   return projects[(index + 1) % projects.length];
