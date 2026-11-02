@@ -160,7 +160,7 @@ export function ExperienceTeaser({
                 {current.position[locale]} · {current.company}
               </h3>
               <span className="font-mono text-micro uppercase text-fg-subtle">
-                {current.start} — {dict.common.present}
+                {current.start}-{dict.common.present}
               </span>
             </div>
             <p className="text-sm leading-relaxed text-fg-muted">{current.summary[locale]}</p>

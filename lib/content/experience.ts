@@ -75,8 +75,8 @@ export const roles: Role[] = [
     company: "Arolitec",
     companyUrl: "https://arolitec.com",
     position: {
-      fr: "Développeur — stage",
-      en: "Developer — internship",
+      fr: "Développeur (stage)",
+      en: "Developer (internship)",
     },
     kind: { fr: "Stage de fin de BTS · 3 mois", en: "Final-year BTS placement · 3 months" },
     location: { fr: "Abidjan, Côte d'Ivoire", en: "Abidjan, Ivory Coast" },
@@ -113,8 +113,8 @@ export const education: Education[] = [
   {
     id: "master",
     degree: { fr: "Master Génie Logiciel (BAC+5)", en: "MSc Software Engineering" },
-    school: "Groupe EDHEG — Abidjan",
-    period: "2024 — 2026",
+    school: "Groupe EDHEG, Abidjan",
+    period: "2024-2026",
     note: {
       fr: "Architecture logicielle, modélisation et qualité, menés en parallèle du poste à temps plein chez Arolitec.",
       en: "Software architecture, modelling and quality, studied alongside the full-time role at Arolitec.",
@@ -124,7 +124,7 @@ export const education: Education[] = [
   {
     id: "licence",
     degree: { fr: "Licence 3 Génie Logiciel (BAC+3)", en: "BSc Software Engineering" },
-    school: "Groupe EDHEG — Abidjan",
+    school: "Groupe EDHEG, Abidjan",
     period: "2024",
     note: {
       fr: "Consolidation des fondamentaux : conception logicielle, bases de données, développement d'applications.",
@@ -135,8 +135,8 @@ export const education: Education[] = [
   {
     id: "bts",
     degree: {
-      fr: "BTS IDA — Développeur d'Applications",
-      en: "BTS IDA — Application Developer",
+      fr: "BTS IDA (Développeur d'Applications)",
+      en: "BTS IDA (Application Developer)",
     },
     school: "IT Academy University",
     period: "2023",
@@ -148,7 +148,7 @@ export const education: Education[] = [
   },
   {
     id: "bac",
-    degree: { fr: "BAC F2 — Électronique", en: "Baccalauréat F2 — Electronics" },
+    degree: { fr: "BAC F2 (Électronique)", en: "Baccalauréat F2 (Electronics)" },
     school: "Groupe ITA Ingénierie SA",
     period: "2019",
     note: {
@@ -163,7 +163,7 @@ export const education: Education[] = [
  * Whole years of professional experience.
  *
  * Takes the current year as an argument so callers decide where "now" comes
- * from — computing it inside the module would freeze the value at build time
+ * from. Computing it inside the module would freeze the value at build time
  * for every statically prerendered page.
  */
 export function yearsOfExperience(currentYear: number, startYear = 2023): number {

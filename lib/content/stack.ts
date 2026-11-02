@@ -6,12 +6,12 @@ export type Technology = {
   /** Stable identifier, also the display name for real product names. */
   name: string;
   /**
-   * Display override for entries that are concepts rather than products —
+   * Display override for entries that are concepts rather than products:
    * "relational modelling" has a French and an English form, "PostgreSQL"
    * does not.
    */
   label?: Localized<string>;
-  /** What he actually does with it — never a proficiency percentage. */
+  /** What he actually does with it, never a proficiency percentage. */
   use: Localized<string>;
   /** Surfaced in the condensed list on the home page. */
   headline?: boolean;

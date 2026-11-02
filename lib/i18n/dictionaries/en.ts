@@ -26,7 +26,7 @@ export const en: Dictionary = {
     googlePlayShort: "Google Play",
     visitWebsite: "Visit the app site",
     websiteShort: "Website",
-    privateSource: "Private — client work",
+    privateSource: "Private client work",
     backToWork: "Back to work",
     viewAllProjects: "View all projects",
     viewProject: "View project",
@@ -50,10 +50,10 @@ export const en: Dictionary = {
   },
 
   home: {
-    status: "Open to conversations — web and mobile projects, in Abidjan or remote.",
+    status: "Open to conversations about web and mobile projects, in Abidjan or remote.",
     roleLine: "Full Stack Web & Mobile Developer",
     intro:
-      "Since 2023 I have been building banking web applications at Arolitec: application architecture, the PostgreSQL relational schema, REST and GraphQL APIs in Node.js and NestJS, and the access-control model that sits under all of it. Under the name Codeur d'Ivoire I also ship my own React Native apps — three so far on Google Play — built for networks that drop, prepaid data and dual-SIM phones.",
+      "Since 2023 I have been building banking web applications at Arolitec: application architecture, the PostgreSQL relational schema, REST and GraphQL APIs in Node.js and NestJS, and the access-control model that sits under all of it. Under the name Codeur d'Ivoire I also ship my own React Native apps (three so far on Google Play), built for networks that drop, prepaid data and dual-SIM phones.",
     primaryCta: "See the work",
     secondaryCta: "Get in touch",
     stats: {
@@ -94,7 +94,7 @@ export const en: Dictionary = {
     title: "Between banking systems and offline mobile",
     lead: "Full-stack developer in Abidjan. I build systems that have to hold: under security constraints during the week, under network constraints the rest of the time.",
     paragraphs: [
-      "At Arolitec I build banking web applications end to end. I set the application architecture — frontend, backend, database — and model the PostgreSQL relational schema before any business logic gets written. Then come the REST and GraphQL APIs in Node.js and NestJS, wired into internal applications and third-party services, and the business and back-office interfaces in Angular, React and Remix, mapped to how the operational processes actually run. In a bank the question is never only “does it work”, it is “who is allowed to do what”: I design and implement the user profiles and role-based access control that govern every screen and every endpoint.",
+      "At Arolitec I build banking web applications end to end. I set the application architecture (frontend, backend, database) and model the PostgreSQL relational schema before any business logic gets written. Then come the REST and GraphQL APIs in Node.js and NestJS, wired into internal applications and third-party services, and the business and back-office interfaces in Angular, React and Remix, mapped to how the operational processes actually run. In a bank the question is never only “does it work”, it is “who is allowed to do what”: I design and implement the user profiles and role-based access control that govern every screen and every endpoint.",
       "Alongside that, I publish my own apps on Google Play under the name Codeur d'Ivoire: Background Eraser, Currency Converter Offline and Simpli Code, all built with React Native, Expo and TypeScript. All three are offline-first, and that is an engineering decision rather than a preference: here, mobile data is prepaid, coverage changes from one neighbourhood to the next, and Mobile Money is everyday infrastructure rather than a payment option. So I treated offline as a constraint to solve rather than route around: the AI cutout runs entirely on the device, the converter keeps more than 170 currencies in local storage and syncs later when the signal returns, and the USSD manager chains the steps of Orange, MTN and Moov codes on the right SIM.",
       "I am finishing a Master's in Software Engineering at Groupe EDHEG-Abidjan, after a Licence 3 in the same field and a BTS in application development. What I consolidate there gets used at work the next day: modelling, application security, industrialisation. Day to day I work in Agile with product teams and business stakeholders: settle the business rule before coding it, run code reviews and have my own code reviewed, write unit and integration tests, and document whatever someone else will inherit.",
     ],
@@ -185,24 +185,24 @@ export const en: Dictionary = {
     errors: {
       required: "This field is required.",
       invalidEmail: "That email address is not valid.",
-      tooShort: "Too short — 2 characters minimum.",
+      tooShort: "Too short: 2 characters minimum.",
       tooLong: "Too long for this field.",
-      messageTooShort: "Message too short — 20 characters minimum.",
-      messageTooLong: "Message too long — 2,000 characters maximum.",
+      messageTooShort: "Message too short: 20 characters minimum.",
+      messageTooLong: "Message too long: 2,000 characters maximum.",
       rateLimited: "Too many messages sent. Wait a few minutes before trying again.",
       server: "Something went wrong on my side. Try again in a moment.",
     },
     responseNote: "Every message is read and answered by me, not by an autoresponder.",
     orSeparator: "or",
     whatsappCta: "Continue on WhatsApp",
-    whatsappHint: "Whatever you have filled in is carried over — just hit send.",
+    whatsappHint: "Whatever you have filled in is carried over, so just hit send.",
     whatsappIntro: "Hello Moïse, I'm reaching out from codeurdivoire.com.",
   },
 
   notFound: {
     code: "404",
     title: "Page not found",
-    body: "This address does not match any page on the site. The link may be out of date or mistyped — the work and experience sections are still in the menu.",
+    body: "This address does not match any page on the site. The link may be out of date or mistyped. The work and experience sections are still in the menu.",
     cta: "Back to home",
     secondaryCta: "See the work",
   },
@@ -211,7 +211,7 @@ export const en: Dictionary = {
   error: errorStrings.en,
 
   footer: {
-    tagline: "Full Stack Web & Mobile Developer — Abidjan, Ivory Coast",
+    tagline: "Full Stack Web & Mobile Developer in Abidjan, Ivory Coast",
     brandNote: "Mobile apps published under the name Codeur d'Ivoire.",
     builtWith: "Designed and built with Next.js and Tailwind CSS.",
     navTitle: "Navigation",
@@ -220,14 +220,14 @@ export const en: Dictionary = {
 
   meta: {
     titleTemplate: "%s · Moïse Soro",
-    defaultTitle: "Moïse Soro — Full Stack Web & Mobile Developer",
+    defaultTitle: "Moïse Soro · Full Stack Web & Mobile Developer",
     home: {
-      title: "Moïse Soro — Full Stack Web & Mobile Developer",
+      title: "Moïse Soro · Full Stack Web & Mobile Developer",
       description:
         "Full stack developer in Abidjan: banking applications at Arolitec, PostgreSQL and NestJS, plus three offline-first React Native apps on Google Play.",
     },
     about: {
-      title: "About — developer in Abidjan",
+      title: "About: developer in Abidjan",
       description:
         "Full stack developer at Arolitec since 2023: banking architecture, PostgreSQL, GraphQL APIs, RBAC, and offline-first mobile apps built for Abidjan.",
     },
@@ -237,17 +237,17 @@ export const en: Dictionary = {
         "Node.js, NestJS, React, Angular, Remix, React Native, PostgreSQL, Docker, CI/CD: what I actually do with each tool. No percentages, no badges.",
     },
     work: {
-      title: "Work — published apps and client projects",
+      title: "Work: published apps and client projects",
       description:
         "Three React Native apps on Google Play as Codeur d'Ivoire: an offline AI photo cutout tool, 170+ currencies, USSD and Mobile Money automation.",
     },
     experience: {
-      title: "Experience — Arolitec, MSc Software Engineering",
+      title: "Experience: Arolitec, MSc Software Engineering",
       description:
         "Full stack developer at Arolitec since 2023 on a permanent contract, hired after a BTS internship. MSc Software Engineering, EDHEG-Abidjan, 2024-2026.",
     },
     contact: {
-      title: "Contact — Abidjan",
+      title: "Contact · Abidjan",
       description:
         "Get in touch about a web or mobile project: send the context, the technical constraint and the deadline, and I will reply with a first read.",
     },

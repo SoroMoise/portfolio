@@ -7,8 +7,8 @@ import type { Localized } from "@/lib/i18n/config";
 
 /**
  * Canonical origin for canonical tags, hreflang alternates, the sitemap and the
- * OG images. `NEXT_PUBLIC_SITE_URL` overrides it — useful for preview
- * deployments — but the default is the production domain so a missing
+ * OG images. `NEXT_PUBLIC_SITE_URL` overrides it (useful for preview
+ * deployments), but the default is the production domain so a missing
  * environment variable cannot silently point the whole site at a stale host.
  */
 export const SITE_URL = (
@@ -37,7 +37,7 @@ export const profile = {
     } satisfies Localized<string>,
     countryCode: "CI",
     timeZone: "Africa/Abidjan",
-    /** Abidjan is UTC+0 year-round — no daylight saving. */
+    /** Abidjan is UTC+0 year-round, with no daylight saving. */
     utcOffset: 0,
   },
   company: {
@@ -75,7 +75,7 @@ export const profile = {
   },
   /**
    * Drop a square portrait (≥800×800, JPG or WebP) at this path and flip
-   * `available` to true — the monogram is used until then.
+   * `available` to true. The monogram is used until then.
    */
   portrait: {
     src: "/moise-soro.jpeg",
@@ -93,7 +93,7 @@ export type SocialLink = {
   label: string;
   href: string;
   handle: string;
-  /** Included in the JSON-LD `sameAs` array — identity profiles only. */
+  /** Included in the JSON-LD `sameAs` array. Identity profiles only. */
   sameAs: boolean;
   /** Shown in the condensed icon rails (header, hero, footer). */
   primary: boolean;
