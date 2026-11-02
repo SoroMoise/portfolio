@@ -3,14 +3,6 @@ import { locales, localeTags, openGraphLocales, type Locale } from "@/lib/i18n/c
 import { getDictionary } from "@/lib/i18n";
 import { profile, sameAs, SITE_URL } from "@/lib/content/site";
 
-/**
- * Build the `alternates` block for a page.
- *
- * `path` is the locale-independent part of the URL ("" for the home page,
- * "/work/simpli-code" for a project). Every page gets a self-referencing
- * canonical plus an hreflang entry per locale and an `x-default` pointing at
- * French, which is the primary language of the site.
- */
 export function alternates(locale: Locale, path: string): Metadata["alternates"] {
   return {
     canonical: `${SITE_URL}/${locale}${path}`,
@@ -26,7 +18,6 @@ export function pageMetadata({
   path,
   title,
   description,
-  /** Absolute or root-relative OG image path; defaults to the locale's generated one. */
   image,
 }: {
   locale: Locale;
@@ -61,10 +52,6 @@ export function pageMetadata({
   };
 }
 
-/**
- * `Person` + `WebSite` graph for the home page. Emitted once per locale so the
- * localised job title and description are the ones crawlers read.
- */
 export function personJsonLd(locale: Locale) {
   const dict = getDictionary(locale);
 
@@ -123,18 +110,12 @@ export function breadcrumbJsonLd(
   };
 }
 
-/** `SoftwareApplication` node for a published mobile app. */
 export function softwareAppJsonLd({
   locale,
   name,
   description,
   url,
   downloadUrl,
-  /**
-   * The app's own landing page, when it has one. Declared as `sameAs` so
-   * crawlers treat this case study and that site as describing one app rather
-   * than two, and attribute the site to the same author.
-   */
   sameAs,
 }: {
   locale: Locale;

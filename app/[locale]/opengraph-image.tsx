@@ -3,13 +3,6 @@ import { locales, isLocale, defaultLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n";
 import { profile } from "@/lib/content/site";
 
-/**
- * Social preview card, generated per locale.
- *
- * `opengraph-image` is its own route entrypoint and does not inherit the
- * layout's `generateStaticParams`, so it declares its own. Without it the
- * image would be rendered on demand for every crawl instead of prerendered.
- */
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
@@ -18,10 +11,6 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "SORO Colotcholoman Moïse · Full Stack Web & Mobile Developer";
 
-/*
- * Colours are literals rather than the CSS tokens: the OG renderer resolves no
- * custom properties and no external stylesheet. They mirror the dark theme.
- */
 const BG = "#141416";
 const FG = "#f4f4f5";
 const MUTED = "#a1a1aa";

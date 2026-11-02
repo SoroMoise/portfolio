@@ -207,7 +207,6 @@ export const en: Dictionary = {
     secondaryCta: "See the work",
   },
 
-  /** Defined in ../error-strings so the client boundary can import them alone. */
   error: errorStrings.en,
 
   footer: {

@@ -6,16 +6,10 @@ import { Monitor, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Dictionary } from "@/lib/i18n";
 
-/** Only the theme strings cross the server/client boundary, not the whole dictionary. */
 export type ThemeLabels = Dictionary["theme"];
 
 const noopSubscribe = () => () => {};
 
-/**
- * True once React has hydrated, without a `setState` inside an effect. The
- * server snapshot is `false` and the client snapshot is `true`, so the first
- * client render matches the server output and the swap happens on hydration.
- */
 function useHasMounted() {
   return useSyncExternalStore(
     noopSubscribe,
@@ -39,8 +33,6 @@ export function ThemeToggle({ labels, className }: { labels: ThemeLabels; classN
     system: labels.system,
   };
 
-  // Show what the toggle will *do*, matching the label, so the icon and the
-  // accessible name never disagree.
   const Icon = next === "light" ? Sun : next === "dark" ? Moon : Monitor;
 
   return (

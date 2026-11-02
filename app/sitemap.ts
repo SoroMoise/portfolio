@@ -4,11 +4,6 @@ import { allPaths } from "@/lib/i18n/routes";
 import { projects } from "@/lib/content/projects";
 import { SITE_URL } from "@/lib/content/site";
 
-/**
- * One entry per page, listed under the default locale with an hreflang
- * alternate for every other language, the shape Google expects for a
- * multilingual site.
- */
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [...allPaths(), ...projects.map((p) => `/work/${p.slug}`)];
 

@@ -5,8 +5,6 @@ const tones = {
   neutral: "border-line text-fg-muted",
   accent: "border-accent-line bg-accent-soft text-accent",
   positive: "border-positive/35 bg-positive-soft text-positive",
-  /* fg-muted, not fg-subtle: this tone sits on `surface-strong`, which is
-     light enough that the subtler token drops under 4.5:1. */
   muted: "border-transparent bg-surface-strong text-fg-muted",
 } as const;
 
@@ -35,7 +33,6 @@ export function Badge({
   );
 }
 
-/** A technology chip: plain, dense, no colour coding. */
 export function TechTag({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <span
@@ -49,7 +46,6 @@ export function TechTag({ children, className }: { children: ReactNode; classNam
   );
 }
 
-/** The live availability marker: a dot with a single expanding ring. */
 export function StatusDot({ className }: { className?: string }) {
   return (
     <span className={cn("relative flex size-2 shrink-0", className)} aria-hidden="true">

@@ -24,11 +24,6 @@ export function Container({
   );
 }
 
-/**
- * A page section. Vertical rhythm comes from one token (`--ds-section-y`) so
- * every section on the site breathes identically instead of each component
- * inventing its own padding.
- */
 export function Section({
   children,
   className,
@@ -41,7 +36,6 @@ export function Section({
   children: ReactNode;
   className?: string;
   id?: string;
-  /** Draw a hairline above the section. */
   bordered?: boolean;
   tone?: "default" | "subtle";
   as?: ElementType;
@@ -63,7 +57,6 @@ export function Section({
   );
 }
 
-/** Small mono label with a leading rule: the site's recurring section marker. */
 export function Eyebrow({
   children,
   className,
@@ -153,7 +146,6 @@ export function SectionHeader({
   );
 }
 
-/** Hairline rule used between list items and blocks. */
 export function Hairline({ className }: { className?: string }) {
   return <hr className={cn("border-0 border-t border-line", className)} />;
 }

@@ -24,7 +24,6 @@ const inter = Inter({
   display: "swap",
 });
 
-/** Editorial display face: one weight, used only for headings and figures. */
 const instrumentSerif = Instrument_Serif({
   variable: "--font-display-serif",
   subsets: ["latin", "latin-ext"],
@@ -43,7 +42,6 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-/** Any locale outside the list is a 404, never an on-demand render. */
 export const dynamicParams = false;
 
 export async function generateMetadata({
@@ -93,7 +91,6 @@ export async function generateMetadata({
       },
     },
     formatDetection: { telephone: false, address: false, email: false },
-    // AdSense site ownership: the meta-tag counterpart of the script below.
     other: { "google-adsense-account": adsenseClientId },
   };
 }
@@ -119,11 +116,6 @@ export default async function LocaleLayout({
   const locale: Locale = raw;
   const dict = getDictionary(locale);
 
-  /*
-   * Resolved once per build, in Abidjan time, and handed down to the footer.
-   * Computing it inside a prerendered leaf component would bake the build year
-   * into static HTML with no way to notice it had gone stale.
-   */
   const year = abidjanYear();
 
   return (
@@ -133,12 +125,6 @@ export default async function LocaleLayout({
       className={`${inter.variable} ${instrumentSerif.variable} ${geistMono.variable}`}
     >
       <head>
-        {/*
-         * AdSense Auto ads. A plain `<script>` rather than `next/script`: Google
-         * wants the tag in the server-rendered `<head>` to verify the site, and
-         * `adsbygoogle.js` warns about the `data-nscript` attribute Next adds.
-         * React 19 hoists and dedupes async scripts, so this stays one request.
-         */}
         <script async src={adsenseScriptUrl} crossOrigin="anonymous" />
       </head>
       <body className="min-h-dvh antialiased">

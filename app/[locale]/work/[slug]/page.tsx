@@ -17,7 +17,6 @@ import { GooglePlayIcon, type IconComponent } from "@/components/ui/icons";
 import { ProjectArtwork } from "@/components/ui/project-artwork";
 import { Reveal } from "@/components/ui/reveal";
 
-/** One prerendered page per project per locale. */
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
     projects.map((project) => ({ locale, slug: project.slug })),
@@ -71,12 +70,6 @@ export default async function ProjectPage({
     { label: dict.work.detail.publisher, value: profile.brand },
   ];
 
-  /*
-   * The outbound buttons, in display order: one row per `ProjectLinks` key,
-   * each rendered only when the project actually carries that URL. Giving an
-   * app a landing page is therefore a one-line edit in `projects.ts`: the
-   * button appears on its own, and the row order here is the visual order.
-   */
   const ctas = [
     {
       key: "googlePlay",
@@ -228,11 +221,6 @@ export default async function ProjectPage({
 
       <Section labelledBy="project-story">
         <Container width="wide">
-          {/*
-            * Named distinctly from the page `h1`: both sections expose a
-            * `region` landmark, and two regions carrying the project name
-            * would be indistinguishable in a landmark list.
-            */}
           <h2 id="project-story" className="sr-only">
             {dict.work.detail.caseStudy}
           </h2>

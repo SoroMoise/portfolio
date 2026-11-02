@@ -3,11 +3,6 @@ import { Facebook, Github, Linkedin, type LucideIcon } from "lucide-react";
 
 export type IconComponent = LucideIcon | ((props: SVGProps<SVGSVGElement>) => React.ReactElement);
 
-/**
- * Brand marks Lucide does not ship. Drawn at a 24×24 viewBox so they sit on the
- * same optical grid as the Lucide set, and inheriting `currentColor`.
- */
-
 export function WhatsAppIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -44,7 +39,6 @@ const socialIcons: Record<string, IconComponent> = {
   googleplay: GooglePlayIcon,
 };
 
-/** Looked up by `SocialLink.id`; falls back to a neutral link glyph. */
 export function socialIcon(id: string): IconComponent {
   return socialIcons[id] ?? Github;
 }

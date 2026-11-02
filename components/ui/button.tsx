@@ -41,7 +41,6 @@ export function Button({
   return <button className={classes(variant, size, className)} {...props} />;
 }
 
-/** Internal navigation: always a `next/link`, never a button in a link. */
 export function ButtonLink({
   href,
   variant = "primary",
@@ -62,10 +61,6 @@ export function ButtonLink({
   );
 }
 
-/**
- * Outbound link. Adds `rel="noreferrer"` and an assistive-only hint that the
- * link opens a new tab.
- */
 export function ExternalButtonLink({
   href,
   variant = "secondary",

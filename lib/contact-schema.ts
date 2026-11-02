@@ -6,12 +6,6 @@ export const SUBJECT_MAX = 160;
 export const MESSAGE_MIN = 20;
 export const MESSAGE_MAX = 2000;
 
-/**
- * One schema, used by both the browser and the route handler.
- *
- * Messages are supplied by the caller so the client can show them in the
- * visitor's language while the server still validates the same shape.
- */
 export function contactSchema(t: Dictionary["contact"]["errors"]) {
   return z.object({
     name: z
@@ -33,10 +27,6 @@ export function contactSchema(t: Dictionary["contact"]["errors"]) {
       .min(1, t.required)
       .min(MESSAGE_MIN, t.messageTooShort)
       .max(MESSAGE_MAX, t.messageTooLong),
-    /**
-     * Honeypot. Real visitors never see this field, so anything in it is a bot.
-     * Named `company` because that is what naive form-fillers look for.
-     */
     company: z.string().max(0).optional(),
   });
 }

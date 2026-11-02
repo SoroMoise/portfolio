@@ -1,27 +1,5 @@
 import { profile } from "@/lib/content/site";
 
-/**
- * Mail delivery for the contact form.
- *
- * Two transports, picked from the environment at request time:
- *
- *   SMTP:   set SMTP_HOST / SMTP_USER / SMTP_PASS and the message is sent
- *             straight from your own mailbox. No third party sees it, and
- *             nothing new has to be signed up for.
- *   Resend: set RESEND_API_KEY instead, if you would rather not put a
- *             mailbox password in the deployment environment.
- *
- * SMTP wins when both are set, since it is the more direct route. With neither
- * configured `send` reports `unconfigured` and the route answers 502: a
- * contact form that quietly drops messages is worse than one that admits it is
- * not wired up.
- *
- * Note that neither option can be removed: a static site has nothing that can
- * open an authenticated SMTP session, and mail sent from an unauthenticated
- * host is refused or filed as spam by every large provider. Something has to
- * hold a mailbox credential; the only real choice is whose mailbox it is.
- */
-
 export type MailPayload = {
   name: string;
   email: string;
@@ -41,10 +19,6 @@ function escapeHtml(value: string): string {
     .replace(/"/g, "&quot;");
 }
 
-/**
- * Strip anything that could inject an extra header into the Subject line.
- * CR and LF are the whole attack; the length cap keeps the header sane.
- */
 function headerSafe(value: string): string {
   return value.replace(/[\r\n]+/g, " ").slice(0, 160);
 }
@@ -84,14 +58,11 @@ async function sendViaSmtp(payload: MailPayload): Promise<SendResult> {
 
   const port = Number(process.env.SMTP_PORT ?? 465);
 
-  // Imported lazily so the driver is only pulled into the function when SMTP
-  // is actually the configured transport.
   const nodemailer = await import("nodemailer");
 
   const transporter = nodemailer.createTransport({
     host,
     port,
-    // 465 is implicit TLS; 587 upgrades with STARTTLS.
     secure: port === 465,
     auth: { user, pass },
   });
@@ -100,9 +71,6 @@ async function sendViaSmtp(payload: MailPayload): Promise<SendResult> {
 
   try {
     await transporter.sendMail({
-      // The envelope sender has to be the authenticated mailbox, or the
-      // provider rejects the message. The visitor's address goes in Reply-To,
-      // so replying from the inbox reaches them directly.
       from: `"${headerSafe(payload.name)} (portfolio)" <${user}>`,
       to: recipient(),
       replyTo: `"${headerSafe(payload.name)}" <${payload.email}>`,
@@ -124,8 +92,6 @@ async function sendViaResend(payload: MailPayload): Promise<SendResult> {
 
   const { text, html } = bodies(payload);
 
-  // Called over fetch rather than through the SDK: one HTTP POST does not
-  // justify another dependency in the serverless bundle.
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {

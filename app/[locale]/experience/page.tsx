@@ -70,7 +70,6 @@ export default async function ExperiencePage({
             {dict.experience.rolesTitle}
           </h2>
 
-          {/* Timeline: a single hairline rail with a marker per role. */}
           <ol className="mt-8 border-l border-line">
             {roles.map((role) => (
               <li key={role.id} className="relative pb-14 pl-8 last:pb-0 sm:pl-12">

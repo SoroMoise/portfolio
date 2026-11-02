@@ -24,12 +24,10 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
 
   return (
     <section className="relative overflow-hidden border-b border-line">
-      {/* Quiet hairline grid, masked so it never fights the text. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-grid opacity-60 mask-fade-y"
       />
-      {/* Single warm bloom behind the headline. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-40 -top-40 size-[36rem] rounded-full bg-accent opacity-[0.07] blur-3xl"
@@ -102,7 +100,6 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             </Enter>
           </div>
 
-          {/* Identity card: the editorial "spec sheet" that replaces a stock photo. */}
           <Enter
             delay={0.16}
             className="rounded-lg border border-line bg-surface/60 p-2 backdrop-blur-sm lg:sticky lg:top-24"
@@ -154,7 +151,6 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </Enter>
         </div>
 
-        {/* Proof strip. */}
         <Enter delay={0.36} className="mt-16 border-t border-line pt-10">
           <dl className="grid gap-8 sm:grid-cols-3 sm:gap-10">
             {stats.map((stat) => (

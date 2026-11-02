@@ -210,7 +210,6 @@ export const fr = {
     secondaryCta: "Voir les réalisations",
   },
 
-  /** Defined in ../error-strings so the client boundary can import them alone. */
   error: errorStrings.fr,
 
   footer: {
@@ -257,8 +256,4 @@ export const fr = {
   },
 };
 
-/**
- * The French dictionary is the reference shape: every other language must
- * provide exactly the same keys, and TypeScript enforces it.
- */
 export type Dictionary = typeof fr;

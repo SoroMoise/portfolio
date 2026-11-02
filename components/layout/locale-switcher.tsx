@@ -6,18 +6,12 @@ import { locales, localeLabels, type Locale } from "@/lib/i18n/config";
 import { swapLocale } from "@/lib/i18n/routes";
 import { cn } from "@/lib/utils";
 
-/**
- * A two-state segmented control rather than a dropdown: with exactly two
- * languages, a menu would hide the choice behind an extra click, and each
- * option can be a real link: crawlable, and shareable in the right language.
- */
 export function LocaleSwitcher({
   locale,
   label,
   className,
 }: {
   locale: Locale;
-  /** The switcher's accessible name; the rest of the dictionary is not needed. */
   label: string;
   className?: string;
 }) {

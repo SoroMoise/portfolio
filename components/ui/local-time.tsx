@@ -3,13 +3,6 @@
 import { useEffect, useState } from "react";
 import { formatAbidjanTime } from "@/lib/time";
 
-/**
- * Live clock in Abidjan time.
- *
- * `initial` is computed on the server so the slot is never empty before
- * hydration. The minute can differ from the client's first paint, hence
- * `suppressHydrationWarning` on the element holding it.
- */
 export function LocalTime({ initial }: { initial: string }) {
   const [time, setTime] = useState(initial);
 
