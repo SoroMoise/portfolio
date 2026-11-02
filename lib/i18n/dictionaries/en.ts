@@ -31,7 +31,7 @@ export const en: Dictionary = {
     viewAllProjects: "View all projects",
     viewProject: "View project",
     getInTouch: "Get in touch",
-    present: "present",
+    since: "Since",
     inProgress: "In progress",
     externalLink: "opens in a new tab",
     openToWork: "Open to conversations",

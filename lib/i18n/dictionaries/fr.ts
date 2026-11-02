@@ -30,7 +30,7 @@ export const fr = {
     viewAllProjects: "Voir tous les projets",
     viewProject: "Voir le projet",
     getInTouch: "Me contacter",
-    present: "aujourd'hui",
+    since: "Depuis",
     inProgress: "En cours",
     externalLink: "ouvre un nouvel onglet",
     openToWork: "Ouvert aux échanges",
