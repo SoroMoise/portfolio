@@ -1,29 +1,13 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { defaultLocale, locales, type Locale } from "@/lib/i18n/config";
 
-/**
- * Locale routing.
- *
- * `middleware.ts` is deprecated in Next.js 16; this is the `proxy.ts`
- * replacement. Every page lives under `/[locale]`, so any request without a
- * locale prefix is redirected to the visitor's best match.
- */
-
 const LOCALE_COOKIE = "NEXT_LOCALE";
-/** One year, in seconds. */
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
 
 function hasLocalePrefix(pathname: string): boolean {
   return locales.some((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`));
 }
 
-/**
- * Pick a locale from `Accept-Language`, honouring quality values.
- *
- * Hand-rolled rather than pulling in `negotiator` and
- * `@formatjs/intl-localematcher`: with two supported languages, the full
- * BCP-47 lookup algorithm buys nothing over a sorted prefix match.
- */
 function negotiate(header: string | null): Locale | undefined {
   if (!header) return undefined;
 
@@ -61,8 +45,6 @@ export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
   if (hasLocalePrefix(pathname)) {
-    // Remember the locale the visitor is actually browsing, so a later visit to
-    // a bare path lands in the same language.
     const current = pathname.split("/")[1] as Locale;
     const response = NextResponse.next();
     if (request.cookies.get(LOCALE_COOKIE)?.value !== current) {
@@ -77,11 +59,6 @@ export function proxy(request: NextRequest) {
 
   const locale = resolveLocale(request);
 
-  /*
-   * A leading segment that looks like a language tag but is not one we support
-   * (`/de/about`, `/es`) gets replaced rather than prefixed. Blindly prefixing
-   * would produce `/fr/de/about`, which then 404s for no good reason.
-   */
   const rest = pathname.replace(/^\/[a-z]{2}(?:-[a-z]{2})?(?=\/|$)/i, "");
   const looksLikeLocale = rest !== pathname;
   const tail = looksLikeLocale ? rest : pathname === "/" ? "" : pathname;
@@ -98,10 +75,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  /*
-   * Skip everything that is not a page: Next internals, the API, and any path
-   * with a file extension (favicon, images, the CV, robots.txt, sitemap.xml,
-   * manifest.webmanifest, the generated OG images).
-   */
   matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };

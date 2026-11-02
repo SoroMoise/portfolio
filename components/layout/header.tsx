@@ -12,12 +12,6 @@ import { profile } from "@/lib/content/site";
 import { ThemeToggle } from "./theme-toggle";
 import { LocaleSwitcher } from "./locale-switcher";
 
-/**
- * Every prop a client component receives is serialised into the RSC payload of
- * every page. Handing the whole dictionary to the header would inline all of it
- * (twice, counting the flight data) into each of the 27 prerendered pages, so
- * the header takes only the strings it renders.
- */
 export type HeaderStrings = {
   nav: Dictionary["nav"];
   theme: Dictionary["theme"];
@@ -37,12 +31,6 @@ export function Header({
   const toggleRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
-  /*
-   * The drawer stores the route it was opened on rather than a plain boolean.
-   * A navigation therefore closes it as a consequence of rendering the new
-   * path, with no effect synchronising one piece of state against another, and no
-   * frame where the drawer covers the page the visitor just moved to.
-   */
   const [openedAt, setOpenedAt] = useState<string | null>(null);
   const open = openedAt === pathname;
 
@@ -53,7 +41,6 @@ export function Header({
   useEffect(() => {
     if (!open) return;
 
-    // Captured now so the cleanup does not read a ref that may have changed.
     const toggle = toggleRef.current;
 
     const onKeyDown = (event: KeyboardEvent) => {
@@ -68,7 +55,6 @@ export function Header({
     return () => {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", onKeyDown);
-      // Send focus back to the control that opened the drawer.
       toggle?.focus();
     };
   }, [open]);
@@ -153,19 +139,6 @@ export function Header({
         </div>
       </header>
 
-      {/*
-       * The drawer is a sibling of the banner, not a child of it: `backdrop-blur`
-       * on the header sets a `backdrop-filter`, and a filtered element becomes the
-       * containing block for its `fixed` descendants. Nested, `inset-0` would
-       * resolve against the 4rem header box instead of the viewport, leaving the
-       * panel a 4rem stub with its nav and footer spilling out untinted. It sorts
-       * above the banner on z-index alone (50 over 40), both being children of the
-       * same root stacking context.
-       *
-       * `inert` (rather than unmounting) keeps the drawer out of the tab order
-       * and the accessibility tree while closed, while still allowing the slide
-       * transition to run in both directions.
-       */}
       <div
         id="mobile-nav"
         inert={!open}

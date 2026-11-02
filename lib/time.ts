@@ -1,6 +1,5 @@
 import { profile } from "@/lib/content/site";
 
-/** Wall-clock time in Abidjan (UTC+0 year-round, no daylight saving). */
 export function formatAbidjanTime(date: Date): string {
   return new Intl.DateTimeFormat("en-GB", {
     hour: "2-digit",

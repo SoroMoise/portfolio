@@ -8,15 +8,6 @@ import { href } from "@/lib/i18n/routes";
 import { Container, Section } from "@/components/ui/layout";
 import { Button, ButtonLink } from "@/components/ui/button";
 
-/**
- * Route-level error boundary. The old site had none, so a single failed client
- * fetch replaced the whole page with Next's default error screen.
- *
- * Next passes no params to an error boundary, so the language is read back off
- * the pathname, the same approach as `not-found-content.tsx`. Hardcoding the
- * default locale here would show French copy inside an `<html lang="en-US">`
- * document and point the only escape link at `/fr`.
- */
 export default function LocaleError({
   error,
   reset,

@@ -17,47 +17,36 @@
 :root {
   color-scheme: light;
 
-  /* Ground */
   --ds-bg: oklch(0.988 0.003 85);
   --ds-bg-subtle: oklch(0.963 0.004 85);
   --ds-surface: oklch(1 0 0);
   --ds-surface-hover: oklch(0.975 0.004 85);
   --ds-surface-strong: oklch(0.945 0.005 85);
 
-  /* Ink */
   --ds-fg: oklch(0.205 0.012 285);
   --ds-fg-muted: oklch(0.455 0.012 285);
-  /* 4.9:1 on --ds-bg: the micro labels using this run at 11px, so it has
-     to clear the 4.5:1 threshold for normal-size text, not the large-text one. */
   --ds-fg-subtle: oklch(0.52 0.014 285);
 
-  /* Lines */
   --ds-border: oklch(0.205 0.012 285 / 0.12);
   --ds-border-strong: oklch(0.205 0.012 285 / 0.24);
 
-  /* Accent: warm amber, deepened for contrast on paper. The value has to
-     clear 4.5:1 against --ds-accent-soft as well as the page background,
-     because accent-on-accent-soft is the badge treatment. */
   --ds-accent: oklch(0.515 0.13 60);
   --ds-accent-hover: oklch(0.465 0.13 58);
   --ds-accent-fg: oklch(0.99 0 0);
   --ds-accent-soft: oklch(0.555 0.135 62 / 0.1);
   --ds-accent-line: oklch(0.555 0.135 62 / 0.28);
 
-  /* Status */
   --ds-positive: oklch(0.52 0.13 155);
   --ds-positive-soft: oklch(0.52 0.13 155 / 0.12);
   --ds-critical: oklch(0.545 0.19 27);
   --ds-critical-soft: oklch(0.545 0.19 27 / 0.1);
 
-  /* Elevation: restrained, editorial rather than material */
   --ds-shadow-sm: 0 1px 2px oklch(0.2 0.01 285 / 0.06);
   --ds-shadow-md:
     0 1px 2px oklch(0.2 0.01 285 / 0.05), 0 8px 24px -12px oklch(0.2 0.01 285 / 0.18);
   --ds-shadow-lg:
     0 1px 2px oklch(0.2 0.01 285 / 0.05), 0 24px 48px -24px oklch(0.2 0.01 285 / 0.25);
 
-  /* Rhythm */
   --ds-section-y: clamp(3.75rem, 2.5rem + 4.5vw, 6.5rem);
   --ds-gutter: clamp(1.25rem, 0.5rem + 3vw, 3rem);
 }
@@ -73,7 +62,6 @@
 
   --ds-fg: oklch(0.965 0.003 285);
   --ds-fg-muted: oklch(0.735 0.008 285);
-  /* 4.8:1 on the dark --ds-bg, same reasoning as the light value. */
   --ds-fg-subtle: oklch(0.64 0.011 285);
 
   --ds-border: oklch(1 0 0 / 0.1);
@@ -129,7 +117,6 @@
   --font-display: var(--font-display-serif), ui-serif, Georgia, "Times New Roman", serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", "Cascadia Mono", monospace;
 
-  /* Fluid editorial type scale */
   --text-display: clamp(2.75rem, 1.15rem + 6.4vw, 6.5rem);
   --text-display--line-height: 0.94;
   --text-display--letter-spacing: -0.03em;
@@ -171,12 +158,6 @@
   --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/*
- * Declared at the top level rather than inside `@theme`: Tailwind only emits
- * keyframes nested in a plain `@theme` block, and this file uses `@theme inline`
- * so that the colour tokens can follow the runtime theme. Top-level keyframes
- * are always passed through, which keeps both behaviours.
- */
 @keyframes rise {
   from {
     opacity: 0;
@@ -188,17 +169,6 @@
   }
 }
 
-/*
- * Scroll-driven reveal, deliberately transform only.
- *
- * A scroll-linked animation holds its `from` state for as long as the viewport
- * has not reached the element, which for this one is "possibly forever". Any
- * opacity below 1 in that state is therefore a permanent contrast reduction on
- * real text, not a transient effect: at 0.6 the muted body copy measured 2.8:1
- * against the light background, and even 0.85 does not clear 4.5:1 because
- * blending toward a near-white ground raises luminance fast. Moving the whole
- * effect into `transform` keeps the motion and leaves every colour untouched.
- */
 @keyframes reveal-rise {
   from {
     transform: translate3d(0, 1rem, 0);
@@ -263,7 +233,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* One visible focus treatment for the whole site. */
   :focus-visible {
     outline: 2px solid var(--ds-accent);
     outline-offset: 2px;
@@ -286,24 +255,12 @@
     text-wrap: pretty;
   }
 
-  /* Reserve the sticky-header height so in-page anchors don't hide behind it. */
   [id] {
     scroll-margin-top: 6.5rem;
   }
 }
 
 @layer components {
-  /*
-   * Scroll-triggered reveal, CSS only. No JavaScript, so nothing is ever
-   * gated on hydration and the fallback is simply "no animation".
-   *
-   * The reveal never fades past 0.6 opacity. A scroll-driven animation holds
-   * its `from` state for anything the viewport has not reached yet, so a
-   * 0 → 1 fade would leave the whole page below the fold invisible to anything
-   * that does not scroll: print, a rendering crawler, a full-page screenshot.
-   * Keeping a floor means the motion still reads on scroll while the content
-   * is legible under every one of those conditions.
-   */
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
       .reveal {
@@ -314,7 +271,6 @@
     }
   }
 
-  /* Printing never scrolls, so drop the reveal entirely. */
   @media print {
     .reveal {
       animation: none !important;
@@ -323,7 +279,6 @@
     }
   }
 
-  /* Slim, unobtrusive scrollbar that follows the theme. */
   .scrollbar-fine {
     scrollbar-width: thin;
     scrollbar-color: var(--ds-border-strong) transparent;
@@ -345,7 +300,6 @@
   letter-spacing: -0.02em;
 }
 
-/* Hairline grid used as a quiet editorial backdrop. */
 @utility bg-grid {
   background-image:
     linear-gradient(to right, var(--ds-border) 1px, transparent 1px),
@@ -361,7 +315,6 @@
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
-/* Honour the OS motion preference for everything, including Motion One. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

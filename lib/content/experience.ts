@@ -5,11 +5,9 @@ export type Role = {
   company: string;
   companyUrl?: string;
   position: Localized<string>;
-  /** Contract type, shown as a small tag next to the position. */
   kind: Localized<string>;
   location: Localized<string>;
   start: string;
-  /** `null` means the role is current. */
   end: string | null;
   summary: Localized<string>;
   responsibilities: Localized<string[]>;

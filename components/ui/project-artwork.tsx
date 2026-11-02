@@ -1,19 +1,9 @@
 import { cn } from "@/lib/utils";
 
-/**
- * Generated cover art for each project.
- *
- * The apps are closed-source and there are no store screenshots in the repo, so
- * rather than shipping a generic code glyph on every card, each project gets a
- * motif that depicts what it actually does, tinted by its own hue. Drop real
- * screenshots into `Project.shots` and the consuming card will prefer those.
- */
-
 type ArtworkProps = {
   slug: string;
   hue: number;
   className?: string;
-  /** Rendered as decoration; the card supplies the accessible name. */
   title?: string;
 };
 
@@ -71,7 +61,6 @@ function Frame({
   );
 }
 
-/** Transparency checkerboard with a subject cut out of it. */
 function BackgroundEraserArt({ hue, title }: { hue: number; title?: string }) {
   const c = palette(hue);
   const squares: React.ReactElement[] = [];
@@ -96,12 +85,10 @@ function BackgroundEraserArt({ hue, title }: { hue: number; title?: string }) {
   return (
     <Frame hue={hue} title={title}>
       <g>{squares}</g>
-      {/* Cut-out subject: shoulders and head, sitting on the checkerboard. */}
       <path
         d="M400 200c26 0 47 21 47 47 0 18-10 34-25 42 38 9 66 36 74 71H304c8-35 36-62 74-71-15-8-25-24-25-42 0-26 21-47 47-47Z"
         fill={c.strong}
       />
-      {/* The selection edge being traced by the brush. */}
       <path
         d="M300 362c10-40 42-70 82-78-18-10-30-29-30-51 0-32 26-58 58-58"
         fill="none"
@@ -125,7 +112,6 @@ function BackgroundEraserArt({ hue, title }: { hue: number; title?: string }) {
   );
 }
 
-/** Two currency nodes, a rate line, and an offline cache marker. */
 function CurrencyConverterArt({ hue, title }: { hue: number; title?: string }) {
   const c = palette(hue);
 
@@ -190,7 +176,6 @@ function CurrencyConverterArt({ hue, title }: { hue: number; title?: string }) {
         </text>
       </g>
 
-      {/* Offline cache badge. */}
       <g transform="translate(560 96)">
         <rect
           x="0"
@@ -216,14 +201,12 @@ function CurrencyConverterArt({ hue, title }: { hue: number; title?: string }) {
   );
 }
 
-/** A USSD sequence collapsing into a single saved action. */
 function SimpliCodeArt({ hue, title }: { hue: number; title?: string }) {
   const c = palette(hue);
   const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#"];
 
   return (
     <Frame hue={hue} title={title}>
-      {/* The long sequence being replaced. */}
       <g transform="translate(90 92)">
         <rect
           x="0"
@@ -255,7 +238,6 @@ function SimpliCodeArt({ hue, title }: { hue: number; title?: string }) {
         strokeDasharray="5 6"
       />
       <path d="M444 110l12 8-12 8" fill={c.mid} />
-      {/* One saved action. */}
       <g transform="translate(470 92)">
         <rect x="0" y="0" width="230" height="52" rx="10" fill={c.strong} fillOpacity="0.18" stroke={c.strong} strokeOpacity="0.55" />
         <circle cx="28" cy="26" r="10" fill={c.strong} />
@@ -268,7 +250,6 @@ function SimpliCodeArt({ hue, title }: { hue: number; title?: string }) {
         />
       </g>
 
-      {/* Keypad. */}
       <g transform="translate(272 190)">
         {keys.map((key, i) => {
           const col = i % 3;
@@ -301,7 +282,6 @@ function SimpliCodeArt({ hue, title }: { hue: number; title?: string }) {
         })}
       </g>
 
-      {/* Dual SIM markers. */}
       <g transform="translate(96 226)">
         {[0, 1].map((i) => (
           <g key={i} transform={`translate(0 ${i * 86})`}>

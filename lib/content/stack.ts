@@ -3,17 +3,9 @@ import type { Localized } from "@/lib/i18n/config";
 export type StackGroupId = "backend" | "frontend" | "mobile" | "api" | "data" | "platform";
 
 export type Technology = {
-  /** Stable identifier, also the display name for real product names. */
   name: string;
-  /**
-   * Display override for entries that are concepts rather than products:
-   * "relational modelling" has a French and an English form, "PostgreSQL"
-   * does not.
-   */
   label?: Localized<string>;
-  /** What he actually does with it, never a proficiency percentage. */
   use: Localized<string>;
-  /** Surfaced in the condensed list on the home page. */
   headline?: boolean;
 };
 
@@ -254,12 +246,10 @@ export const stack: StackGroup[] = [
   },
 ];
 
-/** Display name for a technology in a given language. */
 export function techLabel(item: Technology, locale: "fr" | "en"): string {
   return item.label?.[locale] ?? item.name;
 }
 
-/** Flat list used by the condensed home-page stack teaser. */
 export const headlineTech = stack.flatMap((g) =>
   g.items.filter((i) => i.headline).map((i) => i.name),
 );

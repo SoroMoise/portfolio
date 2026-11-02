@@ -1,19 +1,5 @@
 import type { Localized } from "@/lib/i18n/config";
 
-/**
- * Every outbound link a project can have. All of them are optional and each one
- * is rendered only when it is present, so a project's links are declarative:
- * add the URL here and the button, the card marker and the structured data
- * follow; delete it and they disappear. Nothing else has to change.
- *
- * - `googlePlay`: the store listing. Drives the primary download button and
- *   the `downloadUrl` of the app's structured data.
- * - `website`: the app's own landing page, when it has one. Drives the
- *   secondary button on the case study, the "Website" marker on the card and
- *   the `sameAs` of the structured data.
- * - `github`: the repository, for a project that is open source. Reserved:
- *   none of the published apps is, so no card currently renders it.
- */
 export type ProjectLinks = {
   googlePlay?: string;
   github?: string;
@@ -34,18 +20,9 @@ export type Project = {
   year: number;
   status: "live" | "archived";
   featured: boolean;
-  /** Closed source: these are store-published apps, not repositories. */
   sourceAvailable: boolean;
   links: ProjectLinks;
-  /**
-   * Hue in degrees (OKLCH) used to tint the generated cover art, so the three
-   * cards stay distinguishable without store screenshots in the repo.
-   */
   hue: number;
-  /**
-   * Real screenshots, if any. Drop files in `public/projects/<slug>/` and list
-   * them here; the generated artwork is used whenever this is empty.
-   */
   shots: string[];
   metrics: Array<{ value: string; label: Localized<string> }>;
   seo: Localized<{ title: string; description: string }>;
@@ -101,8 +78,6 @@ export const projects: Project[] = [
     sourceAvailable: false,
     links: {
       googlePlay: "https://play.google.com/store/apps/details?id=com.codeurdivoire.bgremover",
-      // No landing page yet. Uncomment when it ships; nothing else needs to change.
-      // website: "https://bgremover.codeurdivoire.com",
     },
     hue: 292,
     shots: [],
@@ -269,7 +244,6 @@ export const projects: Project[] = [
   },
 ];
 
-/** Confidential day-job work, presented as substance rather than an absence. */
 export const clientWork = {
   title: {
     fr: "Travail client chez Arolitec",
@@ -304,7 +278,6 @@ export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
 
-/** The project after `slug`, wrapping around. It powers the "next project" link. */
 export function nextProject(slug: string): Project {
   const index = projects.findIndex((p) => p.slug === slug);
   return projects[(index + 1) % projects.length];

@@ -4,10 +4,6 @@ import { type Locale } from "./config";
 
 const dictionaries: Record<Locale, Dictionary> = { fr, en };
 
-/**
- * Both dictionaries are plain modules, so this is a synchronous lookup, with no
- * dynamic import and no async boundary in the pages that consume it.
- */
 export function getDictionary(locale: Locale): Dictionary {
   return dictionaries[locale];
 }

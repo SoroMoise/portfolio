@@ -15,7 +15,6 @@ import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 
-/** Only the contact strings are serialised into the page payload. */
 export type ContactStrings = Dictionary["contact"];
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -30,9 +29,7 @@ const initial: Record<ContactFieldName, string> = {
 export function ContactForm({
   locale,
   strings,
-  /** International number for the WhatsApp deep link. */
   phone,
-  /** From `common.externalLink`: an assistive-only hint that a link opens a tab. */
   newTabLabel,
 }: {
   locale: Locale;
@@ -50,7 +47,6 @@ export function ContactForm({
 
   function update(field: ContactFieldName, value: string) {
     setValues((prev) => ({ ...prev, [field]: value }));
-    // Clear a field's error as soon as the visitor starts fixing it.
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   }
 
@@ -69,7 +65,6 @@ export function ContactForm({
       }
       setErrors(fieldErrors);
       setStatus("idle");
-      // Move focus to the first field that needs attention.
       const first = contactFields.find((f) => fieldErrors[f]);
       if (first) document.getElementById(`${formId}-${first}`)?.focus();
       return;
@@ -111,12 +106,6 @@ export function ContactForm({
 
   const busy = status === "submitting";
 
-  /*
-   * Recomputed on every render from what is currently typed, so this stays a
-   * genuine href (copyable, middle-clickable) rather than a button that
-   * builds a URL in an onClick handler. It needs no backend, which makes it
-   * the one route that still works if mail delivery is misconfigured.
-   */
   const whatsappHref = whatsappUrl(
     phone,
     composeWhatsAppText(values, {
@@ -192,7 +181,6 @@ export function ContactForm({
         );
       })}
 
-      {/* Honeypot: hidden from people, irresistible to naive bots. */}
       <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
         <label htmlFor={`${formId}-company`}>Company</label>
         <input id={`${formId}-company`} name="company" type="text" tabIndex={-1} autoComplete="off" />
@@ -212,10 +200,6 @@ export function ContactForm({
         )}
       </Button>
 
-      {/*
-       * Always rendered so assistive tech has a live region to announce into;
-       * an element inserted at the same time as its text is often missed.
-       */}
       <div role="status" aria-live="polite" className="min-h-0">
         {banner && (
           <p

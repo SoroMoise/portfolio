@@ -1,11 +1,6 @@
 import type { Localized } from "@/lib/i18n/config";
 
 /**
- * Every externally-owned fact about the site lives here, transcribed from the
- * CV. Nothing else in the codebase should hardcode a URL, an address or a date.
- */
-
-/**
  * Canonical origin for canonical tags, hreflang alternates, the sitemap and the
  * OG images. `NEXT_PUBLIC_SITE_URL` overrides it (useful for preview
  * deployments), but the default is the production domain so a missing
@@ -19,7 +14,6 @@ export const profile = {
   name: "SORO Colotcholoman Moïse",
   shortName: "Moïse Soro",
   initials: "MS",
-  /** The name he publishes mobile apps under. */
   brand: "Codeur d'Ivoire",
   brandUrl: "https://codeurdivoire.com",
   role: {
@@ -37,7 +31,6 @@ export const profile = {
     } satisfies Localized<string>,
     countryCode: "CI",
     timeZone: "Africa/Abidjan",
-    /** Abidjan is UTC+0 year-round, with no daylight saving. */
     utcOffset: 0,
   },
   company: {
@@ -63,7 +56,6 @@ export const profile = {
     },
   ],
   resume: {
-    /** Files live in `public/cv/`. */
     href: {
       fr: "/cv/soro-moise-cv-fr.pdf",
       en: "/cv/soro-moise-cv-fr.pdf",
@@ -73,10 +65,6 @@ export const profile = {
       en: "SORO-Colotcholoman-Moise-Resume.pdf",
     } satisfies Localized<string>,
   },
-  /**
-   * Drop a square portrait (≥800×800, JPG or WebP) at this path and flip
-   * `available` to true. The monogram is used until then.
-   */
   portrait: {
     src: "/moise-soro.jpeg",
     available: true,
@@ -84,7 +72,6 @@ export const profile = {
   availability: {
     open: true,
   },
-  /** First year of professional work, used to compute experience length. */
   careerStartYear: 2023,
 } as const;
 
@@ -93,9 +80,7 @@ export type SocialLink = {
   label: string;
   href: string;
   handle: string;
-  /** Included in the JSON-LD `sameAs` array. Identity profiles only. */
   sameAs: boolean;
-  /** Shown in the condensed icon rails (header, hero, footer). */
   primary: boolean;
 };
 
@@ -147,16 +132,11 @@ export const githubUsername = "SoroMoise";
 export const googlePlayDeveloperUrl =
   "https://play.google.com/store/apps/dev?id=4666757015702442188";
 
-/** Identity URLs for the `Person` JSON-LD node. */
 export const sameAs = [
   profile.brandUrl,
   ...socials.filter((s) => s.sameAs).map((s) => s.href),
 ];
 
-/**
- * AdSense publisher ID. Must match the `pub-…` entry in `public/ads.txt` and
- * `public/app-ads.txt`, or Google flags the inventory as unauthorised.
- */
 export const adsenseClientId = "ca-pub-1484915286810219";
 
 export const adsenseScriptUrl = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`;

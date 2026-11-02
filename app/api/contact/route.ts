@@ -17,7 +17,6 @@ import { send } from "@/lib/mail";
 
 export const runtime = "nodejs";
 
-/** Sliding window, per IP. In-memory: good enough for a single-instance site. */
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 3;
 const hits = new Map<string, number[]>();
@@ -28,7 +27,6 @@ function rateLimited(ip: string): boolean {
   recent.push(now);
   hits.set(ip, recent);
 
-  // Opportunistic sweep so the map cannot grow without bound.
   if (hits.size > 500) {
     for (const [key, times] of hits) {
       if (times.every((t) => now - t >= WINDOW_MS)) hits.delete(key);
@@ -81,7 +79,6 @@ export async function POST(request: NextRequest) {
 
   const result = await send(parsed.data);
   if (!result.ok) {
-    // The reason is for the server log only, never echoed to the client.
     console.error("[contact] delivery failed:", result.reason);
     return NextResponse.json({ error: messages.server }, { status: 502 });
   }

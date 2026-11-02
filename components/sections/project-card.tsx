@@ -10,16 +10,6 @@ import { Badge, TechTag } from "@/components/ui/badge";
 import { GooglePlayIcon } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 
-/**
- * One project, as a single card-wide link.
- *
- * The whole card is one anchor rather than a card with a nested button, so
- * there is exactly one tab stop and one hit area per project. The Google Play
- * and website badges are decoration here (they say where the app can be
- * found, so the grid is scannable) and stay non-interactive on purpose: the
- * real outbound links live on the detail page, where each one can sit beside
- * the rest of the project's context.
- */
 export function ProjectCard({
   project,
   locale,

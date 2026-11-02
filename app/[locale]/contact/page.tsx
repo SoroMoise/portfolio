@@ -154,12 +154,6 @@ function ContactRow({
   label: string;
   children: React.ReactNode;
 }) {
-  /*
-   * `dt` and `dd` sit directly inside this wrapper: a `dl` may group its pairs
-   * in a `div`, but only one level deep, and only with `dt`/`dd` as children.
-   * The icon is painted by the wrapper's `::before` slot instead of a sibling
-   * span, which would break that grouping.
-   */
   return (
     <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-4 py-4">
       <dt className="col-start-2 font-mono text-micro uppercase text-fg-subtle">{label}</dt>
