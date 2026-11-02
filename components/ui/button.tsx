@@ -41,7 +41,7 @@ export function Button({
   return <button className={classes(variant, size, className)} {...props} />;
 }
 
-/** Internal navigation — always a `next/link`, never a button in a link. */
+/** Internal navigation: always a `next/link`, never a button in a link. */
 export function ButtonLink({
   href,
   variant = "primary",

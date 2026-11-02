@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/content/site";
 
 /**
  * One entry per page, listed under the default locale with an hreflang
- * alternate for every other language — the shape Google expects for a
+ * alternate for every other language, the shape Google expects for a
  * multilingual site.
  */
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -5,14 +5,14 @@ import { profile } from "@/lib/content/site";
  *
  * Two transports, picked from the environment at request time:
  *
- *   SMTP    — set SMTP_HOST / SMTP_USER / SMTP_PASS and the message is sent
+ *   SMTP:   set SMTP_HOST / SMTP_USER / SMTP_PASS and the message is sent
  *             straight from your own mailbox. No third party sees it, and
  *             nothing new has to be signed up for.
- *   Resend  — set RESEND_API_KEY instead, if you would rather not put a
+ *   Resend: set RESEND_API_KEY instead, if you would rather not put a
  *             mailbox password in the deployment environment.
  *
  * SMTP wins when both are set, since it is the more direct route. With neither
- * configured `send` reports `unconfigured` and the route answers 502 — a
+ * configured `send` reports `unconfigured` and the route answers 502: a
  * contact form that quietly drops messages is worse than one that admits it is
  * not wired up.
  *

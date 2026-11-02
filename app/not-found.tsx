@@ -13,7 +13,7 @@ const instrumentSerif = Instrument_Serif({
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 /**
- * Root 404, reached only by paths the locale proxy skips — anything with a file
+ * Root 404, reached only by paths the locale proxy skips: anything with a file
  * extension, essentially. The root layout is a pass-through, so this page has
  * to render the whole document itself, including `<html lang>`.
  */

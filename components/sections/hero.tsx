@@ -102,7 +102,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             </Enter>
           </div>
 
-          {/* Identity card — the editorial "spec sheet" that replaces a stock photo. */}
+          {/* Identity card: the editorial "spec sheet" that replaces a stock photo. */}
           <Enter
             delay={0.16}
             className="rounded-lg border border-line bg-surface/60 p-2 backdrop-blur-sm lg:sticky lg:top-24"

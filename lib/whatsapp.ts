@@ -1,7 +1,7 @@
 /**
  * Deep links into WhatsApp with the message already composed.
  *
- * `wa.me` is a plain URL, so this needs no backend at all — which makes it the
+ * `wa.me` is a plain URL, so this needs no backend at all, which makes it the
  * one contact route that keeps working even when no mail transport is
  * configured. It also happens to be the channel most of the site's audience
  * actually uses.
@@ -42,8 +42,8 @@ export function composeWhatsAppText(draft: WhatsAppDraft, labels: WhatsAppLabels
 }
 
 /**
- * `wa.me` wants a bare international number — digits only, no `+` and no
- * separators — and percent-encoded text. `URLSearchParams` is deliberately not
+ * `wa.me` wants a bare international number (digits only, no `+` and no
+ * separators) and percent-encoded text. `URLSearchParams` is deliberately not
  * used here: it encodes spaces as `+`, which WhatsApp renders literally.
  */
 export function whatsappUrl(phone: string, text?: string): string {
