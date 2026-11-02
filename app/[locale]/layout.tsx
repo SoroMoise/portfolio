@@ -24,7 +24,7 @@ const inter = Inter({
   display: "swap",
 });
 
-/** Editorial display face — one weight, used only for headings and figures. */
+/** Editorial display face: one weight, used only for headings and figures. */
 const instrumentSerif = Instrument_Serif({
   variable: "--font-display-serif",
   subsets: ["latin", "latin-ext"],
@@ -93,7 +93,7 @@ export async function generateMetadata({
       },
     },
     formatDetection: { telephone: false, address: false, email: false },
-    // AdSense site ownership — the meta-tag counterpart of the script below.
+    // AdSense site ownership: the meta-tag counterpart of the script below.
     other: { "google-adsense-account": adsenseClientId },
   };
 }

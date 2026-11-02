@@ -63,7 +63,7 @@ export function Section({
   );
 }
 
-/** Small mono label with a leading rule — the site's recurring section marker. */
+/** Small mono label with a leading rule: the site's recurring section marker. */
 export function Eyebrow({
   children,
   className,

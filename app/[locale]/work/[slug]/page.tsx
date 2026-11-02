@@ -74,7 +74,7 @@ export default async function ProjectPage({
   /*
    * The outbound buttons, in display order: one row per `ProjectLinks` key,
    * each rendered only when the project actually carries that URL. Giving an
-   * app a landing page is therefore a one-line edit in `projects.ts` — the
+   * app a landing page is therefore a one-line edit in `projects.ts`: the
    * button appears on its own, and the row order here is the visual order.
    */
   const ctas = [

@@ -35,7 +35,7 @@
   --ds-border: oklch(0.205 0.012 285 / 0.12);
   --ds-border-strong: oklch(0.205 0.012 285 / 0.24);
 
-  /* Accent — warm amber, deepened for contrast on paper. The value has to
+  /* Accent: warm amber, deepened for contrast on paper. The value has to
      clear 4.5:1 against --ds-accent-soft as well as the page background,
      because accent-on-accent-soft is the badge treatment. */
   --ds-accent: oklch(0.515 0.13 60);
@@ -50,7 +50,7 @@
   --ds-critical: oklch(0.545 0.19 27);
   --ds-critical-soft: oklch(0.545 0.19 27 / 0.1);
 
-  /* Elevation — restrained, editorial rather than material */
+  /* Elevation: restrained, editorial rather than material */
   --ds-shadow-sm: 0 1px 2px oklch(0.2 0.01 285 / 0.06);
   --ds-shadow-md:
     0 1px 2px oklch(0.2 0.01 285 / 0.05), 0 8px 24px -12px oklch(0.2 0.01 285 / 0.18);
@@ -189,7 +189,7 @@
 }
 
 /*
- * Scroll-driven reveal — transform only, deliberately.
+ * Scroll-driven reveal, deliberately transform only.
  *
  * A scroll-linked animation holds its `from` state for as long as the viewport
  * has not reached the element, which for this one is "possibly forever". Any
@@ -294,7 +294,7 @@
 
 @layer components {
   /*
-   * Scroll-triggered reveal, CSS only — no JavaScript, so nothing is ever
+   * Scroll-triggered reveal, CSS only. No JavaScript, so nothing is ever
    * gated on hydration and the fallback is simply "no animation".
    *
    * The reveal never fades past 0.6 opacity. A scroll-driven animation holds
@@ -314,7 +314,7 @@
     }
   }
 
-  /* Printing never scrolls — drop the reveal entirely. */
+  /* Printing never scrolls, so drop the reveal entirely. */
   @media print {
     .reveal {
       animation: none !important;

@@ -15,7 +15,7 @@ import { LocaleSwitcher } from "./locale-switcher";
 /**
  * Every prop a client component receives is serialised into the RSC payload of
  * every page. Handing the whole dictionary to the header would inline all of it
- * — twice, counting the flight data — into each of the 27 prerendered pages, so
+ * (twice, counting the flight data) into each of the 27 prerendered pages, so
  * the header takes only the strings it renders.
  */
 export type HeaderStrings = {
@@ -40,7 +40,7 @@ export function Header({
   /*
    * The drawer stores the route it was opened on rather than a plain boolean.
    * A navigation therefore closes it as a consequence of rendering the new
-   * path — no effect synchronising one piece of state against another, and no
+   * path, with no effect synchronising one piece of state against another, and no
    * frame where the drawer covers the page the visitor just moved to.
    */
   const [openedAt, setOpenedAt] = useState<string | null>(null);

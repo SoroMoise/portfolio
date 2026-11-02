@@ -82,7 +82,7 @@ export default async function ExperiencePage({
                 <Reveal className="flex flex-col gap-5">
                   <div className="flex flex-col gap-2">
                     <p className="font-mono text-micro uppercase text-fg-subtle">
-                      {role.start} — {role.end ?? dict.common.present} · {role.location[locale]}
+                      {role.end ? `${role.start}-${role.end}` : `${dict.common.since} ${role.start}`} · {role.location[locale]}
                     </p>
                     <div className="flex flex-wrap items-center gap-3">
                       <h3 className="font-display text-heading text-fg">

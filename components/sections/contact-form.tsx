@@ -32,7 +32,7 @@ export function ContactForm({
   strings,
   /** International number for the WhatsApp deep link. */
   phone,
-  /** From `common.externalLink` — assistive-only hint that a link opens a tab. */
+  /** From `common.externalLink`: an assistive-only hint that a link opens a tab. */
   newTabLabel,
 }: {
   locale: Locale;
@@ -113,7 +113,7 @@ export function ContactForm({
 
   /*
    * Recomputed on every render from what is currently typed, so this stays a
-   * genuine href — copyable, middle-clickable — rather than a button that
+   * genuine href (copyable, middle-clickable) rather than a button that
    * builds a URL in an onClick handler. It needs no backend, which makes it
    * the one route that still works if mail delivery is misconfigured.
    */

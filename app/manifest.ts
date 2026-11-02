@@ -3,7 +3,7 @@ import { profile } from "@/lib/content/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${profile.name} — ${profile.role.fr}`,
+    name: `${profile.name} · ${profile.role.fr}`,
     short_name: profile.shortName,
     description: profile.role.fr,
     start_url: "/",

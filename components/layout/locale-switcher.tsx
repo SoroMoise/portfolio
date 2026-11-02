@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 /**
  * A two-state segmented control rather than a dropdown: with exactly two
  * languages, a menu would hide the choice behind an extra click, and each
- * option can be a real link — crawlable, and shareable in the right language.
+ * option can be a real link: crawlable, and shareable in the right language.
  */
 export function LocaleSwitcher({
   locale,
@@ -48,7 +48,7 @@ export function LocaleSwitcher({
             )}
           >
             {localeLabels[code].short}
-            <span className="sr-only"> — {localeLabels[code].long}</span>
+            <span className="sr-only"> ({localeLabels[code].long})</span>
           </Link>
         );
       })}

@@ -13,7 +13,7 @@ export const routeKeys = [
 export type RouteKey = (typeof routeKeys)[number];
 
 /**
- * Path segments are shared across languages — only the locale prefix changes.
+ * Path segments are shared across languages; only the locale prefix changes.
  * Translating the slugs too would double the URL surface for no SEO gain and
  * break every link the moment a translation is edited.
  */
@@ -42,7 +42,7 @@ export function swapLocale(pathname: string, next: Locale): string {
 
 export type NavItem = { key: RouteKey; label: string; href: string };
 
-/** Nav entries in display order — `home` is reached through the wordmark. */
+/** Nav entries in display order. `home` is reached through the wordmark. */
 export function navItems(locale: Locale, nav: Dictionary["nav"]): NavItem[] {
   return (["about", "stack", "work", "experience", "contact"] as const).map((key) => ({
     key,

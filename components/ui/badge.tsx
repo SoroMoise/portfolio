@@ -35,7 +35,7 @@ export function Badge({
   );
 }
 
-/** A technology chip — plain, dense, no colour coding. */
+/** A technology chip: plain, dense, no colour coding. */
 export function TechTag({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <span

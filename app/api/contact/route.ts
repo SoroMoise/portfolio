@@ -10,7 +10,7 @@ import { send } from "@/lib/mail";
  * The previous version logged the submission and returned success, so every
  * message ever sent through the site was silently discarded while the visitor
  * was told it had arrived. This one reports success only once the transport in
- * `lib/mail.ts` has accepted the message, and returns a 5xx otherwise —
+ * `lib/mail.ts` has accepted the message, and returns a 5xx otherwise,
  * including when no transport is configured, so a misconfigured deployment
  * fails loudly instead of swallowing enquiries.
  */
@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
 
   const result = await send(parsed.data);
   if (!result.ok) {
-    // The reason is for the server log only — never echoed to the client.
+    // The reason is for the server log only, never echoed to the client.
     console.error("[contact] delivery failed:", result.reason);
     return NextResponse.json({ error: messages.server }, { status: 502 });
   }

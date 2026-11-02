@@ -6,12 +6,12 @@ import type { Localized } from "@/lib/i18n/config";
  * add the URL here and the button, the card marker and the structured data
  * follow; delete it and they disappear. Nothing else has to change.
  *
- * - `googlePlay` — the store listing. Drives the primary download button and
+ * - `googlePlay`: the store listing. Drives the primary download button and
  *   the `downloadUrl` of the app's structured data.
- * - `website` — the app's own landing page, when it has one. Drives the
+ * - `website`: the app's own landing page, when it has one. Drives the
  *   secondary button on the case study, the "Website" marker on the card and
  *   the `sameAs` of the structured data.
- * - `github` — the repository, for a project that is open source. Reserved:
+ * - `github`: the repository, for a project that is open source. Reserved:
  *   none of the published apps is, so no card currently renders it.
  */
 export type ProjectLinks = {
@@ -60,8 +60,8 @@ export const projects: Project[] = [
       en: "AI cutouts that never leave the phone.",
     },
     summary: {
-      fr: "Background Eraser supprime l'arrière-plan d'une photo par IA sans jamais envoyer l'image sur un serveur : tout le traitement s'exécute sur l'appareil. L'utilisateur reprend ensuite le résultat à la main — pinceau, restauration, zoom — puis exporte en PNG transparent ou en JPG HD.",
-      en: "Background Eraser removes a photo's background with AI without ever sending the image to a server — the whole process runs on the device. You then fix the result by hand — brush, restore, zoom — and export a transparent PNG or an HD JPG.",
+      fr: "Background Eraser supprime l'arrière-plan d'une photo par IA sans jamais envoyer l'image sur un serveur : tout le traitement s'exécute sur l'appareil. L'utilisateur reprend ensuite le résultat à la main (pinceau, restauration, zoom), puis exporte en PNG transparent ou en JPG HD.",
+      en: "Background Eraser removes a photo's background with AI without ever sending the image to a server: the whole process runs on the device. You then fix the result by hand (brush, restore, zoom) and export a transparent PNG or an HD JPG.",
     },
     problem: {
       fr: "Les outils de détourage grand public envoient l'image sur un serveur : il faut une connexion stable, du forfait data à dépenser à chaque photo, et la photo quitte le téléphone.",
@@ -101,7 +101,7 @@ export const projects: Project[] = [
     sourceAvailable: false,
     links: {
       googlePlay: "https://play.google.com/store/apps/details?id=com.codeurdivoire.bgremover",
-      // No landing page yet. Uncomment when it ships — nothing else to change.
+      // No landing page yet. Uncomment when it ships; nothing else needs to change.
       // website: "https://bgremover.codeurdivoire.com",
     },
     hue: 292,
@@ -113,12 +113,12 @@ export const projects: Project[] = [
     ],
     seo: {
       fr: {
-        title: "Background Eraser — détourage IA hors ligne",
+        title: "Background Eraser : détourage IA hors ligne",
         description:
           "Détourage photo par IA exécuté entièrement sur l'appareil : retouche manuelle au pinceau, zoom, export PNG transparent ou JPG HD, sans connexion.",
       },
       en: {
-        title: "Background Eraser — offline AI photo cutout",
+        title: "Background Eraser: offline AI photo cutout",
         description:
           "React Native app that removes photo backgrounds with AI entirely on-device: brush and restore editing, transparent PNG or HD JPG export, offline.",
       },
@@ -185,12 +185,12 @@ export const projects: Project[] = [
     ],
     seo: {
       fr: {
-        title: "Currency Converter Offline — 170+ devises hors ligne",
+        title: "Currency Converter Offline : 170+ devises hors ligne",
         description:
           "Convertisseur React Native offline-first : plus de 170 devises, taux rafraîchis chaque heure, synchronisation différée, graphiques et 20 langues.",
       },
       en: {
-        title: "Currency Converter Offline — 170+ currencies offline",
+        title: "Currency Converter Offline: 170+ currencies offline",
         description:
           "Offline-first React Native converter: 170+ currencies, hourly rate refresh, deferred synchronisation, historical charts and 20 supported languages.",
       },
@@ -204,8 +204,8 @@ export const projects: Project[] = [
       en: "Every USSD and Mobile Money code, one tap away.",
     },
     summary: {
-      fr: "Simpli Code centralise les codes USSD et les services Mobile Money des trois opérateurs — Orange, MTN et Moov — et les exécute à la place de l'utilisateur. L'application gère les téléphones à double SIM, génère les champs de saisie attendus à chaque étape et enchaîne automatiquement les niveaux d'un code multi-étapes.",
-      en: "Simpli Code brings together the USSD codes and Mobile Money services of all three operators — Orange, MTN and Moov — and runs them on the user's behalf. It handles dual-SIM phones, generates the input fields each step expects, and chains the levels of a multi-step code automatically.",
+      fr: "Simpli Code centralise les codes USSD et les services Mobile Money des trois opérateurs (Orange, MTN et Moov) et les exécute à la place de l'utilisateur. L'application gère les téléphones à double SIM, génère les champs de saisie attendus à chaque étape et enchaîne automatiquement les niveaux d'un code multi-étapes.",
+      en: "Simpli Code brings together the USSD codes and Mobile Money services of all three operators (Orange, MTN and Moov) and runs them on the user's behalf. It handles dual-SIM phones, generates the input fields each step expects, and chains the levels of a multi-step code automatically.",
     },
     problem: {
       fr: "Les services Mobile Money passent par des codes USSD longs, à plusieurs niveaux, différents chez chaque opérateur, et à ressaisir intégralement à chaque opération ; sur un téléphone à double SIM, la mauvaise ligne fait échouer la transaction.",
@@ -256,12 +256,12 @@ export const projects: Project[] = [
     ],
     seo: {
       fr: {
-        title: "Simpli Code — codes USSD et Mobile Money",
+        title: "Simpli Code : codes USSD et Mobile Money",
         description:
           "Gestionnaire USSD React Native pour Orange, MTN et Moov : double SIM, champs dynamiques et exécution automatisée des séquences multi-étapes.",
       },
       en: {
-        title: "Simpli Code — USSD and Mobile Money manager",
+        title: "Simpli Code: USSD and Mobile Money manager",
         description:
           "React Native USSD manager for Orange, MTN and Moov: dual SIM, dynamic input fields and automated execution of multi-step sequences.",
       },
@@ -304,7 +304,7 @@ export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
 
-/** The project after `slug`, wrapping around — powers the "next project" link. */
+/** The project after `slug`, wrapping around. It powers the "next project" link. */
 export function nextProject(slug: string): Project {
   const index = projects.findIndex((p) => p.slug === slug);
   return projects[(index + 1) % projects.length];

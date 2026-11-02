@@ -12,7 +12,7 @@ export type NotFoundStrings = Record<Locale, Dictionary["notFound"]>;
 /**
  * `not-found.tsx` receives no route params, so the language is read back off
  * the pathname on the client. The copy for both languages is passed in as a
- * prop rather than looked up here — importing `getDictionary` from a client
+ * prop rather than looked up here, because importing `getDictionary` from a client
  * component would pull every string of both dictionaries into the bundle.
  */
 export function NotFoundContent({ strings }: { strings: NotFoundStrings }) {

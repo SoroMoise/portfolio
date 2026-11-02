@@ -4,7 +4,7 @@ import { defaultLocale, locales, type Locale } from "@/lib/i18n/config";
 /**
  * Locale routing.
  *
- * `middleware.ts` is deprecated in Next.js 16 — this is the `proxy.ts`
+ * `middleware.ts` is deprecated in Next.js 16; this is the `proxy.ts`
  * replacement. Every page lives under `/[locale]`, so any request without a
  * locale prefix is redirected to the visitor's best match.
  */
