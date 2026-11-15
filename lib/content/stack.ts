@@ -98,14 +98,14 @@ export const stack: StackGroup[] = [
         name: "Expo / Expo Router",
         headline: true,
         use: {
-          fr: "Build, navigation, mises à jour et publication sur le store, plus l'accès aux capacités natives sans sortir du flux de développement.",
+          fr: "Build, navigation, mises à jour et publication sur le store, ainsi que l'accès aux capacités natives sans sortir du flux de développement.",
           en: "Builds, navigation, updates and store releases, plus access to native capabilities without leaving the development flow.",
         },
       },
       {
         name: "Offline-first",
         use: {
-          fr: "Persistance locale, file de synchronisation différée, application complètement utilisable en mode avion.",
+          fr: "Persistance locale, file de synchronisation différée, et une application entièrement utilisable en mode avion.",
           en: "Local persistence, deferred sync queues, an app that stays fully usable in airplane mode.",
         },
       },
@@ -157,7 +157,7 @@ export const stack: StackGroup[] = [
         headline: true,
         use: {
           fr: "La base principale de mes applications bancaires : modélisation, relations, contraintes d'intégrité, index, requêtes.",
-          en: "The primary database behind my banking work: modelling, relations, integrity constraints, indexes, queries.",
+          en: "The primary database behind my banking work: modeling, relations, integrity constraints, indexes, queries.",
         },
       },
       {
@@ -176,7 +176,7 @@ export const stack: StackGroup[] = [
       },
       {
         name: "Modélisation relationnelle",
-        label: { fr: "Modélisation relationnelle", en: "Relational modelling" },
+        label: { fr: "Modélisation relationnelle", en: "Relational modeling" },
         use: {
           fr: "Traduction des règles métier en entités, relations et contraintes, avant le développement.",
           en: "Turning business rules into entities, relations and constraints before development starts.",
@@ -232,7 +232,7 @@ export const stack: StackGroup[] = [
         headline: true,
         use: {
           fr: "Conteneurisation des applications et de leurs dépendances, pour que la même image tourne sur le poste de développement et sur le serveur.",
-          en: "Containerising applications and their dependencies so the same image runs locally and on the server.",
+          en: "Containerizing applications and their dependencies so the same image runs locally and on the server.",
         },
       },
       {
@@ -268,7 +268,7 @@ export const principles: Principle[] = [
     title: { fr: "Le schéma avant le code", en: "Schema before code" },
     body: {
       fr: "Je commence par le modèle relationnel et les contraintes de données : une table mal pensée coûte des mois, une migration bien préparée coûte une après-midi.",
-      en: "I start with the relational model and its constraints: a badly shaped table costs months, a well-prepared migration costs an afternoon.",
+      en: "I start with the relational model and its constraints: a poorly designed table costs months, a well-prepared migration costs an afternoon.",
     },
   },
   {
@@ -283,7 +283,7 @@ export const principles: Principle[] = [
     id: "design-for-the-drop",
     title: {
       fr: "Concevoir pour la coupure réseau",
-      en: "Design for the drop",
+      en: "Design for network loss",
     },
     body: {
       fr: "Je pars du principe que la connexion tombera : écriture locale d'abord, synchronisation différée ensuite, état cohérent au retour du réseau.",

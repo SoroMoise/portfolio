@@ -64,7 +64,7 @@ export const en: Dictionary = {
     selectedWork: {
       eyebrow: "Selected work",
       title: "Three published apps, one shared constraint",
-      lead: "Here, mobile data is prepaid and coverage changes from one neighbourhood to the next. An app that needs a live connection is an app that gets uninstalled.",
+      lead: "Here, mobile data is prepaid and coverage changes from one neighborhood to the next. An app that needs a live connection is an app that gets uninstalled.",
     },
     approach: {
       eyebrow: "Method",
@@ -74,12 +74,12 @@ export const en: Dictionary = {
     stackTeaser: {
       eyebrow: "Stack",
       title: "What I actually do with each tool",
-      lead: "No percentages, no seniority badges: one line per technology on what I do with it day to day.",
+      lead: "No percentages, no seniority badges: one line per technology on how I use it day to day.",
       cta: "See the full stack",
     },
     experienceTeaser: {
       eyebrow: "Experience",
-      title: "From a final-year placement to banking applications",
+      title: "From a final-year internship to banking applications",
       cta: "See the full background",
     },
     contactTeaser: {
@@ -92,11 +92,11 @@ export const en: Dictionary = {
   about: {
     eyebrow: "About",
     title: "Between banking systems and offline mobile",
-    lead: "Full-stack developer in Abidjan. I build systems that have to hold: under security constraints during the week, under network constraints the rest of the time.",
+    lead: "Full-stack developer in Abidjan. I build systems that have to hold up: under security constraints during the week, under network constraints the rest of the time.",
     paragraphs: [
-      "At Arolitec I build banking web applications end to end. I set the application architecture (frontend, backend, database) and model the PostgreSQL relational schema before any business logic gets written. Then come the REST and GraphQL APIs in Node.js and NestJS, wired into internal applications and third-party services, and the business and back-office interfaces in Angular, React and Remix, mapped to how the operational processes actually run. In a bank the question is never only “does it work”, it is “who is allowed to do what”: I design and implement the user profiles and role-based access control that govern every screen and every endpoint.",
-      "Alongside that, I publish my own apps on Google Play under the name Codeur d'Ivoire: Background Eraser, Currency Converter Offline and Simpli Code, all built with React Native, Expo and TypeScript. All three are offline-first, and that is an engineering decision rather than a preference: here, mobile data is prepaid, coverage changes from one neighbourhood to the next, and Mobile Money is everyday infrastructure rather than a payment option. So I treated offline as a constraint to solve rather than route around: the AI cutout runs entirely on the device, the converter keeps more than 170 currencies in local storage and syncs later when the signal returns, and the USSD manager chains the steps of Orange, MTN and Moov codes on the right SIM.",
-      "I am finishing a Master's in Software Engineering at Groupe EDHEG-Abidjan, after a Licence 3 in the same field and a BTS in application development. What I consolidate there gets used at work the next day: modelling, application security, industrialisation. Day to day I work in Agile with product teams and business stakeholders: settle the business rule before coding it, run code reviews and have my own code reviewed, write unit and integration tests, and document whatever someone else will inherit.",
+      "At Arolitec I build banking web applications end to end. I set the application architecture (frontend, backend, database) and model the PostgreSQL relational schema before any business logic gets written. Then come the REST and GraphQL APIs in Node.js and NestJS, wired into internal applications and third-party services, and the business and back-office interfaces in Angular, React and Remix, mapped to how the operational processes actually run. In a bank the question is never only “does it work?” but also “who is allowed to do what?” I design and implement the user profiles and role-based access control that govern every screen and every endpoint.",
+      "Alongside that, I publish my own apps on Google Play under the name Codeur d'Ivoire: Background Eraser, Currency Converter Offline and Simpli Code, all built with React Native, Expo and TypeScript. All three are offline-first, and that is an engineering decision, not a preference: here, mobile data is prepaid, coverage changes from one neighborhood to the next, and Mobile Money is everyday infrastructure rather than a payment option. So I treated offline as a problem to solve, not to work around: the AI cutout runs entirely on the device, the converter keeps more than 170 currencies in local storage and syncs later when the signal returns, and the USSD manager chains the steps of Orange, MTN and Moov codes on the right SIM.",
+      "I am finishing a Master's in Software Engineering at Groupe EDHEG-Abidjan, after a bachelor's in the same field (Licence 3) and a BTS in application development. What I consolidate there gets used at work the next day: modeling, application security, build and release practices. Day to day I work in an Agile setup with product teams and business stakeholders: settle the business rule before coding it, run code reviews and have my own code reviewed, write unit and integration tests, and document whatever someone else will inherit.",
     ],
     facts: {
       title: "At a glance",
@@ -108,7 +108,7 @@ export const en: Dictionary = {
       focusValue: "Banking applications, offline-first mobile",
     },
     principlesTitle: "How I work",
-    principlesLead: "What I do not compromise on, whatever the project.",
+    principlesLead: "What I won't compromise on, whatever the project.",
     educationTitle: "Education",
   },
 
@@ -151,7 +151,7 @@ export const en: Dictionary = {
   experience: {
     eyebrow: "Experience",
     title: "Background and education",
-    lead: "Joined Arolitec on a final-year BTS placement, hired on a permanent contract at the end of it, and on the company's banking applications ever since.",
+    lead: "Joined Arolitec on a final-year BTS internship, was hired on a permanent contract at the end of it, and has worked on the company's banking applications ever since.",
     rolesTitle: "Professional experience",
     educationTitle: "Education",
     languagesTitle: "Languages",
@@ -165,7 +165,7 @@ export const en: Dictionary = {
     title: "Let's talk about your project",
     lead: "Tell me the context, the technical constraint and the deadline. You will get a considered first read, not a template quote.",
     directTitle: "Direct contact",
-    whatsappNote: "Faster by WhatsApp",
+    whatsappNote: "Faster on WhatsApp",
     formTitle: "Send a message",
     fields: {
       name: "Name",
@@ -181,7 +181,7 @@ export const en: Dictionary = {
     submit: "Send message",
     submitting: "Sending…",
     success: "Message received. I will reply personally.",
-    error: "Sending failed. Try again, or email me directly at soromoise4@gmail.com",
+    error: "Message not sent. Try again, or email me directly at soromoise4@gmail.com",
     errors: {
       required: "This field is required.",
       invalidEmail: "That email address is not valid.",
@@ -210,7 +210,7 @@ export const en: Dictionary = {
   error: errorStrings.en,
 
   footer: {
-    tagline: "Full Stack Web & Mobile Developer in Abidjan, Ivory Coast",
+    tagline: "Full Stack Web & Mobile Developer in Abidjan, Côte d'Ivoire",
     brandNote: "Mobile apps published under the name Codeur d'Ivoire.",
     builtWith: "Designed and built with Next.js and Tailwind CSS.",
     navTitle: "Navigation",
