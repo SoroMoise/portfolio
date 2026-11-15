@@ -83,7 +83,7 @@ export const fr = {
     },
     contactTeaser: {
       title: "Parlons de votre projet",
-      lead: "Décrivez le contexte, la contrainte technique et l'échéance. Je réponds avec une première lecture, pas avec un devis générique.",
+      lead: "Décrivez le contexte, la contrainte technique et l'échéance. Je vous réponds avec un premier avis concret, pas avec un devis générique.",
       cta: "Démarrer la conversation",
     },
   },
@@ -93,7 +93,7 @@ export const fr = {
     title: "Entre systèmes bancaires et mobile hors ligne",
     lead: "Développeur full stack à Abidjan. Je construis des systèmes qui doivent tenir : sous contrainte de sécurité en semaine, sous contrainte de réseau le reste du temps.",
     paragraphs: [
-      "Chez Arolitec, je développe des applications bancaires de bout en bout. Je pose l'architecture applicative (frontend, backend, base de données) et je modélise le schéma relationnel PostgreSQL avant d'écrire la première ligne de code métier. Viennent ensuite les API REST et GraphQL en Node.js et NestJS, reliées aux applications internes et à des services tiers, puis les interfaces métier et back-office en Angular, React et Remix, câblées sur les processus opérationnels réels. Dans une banque, la question n'est jamais seulement « est-ce que ça fonctionne » mais « qui a le droit de faire quoi » : je conçois et j'implémente la gestion des profils utilisateurs et des droits d'accès (RBAC) qui encadre chaque écran et chaque endpoint.",
+      "Chez Arolitec, je développe des applications bancaires de bout en bout. Je pose l'architecture applicative (frontend, backend, base de données) et je modélise le schéma relationnel PostgreSQL avant d'écrire la première ligne de code métier. Viennent ensuite les API REST et GraphQL en Node.js et NestJS, reliées aux applications internes et à des services tiers, puis les interfaces métier et back-office en Angular, React et Remix, calées sur les processus opérationnels réels. Dans une banque, la question n'est jamais seulement « est-ce que ça fonctionne » mais « qui a le droit de faire quoi » : je conçois et j'implémente la gestion des profils utilisateurs et des droits d'accès (RBAC) qui encadre chaque écran et chaque endpoint.",
       "En parallèle, je publie mes propres applications sur Google Play sous le nom Codeur d'Ivoire : Background Eraser, Currency Converter Offline et Simpli Code, toutes en React Native, Expo et TypeScript. Toutes les trois sont pensées offline-first, et ce n'est pas une préférence esthétique : ici, la donnée mobile est prépayée, la couverture varie d'un quartier à l'autre, et le Mobile Money est une infrastructure du quotidien, pas une option de paiement. J'ai donc traité le hors-ligne comme une contrainte d'ingénierie à résoudre plutôt qu'à contourner : le détourage par IA s'exécute intégralement sur l'appareil, le convertisseur garde plus de 170 devises en local et synchronise en différé quand le réseau revient, le gestionnaire USSD enchaîne les étapes des codes Orange, MTN et Moov sur la bonne SIM.",
       "Je termine un Master Génie Logiciel au Groupe EDHEG-Abidjan, après une Licence 3 dans la même filière et un BTS Développeur d'Applications. Ce que j'y consolide sert le lendemain au travail : modélisation, sécurité applicative, industrialisation. Au quotidien, je travaille en Agile avec les équipes produit et les référents métier : je discute la règle métier avant de la coder, je mène des revues de code et je fais relire le mien, j'écris des tests unitaires et d'intégration, et je documente ce qui sera repris par quelqu'un d'autre.",
     ],
@@ -150,7 +150,7 @@ export const fr = {
   experience: {
     eyebrow: "Parcours",
     title: "Expérience et formation",
-    lead: "Entré chez Arolitec en stage de fin de BTS, recruté en CDI à l'issue de celui-ci, et depuis sur les applications bancaires de l'entreprise.",
+    lead: "Entré chez Arolitec pour mon stage de fin de BTS, j'y ai été recruté en CDI à la fin du stage, et je travaille depuis sur ses applications bancaires.",
     rolesTitle: "Expérience professionnelle",
     educationTitle: "Formation",
     languagesTitle: "Langues",
@@ -162,7 +162,7 @@ export const fr = {
   contact: {
     eyebrow: "Contact",
     title: "Parlons de votre projet",
-    lead: "Décrivez le contexte, la contrainte technique et l'échéance. Je réponds avec une première lecture, pas avec un devis générique.",
+    lead: "Décrivez le contexte, la contrainte technique et l'échéance. Je vous réponds avec un premier avis concret, pas avec un devis générique.",
     directTitle: "Contact direct",
     whatsappNote: "Plus rapide par WhatsApp",
     formTitle: "Envoyer un message",
@@ -194,11 +194,11 @@ export const fr = {
       server: "Une erreur est survenue de mon côté. Réessayez dans un instant.",
     },
     responseNote:
-      "Chaque message est lu et reçoit une réponse écrite de ma main, sans aucun envoi automatique.",
+      "Chaque message est lu, et c'est moi qui vous réponds : jamais un message automatique.",
     orSeparator: "ou",
     whatsappCta: "Continuer sur WhatsApp",
     whatsappHint:
-      "Vos réponses sont reprises dans le message : il ne reste qu'à envoyer.",
+      "Ce que vous avez saisi est repris dans le message : il ne reste qu'à l'envoyer.",
     whatsappIntro: "Bonjour Moïse, je vous écris depuis codeurdivoire.com.",
   },
 
@@ -251,7 +251,7 @@ export const fr = {
     contact: {
       title: "Contact · Abidjan",
       description:
-        "Écrivez-moi pour un projet web ou mobile : décrivez le contexte, la contrainte technique et l'échéance, je réponds avec une première lecture.",
+        "Écrivez-moi pour un projet web ou mobile : décrivez le contexte, la contrainte technique et l'échéance, je vous réponds avec un premier avis.",
     },
   },
 };
