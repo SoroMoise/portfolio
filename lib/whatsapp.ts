@@ -9,14 +9,16 @@ export type WhatsAppLabels = {
   intro: string;
   name: string;
   subject: string;
+  colon?: string;
 };
 
 const TEXT_MAX = 1800;
 
 export function composeWhatsAppText(draft: WhatsAppDraft, labels: WhatsAppLabels): string {
+  const colon = labels.colon ?? " : ";
   const header = [
-    draft.name?.trim() ? `${labels.name} : ${draft.name.trim()}` : null,
-    draft.subject?.trim() ? `${labels.subject} : ${draft.subject.trim()}` : null,
+    draft.name?.trim() ? `${labels.name}${colon}${draft.name.trim()}` : null,
+    draft.subject?.trim() ? `${labels.subject}${colon}${draft.subject.trim()}` : null,
   ].filter(Boolean);
 
   const parts = [labels.intro, header.join("\n"), draft.message?.trim()].filter(

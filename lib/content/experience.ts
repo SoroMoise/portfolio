@@ -24,7 +24,7 @@ export const roles: Role[] = [
       en: "Full Stack Developer",
     },
     kind: { fr: "CDI", en: "Permanent" },
-    location: { fr: "Abidjan, Côte d'Ivoire", en: "Abidjan, Ivory Coast" },
+    location: { fr: "Abidjan, Côte d'Ivoire", en: "Abidjan, Côte d'Ivoire" },
     start: "2023",
     end: null,
     summary: {
@@ -35,7 +35,7 @@ export const roles: Role[] = [
       fr: [
         "Concevoir l'architecture applicative complète des applications bancaires livrées : frontend, backend, base de données.",
         "Modéliser le schéma relationnel PostgreSQL et les contraintes d'intégrité qui portent les données métier.",
-        "Construire les interfaces métier et back-office en Angular, React et Remix, câblées sur les processus opérationnels réels.",
+        "Construire les interfaces métier et back-office en Angular, React et Remix, calées sur les processus opérationnels réels.",
         "Concevoir et développer les API REST et GraphQL en Node.js et NestJS, et les intégrer aux applications métier comme aux services tiers.",
         "Implémenter la gestion des profils utilisateurs et des droits d'accès (RBAC) dans un contexte bancaire à fortes exigences de sécurité.",
         "Livrer les fonctionnalités en Agile avec les équipes produit et les référents métier, du cadrage à la mise en production.",
@@ -48,9 +48,9 @@ export const roles: Role[] = [
         "Build the business and back-office interfaces in Angular, React and Remix, wired to real operational processes.",
         "Design and build the REST and GraphQL APIs in Node.js and NestJS, integrated with business applications and third-party services.",
         "Implement user profiles and role-based access control (RBAC) in a banking context with strict security requirements.",
-        "Ship features in Agile with product teams and business stakeholders, from scoping through to production.",
+        "Ship features in an Agile workflow with product teams and business stakeholders, from scoping through to production.",
         "Hold the quality bar: code reviews, merge-request validation, unit and integration tests, technical documentation.",
-        "Run the DevOps chain: Git and GitHub, branching strategy, CI/CD pipelines, Docker containerisation, deployment on Linux servers.",
+        "Run the DevOps chain: Git and GitHub, branching strategy, CI/CD pipelines, Docker containerization, deployment on Linux servers.",
       ],
     },
     stack: [
@@ -76,13 +76,13 @@ export const roles: Role[] = [
       fr: "Développeur (stage)",
       en: "Developer (internship)",
     },
-    kind: { fr: "Stage de fin de BTS · 3 mois", en: "Final-year BTS placement · 3 months" },
-    location: { fr: "Abidjan, Côte d'Ivoire", en: "Abidjan, Ivory Coast" },
+    kind: { fr: "Stage de fin de BTS · 3 mois", en: "Final-year BTS internship · 3 months" },
+    location: { fr: "Abidjan, Côte d'Ivoire", en: "Abidjan, Côte d'Ivoire" },
     start: "2023",
     end: "2023",
     summary: {
       fr: "Développement d'applications web full stack au sein de l'équipe technique. Travail reconnu par l'équipe, qui a débouché sur une proposition de CDI à l'issue du stage.",
-      en: "Full-stack web application development inside the technical team. The work was recognised by the team, which offered a permanent contract at the end of the internship.",
+      en: "Full-stack web application development within the engineering team. The team recognized the work and offered a permanent contract at the end of the internship.",
     },
     responsibilities: {
       fr: [
@@ -91,7 +91,7 @@ export const roles: Role[] = [
       ],
       en: [
         "Full-stack web application development inside the engineering team.",
-        "Integration into the team's rituals and quality standards.",
+        "Fitting into the team's rituals and quality standards.",
       ],
     },
     stack: ["JavaScript", "TypeScript", "Node.js", "React"],
@@ -115,7 +115,7 @@ export const education: Education[] = [
     period: "2024-2026",
     note: {
       fr: "Architecture logicielle, modélisation et qualité, menés en parallèle du poste à temps plein chez Arolitec.",
-      en: "Software architecture, modelling and quality, studied alongside the full-time role at Arolitec.",
+      en: "Software architecture, modeling and quality, studied while working full time at Arolitec.",
     },
     inProgress: true,
   },
@@ -151,7 +151,7 @@ export const education: Education[] = [
     period: "2019",
     note: {
       fr: "Formation initiale en électronique : l'habitude des systèmes qui doivent tenir sur le terrain vient de là.",
-      en: "The original electronics training, and where the habit of building systems that have to hold up in the field comes from.",
+      en: "Foundational training in electronics, and the source of my habit of building systems that have to hold up in the field.",
     },
     inProgress: false,
   },

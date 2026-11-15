@@ -112,7 +112,7 @@ export const projects: Project[] = [
     },
     problem: {
       fr: "Un convertisseur qui interroge une API à chaque conversion devient inutilisable exactement au moment où on en a besoin : en déplacement, en zone de couverture faible, ou avec un forfait data épuisé.",
-      en: "A converter that calls an API on every conversion breaks at exactly the moment you need it: travelling, in weak coverage, or out of prepaid data.",
+      en: "A converter that calls an API on every conversion breaks at exactly the moment you need it: traveling, in weak coverage, or out of prepaid data.",
     },
     build: {
       fr: "Une architecture offline-first : les taux sont stockés localement et font autorité pour l'affichage, le rafraîchissement horaire s'effectue en arrière-plan quand le réseau le permet, et une synchronisation qui échoue est reprise plus tard sans bloquer l'interface.",
@@ -134,7 +134,7 @@ export const projects: Project[] = [
       en: [
         "More than 170 currencies supported",
         "Exchange rates refreshed every hour",
-        "Offline-first operation with deferred synchronisation",
+        "Offline-first operation with deferred synchronization",
         "Historical charts showing how rates have moved",
         "Interface available in 20 languages",
         "Instant conversion from locally stored data, with no network wait",
@@ -167,7 +167,7 @@ export const projects: Project[] = [
       en: {
         title: "Currency Converter Offline: 170+ currencies offline",
         description:
-          "Offline-first React Native converter: 170+ currencies, hourly rate refresh, deferred synchronisation, historical charts and 20 supported languages.",
+          "Offline-first React Native converter: 170+ currencies, hourly rate refresh, deferred synchronization, historical charts and 20 supported languages.",
       },
     },
   },
@@ -188,11 +188,11 @@ export const projects: Project[] = [
     },
     build: {
       fr: "Un catalogue de codes par opérateur, des champs de saisie dynamiques pour les paramètres variables, et un moteur d'exécution qui enchaîne les étapes sur la SIM choisie.",
-      en: "A catalogue of codes per operator, dynamic input fields for the variable parameters, and an execution engine that chains the steps on the chosen SIM.",
+      en: "A catalog of codes per operator, dynamic input fields for the variable parameters, and an execution engine that chains the steps on the chosen SIM.",
     },
     outcome: {
       fr: "Une opération Mobile Money se déclenche depuis une seule fiche, sur le bon opérateur et la bonne ligne, sans rien mémoriser ni ressaisir.",
-      en: "A Mobile Money operation launches from a single saved entry, on the right operator and the right line, with nothing to memorise or retype.",
+      en: "A Mobile Money operation launches from a single saved entry, on the right operator and the right line, with nothing to memorize or retype.",
     },
     features: {
       fr: [
@@ -204,12 +204,12 @@ export const projects: Project[] = [
         "Enregistrement et organisation des codes personnels pour réutilisation",
       ],
       en: [
-        "Orange, MTN and Moov USSD codes in a single catalogue",
+        "Orange, MTN and Moov USSD codes in a single catalog",
         "Mobile Money services grouped in one place",
         "Dual-SIM support with line selection at execution time",
         "Dynamic input fields matched to each code",
         "Automated execution of multi-step sequences",
-        "Personal codes saved and organised for reuse",
+        "Personal codes saved and organized for reuse",
       ],
     },
     stack: ["React Native", "Expo", "TypeScript"],
@@ -255,8 +255,8 @@ export const clientWork = {
       "Cette confidentialité, je la respecte pour mes futurs clients exactement comme pour l'actuel. Je peux en revanche détailler l'architecture, les choix de modélisation et les compromis lors d'un entretien, schéma au tableau, sans exposer une donnée ni une ligne de code client. Et si vous voulez juger mon travail sans NDA, les trois applications publiées sur Google Play sont la partie visible de la même pratique : elles sont téléchargeables dès maintenant.",
     ],
     en: [
-      "Most of what I have built since 2023 cannot be shown here: these are internal banking applications, covered by the confidentiality their users require. What I can describe is the engineering: PostgreSQL schemas modelled from business rules, REST and GraphQL APIs in Node.js and NestJS wired to third-party services, Angular, React and Remix back-offices that follow real operational processes, user-profile and access-rights management (RBAC) enforced at the API layer, unit and integration tests, code reviews, CI/CD pipelines, Docker images and deployments on Linux servers.",
-      "I hold to that confidentiality for future clients exactly as I do for the current one. What I can do is walk through the architecture, the modelling choices and the trade-offs in an interview, on a whiteboard, without exposing a single record or line of client code. And if you want to judge my work without an NDA, the three apps on Google Play are the visible half of the same practice: you can download them right now.",
+      "Most of what I have built since 2023 cannot be shown here: these are internal banking applications, covered by their users' confidentiality rules. What I can describe is the engineering: PostgreSQL schemas modeled from business rules, REST and GraphQL APIs in Node.js and NestJS wired to third-party services, Angular, React and Remix back-offices that follow real operational processes, user-profile and access-rights management (RBAC) enforced at the API layer, unit and integration tests, code reviews, CI/CD pipelines, Docker images and deployments on Linux servers.",
+      "I hold to that confidentiality for future clients exactly as I do for the current one. What I can do is walk through the architecture, the modeling choices and the trade-offs in an interview, on a whiteboard, without exposing a single record or line of client code. And if you want to judge my work without an NDA, the three apps on Google Play are the visible half of the same practice: you can download them right now.",
     ],
   } satisfies Localized<string[]>,
   stack: [

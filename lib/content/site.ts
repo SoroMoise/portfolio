@@ -27,7 +27,7 @@ export const profile = {
     city: "Abidjan",
     country: {
       fr: "Côte d'Ivoire",
-      en: "Ivory Coast",
+      en: "Côte d'Ivoire",
     } satisfies Localized<string>,
     countryCode: "CI",
     timeZone: "Africa/Abidjan",

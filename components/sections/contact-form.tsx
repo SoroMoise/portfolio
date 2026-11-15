@@ -112,6 +112,7 @@ export function ContactForm({
       intro: strings.whatsappIntro,
       name: strings.fields.name,
       subject: strings.fields.subject,
+      colon: locale === "fr" ? " : " : ": ",
     }),
   );
 
