@@ -4,7 +4,7 @@ import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n";
 import { href } from "@/lib/i18n/routes";
 import { profile, socials } from "@/lib/content/site";
-import { projects } from "@/lib/content/projects";
+import { publishedProjects } from "@/lib/content/projects";
 import { Container } from "@/components/ui/layout";
 import { ButtonLink } from "@/components/ui/button";
 import { StatusDot } from "@/components/ui/badge";
@@ -15,9 +15,9 @@ import { formatAbidjanTime } from "@/lib/time";
 
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const stats = [
-    { value: String(projects.length), label: dict.home.stats.apps },
+    { value: String(publishedProjects.length), label: dict.home.stats.apps },
     { value: "2023 →", label: dict.home.stats.since },
-    { value: "170+", label: dict.home.stats.currencies },
+    { value: "0", label: dict.home.stats.accounts },
   ];
 
   const rail = socials.filter((s) => s.primary);

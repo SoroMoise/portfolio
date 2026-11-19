@@ -90,8 +90,8 @@ export const stack: StackGroup[] = [
         name: "React Native",
         headline: true,
         use: {
-          fr: "Les trois applications que j'écris, publie et maintiens moi-même sur Google Play.",
-          en: "The three apps I write, publish and maintain myself on Google Play.",
+          fr: "Les applications que j'écris, publie et maintiens moi-même sur Google Play : six en production, une septième en test fermé.",
+          en: "The apps I write, publish and maintain myself on Google Play: six live, a seventh in closed testing.",
         },
       },
       {

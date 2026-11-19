@@ -307,6 +307,12 @@
   background-size: 4rem 4rem;
 }
 
+@utility project-stage {
+  background:
+    radial-gradient(62% 70% at 50% 100%, color-mix(in oklch, var(--ds-accent) 20%, transparent), transparent 72%),
+    linear-gradient(180deg, var(--ds-bg-subtle), var(--ds-surface-strong));
+}
+
 @utility mask-fade-y {
   mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
 }

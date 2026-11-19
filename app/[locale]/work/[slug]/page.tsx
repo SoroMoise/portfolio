@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, Github, Globe } from "lucide-react";
 import { isLocale, locales, type Locale } from "@/lib/i18n/config";
@@ -8,13 +7,13 @@ import { getDictionary } from "@/lib/i18n";
 import { href, projectHref } from "@/lib/i18n/routes";
 import { breadcrumbJsonLd, pageMetadata, softwareAppJsonLd } from "@/lib/seo";
 import { SITE_URL, profile } from "@/lib/content/site";
-import { getProject, nextProject, projects, type ProjectLinks } from "@/lib/content/projects";
+import { getProject, nextProject, projects } from "@/lib/content/projects";
 import { JsonLd } from "@/components/ui/json-ld";
 import { Container, Section } from "@/components/ui/layout";
 import { ExternalButtonLink, type ButtonVariant } from "@/components/ui/button";
 import { Badge, TechTag } from "@/components/ui/badge";
 import { GooglePlayIcon, type IconComponent } from "@/components/ui/icons";
-import { ProjectArtwork } from "@/components/ui/project-artwork";
+import { AppIcon, ProjectGallery } from "@/components/ui/project-media";
 import { Reveal } from "@/components/ui/reveal";
 
 export function generateStaticParams() {
@@ -59,7 +58,7 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   const next = nextProject(slug);
-  const cover = project.shots[0];
+  const website = project.links.website?.[locale];
 
   const detail = [
     { label: dict.work.detail.year, value: String(project.year) },
@@ -67,30 +66,35 @@ export default async function ProjectPage({
       label: dict.work.detail.platforms,
       value: project.platforms.map((p) => dict.work.platform[p]).join(", "),
     },
+    { label: dict.work.detail.status, value: dict.work.status[project.status] },
     { label: dict.work.detail.publisher, value: profile.brand },
   ];
 
   const ctas = [
     {
       key: "googlePlay",
+      url: project.links.googlePlay,
       label: dict.common.getOnGooglePlay,
       icon: GooglePlayIcon,
       variant: "primary",
     },
     {
       key: "website",
+      url: website,
       label: dict.common.visitWebsite,
       icon: Globe,
-      variant: "secondary",
+      variant: project.links.googlePlay ? "secondary" : "primary",
     },
     {
       key: "github",
+      url: project.links.github,
       label: dict.common.viewOnGithub,
       icon: Github,
       variant: "secondary",
     },
   ] satisfies Array<{
-    key: keyof ProjectLinks;
+    key: string;
+    url: string | undefined;
     label: string;
     icon: IconComponent;
     variant: ButtonVariant;
@@ -112,7 +116,7 @@ export default async function ProjectPage({
           description: project.summary[locale],
           url: `${SITE_URL}/${locale}/work/${slug}`,
           downloadUrl: project.links.googlePlay,
-          sameAs: project.links.website,
+          sameAs: website,
         })}
       />
 
@@ -131,17 +135,24 @@ export default async function ProjectPage({
 
           <div className="mt-10 grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-20">
             <div className="flex flex-col gap-6">
-              <h1 id="project-title" className="font-display text-title text-fg">
-                {project.name}
-              </h1>
+              <div className="flex items-center gap-5">
+                <AppIcon project={project} size={72} className="size-14 sm:size-[4.5rem]" />
+                <div className="flex min-w-0 flex-col gap-2">
+                  <p className="font-mono text-micro uppercase text-fg-subtle">
+                    {project.category[locale]}
+                  </p>
+                  <h1 id="project-title" className="font-display text-title text-fg">
+                    {project.name}
+                  </h1>
+                </div>
+              </div>
               <p className="text-heading font-display italic text-accent">
                 {project.tagline[locale]}
               </p>
               <p className="max-w-2xl text-lead text-fg-muted">{project.summary[locale]}</p>
 
               <div className="mt-2 flex flex-wrap items-center gap-3">
-                {ctas.map(({ key, label, icon: Icon, variant }) => {
-                  const url = project.links[key];
+                {ctas.map(({ key, url, label, icon: Icon, variant }) => {
                   if (!url) return null;
 
                   return (
@@ -156,13 +167,16 @@ export default async function ProjectPage({
                     </ExternalButtonLink>
                   );
                 })}
+                {project.status === "testing" && (
+                  <Badge tone="accent">{dict.common.closedTesting}</Badge>
+                )}
                 {!project.sourceAvailable && (
-                  <Badge tone="muted">{dict.common.privateSource}</Badge>
+                  <Badge tone="muted">{dict.common.closedSource}</Badge>
                 )}
               </div>
             </div>
 
-            <dl className="grid grid-cols-2 gap-x-8 gap-y-6 self-start rounded-lg border border-line bg-surface/50 p-6 sm:grid-cols-3 lg:grid-cols-1">
+            <dl className="grid grid-cols-2 gap-x-8 gap-y-6 self-start rounded-lg border border-line bg-surface/50 p-6 sm:grid-cols-4 lg:grid-cols-2">
               {detail.map((row) => (
                 <div key={row.label} className="flex flex-col gap-1">
                   <dt className="font-mono text-micro uppercase text-fg-subtle">{row.label}</dt>
@@ -182,26 +196,14 @@ export default async function ProjectPage({
             </dl>
           </div>
 
-          <Reveal className="mt-14 overflow-hidden rounded-lg border border-line bg-bg-subtle">
-            <div className="relative aspect-16/9 max-h-[26rem]">
-              {cover ? (
-                <Image
-                  src={cover}
-                  alt={project.name}
-                  fill
-                  priority
-                  sizes="(min-width: 1280px) 72rem, 100vw"
-                  className="object-cover"
-                />
-              ) : (
-                <ProjectArtwork
-                  slug={project.slug}
-                  hue={project.hue}
-                  title={project.tagline[locale]}
-                  className="h-full"
-                />
-              )}
-            </div>
+          <Reveal className="mt-14">
+            <h2 className="sr-only">{dict.work.detail.screenshots}</h2>
+            <ProjectGallery
+              project={project}
+              locale={locale}
+              label={dict.work.detail.screenshots}
+              altTemplate={dict.work.detail.screenshotAlt}
+            />
           </Reveal>
 
           <dl className="mt-12 grid gap-8 border-t border-line pt-10 sm:grid-cols-3">
