@@ -33,17 +33,14 @@ export function SelectedWork({ locale, dict }: { locale: Locale; dict: Dictionar
           }
         />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featuredProjects.map((project, index) => (
-            <Reveal
-              key={project.slug}
-              className={index === 0 ? "lg:col-span-2" : undefined}
-            >
+            <Reveal key={project.slug}>
               <ProjectCard
                 project={project}
                 locale={locale}
                 dict={dict}
-                priority={index === 0}
+                priority={index < 3}
               />
             </Reveal>
           ))}

@@ -36,6 +36,9 @@ export const en: Dictionary = {
     externalLink: "opens in a new tab",
     openToWork: "Open to conversations",
     localTime: "Local time",
+    closedTesting: "In closed testing",
+    closedSource: "Closed source",
+    readCaseStudy: "Read the case study",
   },
 
   theme: {
@@ -53,18 +56,18 @@ export const en: Dictionary = {
     status: "Open to conversations about web and mobile projects, in Abidjan or remote.",
     roleLine: "Full Stack Web & Mobile Developer",
     intro:
-      "Since 2023 I have been building banking web applications at Arolitec: application architecture, the PostgreSQL relational schema, REST and GraphQL APIs in Node.js and NestJS, and the access-control model that sits under all of it. Under the name Codeur d'Ivoire I also ship my own React Native apps (three so far on Google Play), built for networks that drop, prepaid data and dual-SIM phones.",
+      "Since 2023 I have been building banking web applications at Arolitec: application architecture, the PostgreSQL relational schema, REST and GraphQL APIs in Node.js and NestJS, and the access-control model that sits under all of it. Under the name Codeur d'Ivoire I also ship my own React Native apps (six so far on Google Play, a seventh in closed testing), published for an international audience and built to do everything on the device: no account, no server, not even a signal required.",
     primaryCta: "See the work",
     secondaryCta: "Get in touch",
     stats: {
       apps: "apps published on Google Play",
       since: "shipping banking software",
-      currencies: "currencies handled offline",
+      accounts: "accounts required by my apps",
     },
     selectedWork: {
       eyebrow: "Selected work",
-      title: "Three published apps, one shared constraint",
-      lead: "Here, mobile data is prepaid and coverage changes from one neighborhood to the next. An app that needs a live connection is an app that gets uninstalled.",
+      title: "Six published apps, one rule",
+      lead: "The phone does the work. AI, audio, maths and documents are processed on the device: nothing waits for a connection, no user data goes to a server, and no app asks for an account.",
     },
     approach: {
       eyebrow: "Method",
@@ -95,7 +98,7 @@ export const en: Dictionary = {
     lead: "Full-stack developer in Abidjan. I build systems that have to hold up: under security constraints during the week, under network constraints the rest of the time.",
     paragraphs: [
       "At Arolitec I build banking web applications end to end. I set the application architecture (frontend, backend, database) and model the PostgreSQL relational schema before any business logic gets written. Then come the REST and GraphQL APIs in Node.js and NestJS, wired into internal applications and third-party services, and the business and back-office interfaces in Angular, React and Remix, mapped to how the operational processes actually run. In a bank the question is never only “does it work?” but also “who is allowed to do what?” I design and implement the user profiles and role-based access control that govern every screen and every endpoint.",
-      "Alongside that, I publish my own apps on Google Play under the name Codeur d'Ivoire: Background Eraser, Currency Converter Offline and Simpli Code, all built with React Native, Expo and TypeScript. All three are offline-first, and that is an engineering decision, not a preference: here, mobile data is prepaid, coverage changes from one neighborhood to the next, and Mobile Money is everyday infrastructure rather than a payment option. So I treated offline as a problem to solve, not to work around: the AI cutout runs entirely on the device, the converter keeps more than 170 currencies in local storage and syncs later when the signal returns, and the USSD manager chains the steps of Orange, MTN and Moov codes on the right SIM.",
+      "Alongside that, I publish my own apps on Google Play under the name Codeur d'Ivoire: BG Remover, Noise Remover, Currency Converter Offline, Deep Focus, Health Log and Simpli Code, plus Tarifo, in closed testing. All of them are written in React Native, Expo and TypeScript, most ship in 20 languages, and all follow the same rule: the phone does the work. That is an engineering decision, not a preference: an app that needs a connection, an account or a server to work is an app that gets uninstalled, wherever its user lives. So I treated offline as a problem to solve, not to work around: the AI cutout runs on the device, voice cleanup goes through a native C++ module, the converter keeps 148 currencies in local storage and resyncs when the signal returns, and the distraction blocker relies on Android modules written in Kotlin.",
       "I am finishing a Master's in Software Engineering at Groupe EDHEG-Abidjan, after a bachelor's in the same field (Licence 3) and a BTS in application development. What I consolidate there gets used at work the next day: modeling, application security, build and release practices. Day to day I work in an Agile setup with product teams and business stakeholders: settle the business rule before coding it, run code reviews and have my own code reviewed, write unit and integration tests, and document whatever someone else will inherit.",
     ],
     facts: {
@@ -122,8 +125,8 @@ export const en: Dictionary = {
   work: {
     eyebrow: "Work",
     title: "Published apps and client work",
-    lead: "Three React Native apps on Google Play under the name Codeur d'Ivoire, plus the daily banking work that stays confidential.",
-    publishedTitle: "Published on Google Play",
+    lead: "Six React Native apps on Google Play under the name Codeur d'Ivoire, a seventh in closed testing, plus the daily banking work that stays confidential.",
+    publishedTitle: "On Google Play",
     clientTitle: "Client work at Arolitec",
     detail: {
       problem: "The problem",
@@ -136,6 +139,9 @@ export const en: Dictionary = {
       publisher: "Publisher",
       nextProject: "Next project",
       caseStudy: "Case study",
+      status: "Status",
+      screenshots: "Screenshots",
+      screenshotAlt: "{name}, screenshot {index} of {total}",
     },
     platform: {
       android: "Android",
@@ -144,7 +150,7 @@ export const en: Dictionary = {
     },
     status: {
       live: "Live",
-      archived: "Archived",
+      testing: "In closed testing",
     },
   },
 
@@ -223,12 +229,12 @@ export const en: Dictionary = {
     home: {
       title: "Moïse Soro · Full Stack Web & Mobile Developer",
       description:
-        "Full stack developer in Abidjan: banking applications at Arolitec, PostgreSQL and NestJS, plus three offline-first React Native apps on Google Play.",
+        "Full stack developer in Abidjan: banking applications at Arolitec, PostgreSQL and NestJS, plus six offline-first React Native apps on Google Play.",
     },
     about: {
       title: "About: developer in Abidjan",
       description:
-        "Full stack developer at Arolitec since 2023: banking architecture, PostgreSQL, GraphQL APIs, RBAC, and offline-first mobile apps built for Abidjan.",
+        "Full stack developer at Arolitec since 2023: banking architecture, PostgreSQL, GraphQL APIs, RBAC, and offline-first mobile apps for an international audience.",
     },
     stack: {
       title: "Tech stack",
@@ -238,7 +244,7 @@ export const en: Dictionary = {
     work: {
       title: "Work: published apps and client projects",
       description:
-        "Three React Native apps on Google Play as Codeur d'Ivoire: an offline AI photo cutout tool, 170+ currencies, USSD and Mobile Money automation.",
+        "Six React Native apps on Google Play as Codeur d'Ivoire: AI photo cutouts, voice cleanup, 148 currencies, focus, health logging and USSD.",
     },
     experience: {
       title: "Experience: Arolitec, MSc Software Engineering",

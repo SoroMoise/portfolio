@@ -71,16 +71,15 @@ export default async function WorkPage({
             {dict.work.publishedTitle}
           </h2>
 
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          <div className="mt-6 flex flex-col gap-6 lg:gap-8">
             {projects.map((project, index) => (
-              <Reveal
-                key={project.slug}
-                className={index === 0 ? "lg:col-span-2" : undefined}
-              >
+              <Reveal key={project.slug}>
                 <ProjectCard
                   project={project}
                   locale={locale}
                   dict={dict}
+                  layout="feature"
+                  reverse={index % 2 === 1}
                   priority={index === 0}
                 />
               </Reveal>

@@ -35,6 +35,9 @@ export const fr = {
     externalLink: "ouvre un nouvel onglet",
     openToWork: "Ouvert aux échanges",
     localTime: "Heure locale",
+    closedTesting: "En test fermé",
+    closedSource: "Code source privé",
+    readCaseStudy: "Lire l'étude de cas",
   },
 
   theme: {
@@ -52,18 +55,18 @@ export const fr = {
     status: "Ouvert aux échanges : projets web et mobile, à Abidjan comme à distance.",
     roleLine: "Développeur Full Stack Web & Mobile",
     intro:
-      "Depuis 2023, je développe des applications bancaires chez Arolitec : architecture applicative, schéma relationnel PostgreSQL, API REST et GraphQL en Node.js et NestJS, gestion des droits d'accès. En parallèle, je publie sous le nom Codeur d'Ivoire mes propres applications React Native (trois à ce jour sur Google Play), conçues pour des réseaux qui coupent, des forfaits data prépayés et des téléphones à double SIM.",
+      "Depuis 2023, je développe des applications bancaires chez Arolitec : architecture applicative, schéma relationnel PostgreSQL, API REST et GraphQL en Node.js et NestJS, gestion des droits d'accès. En parallèle, je publie sous le nom Codeur d'Ivoire mes propres applications React Native (six à ce jour sur Google Play, une septième en test fermé), publiées pour un public international et conçues pour tout faire sur l'appareil : sans compte, sans serveur, même sans réseau.",
     primaryCta: "Voir les réalisations",
     secondaryCta: "Me contacter",
     stats: {
       apps: "applications publiées sur Google Play",
       since: "en production bancaire chez Arolitec",
-      currencies: "devises gérées hors ligne",
+      accounts: "compte exigé par mes applications",
     },
     selectedWork: {
       eyebrow: "Réalisations sélectionnées",
-      title: "Trois applications publiées, une même contrainte",
-      lead: "Ici, la donnée mobile est prépayée et la couverture varie d'un quartier à l'autre. Une application qui exige une connexion permanente est une application qu'on désinstalle.",
+      title: "Six applications publiées, une même règle",
+      lead: "Le téléphone fait le travail. L'IA, l'audio, les calculs et les documents sont traités sur l'appareil : rien n'attend une connexion, aucune donnée ne part sur un serveur, et aucune application ne demande de compte.",
     },
     approach: {
       eyebrow: "Méthode",
@@ -94,7 +97,7 @@ export const fr = {
     lead: "Développeur full stack à Abidjan. Je construis des systèmes qui doivent tenir : sous contrainte de sécurité en semaine, sous contrainte de réseau le reste du temps.",
     paragraphs: [
       "Chez Arolitec, je développe des applications bancaires de bout en bout. Je pose l'architecture applicative (frontend, backend, base de données) et je modélise le schéma relationnel PostgreSQL avant d'écrire la première ligne de code métier. Viennent ensuite les API REST et GraphQL en Node.js et NestJS, reliées aux applications internes et à des services tiers, puis les interfaces métier et back-office en Angular, React et Remix, calées sur les processus opérationnels réels. Dans une banque, la question n'est jamais seulement « est-ce que ça fonctionne » mais « qui a le droit de faire quoi » : je conçois et j'implémente la gestion des profils utilisateurs et des droits d'accès (RBAC) qui encadre chaque écran et chaque endpoint.",
-      "En parallèle, je publie mes propres applications sur Google Play sous le nom Codeur d'Ivoire : Background Eraser, Currency Converter Offline et Simpli Code, toutes en React Native, Expo et TypeScript. Toutes les trois sont pensées offline-first, et ce n'est pas une préférence esthétique : ici, la donnée mobile est prépayée, la couverture varie d'un quartier à l'autre, et le Mobile Money est une infrastructure du quotidien, pas une option de paiement. J'ai donc traité le hors-ligne comme une contrainte d'ingénierie à résoudre plutôt qu'à contourner : le détourage par IA s'exécute intégralement sur l'appareil, le convertisseur garde plus de 170 devises en local et synchronise en différé quand le réseau revient, le gestionnaire USSD enchaîne les étapes des codes Orange, MTN et Moov sur la bonne SIM.",
+      "En parallèle, je publie mes propres applications sur Google Play sous le nom Codeur d'Ivoire : BG Remover, Noise Remover, Currency Converter Offline, Deep Focus, Health Log et Simpli Code, et Tarifo, en test fermé. Toutes sont écrites en React Native, Expo et TypeScript, la plupart sont traduites en 20 langues, et toutes suivent la même règle : le téléphone fait le travail. Ce n'est pas une préférence esthétique : une application qui exige une connexion, un compte ou un serveur pour fonctionner est une application qu'on désinstalle, où que l'on soit. J'ai donc traité le hors-ligne comme une contrainte d'ingénierie à résoudre plutôt qu'à contourner : le détourage par IA s'exécute sur l'appareil, le débruitage de la voix passe par un module natif en C++, le convertisseur garde 148 devises en local et se resynchronise quand le réseau revient, et le bloqueur de distractions s'appuie sur des modules Android écrits en Kotlin.",
       "Je termine un Master Génie Logiciel au Groupe EDHEG-Abidjan, après une Licence 3 dans la même filière et un BTS Développeur d'Applications. Ce que j'y consolide sert le lendemain au travail : modélisation, sécurité applicative, industrialisation. Au quotidien, je travaille en Agile avec les équipes produit et les référents métier : je discute la règle métier avant de la coder, je mène des revues de code et je fais relire le mien, j'écris des tests unitaires et d'intégration, et je documente ce qui sera repris par quelqu'un d'autre.",
     ],
     facts: {
@@ -121,8 +124,8 @@ export const fr = {
   work: {
     eyebrow: "Réalisations",
     title: "Applications publiées et travail client",
-    lead: "Trois applications React Native disponibles sur Google Play sous le nom Codeur d'Ivoire, et le travail bancaire quotidien qui reste confidentiel.",
-    publishedTitle: "Publié sur Google Play",
+    lead: "Six applications React Native disponibles sur Google Play sous le nom Codeur d'Ivoire, une septième en test fermé, et le travail bancaire quotidien qui reste confidentiel.",
+    publishedTitle: "Sur Google Play",
     clientTitle: "Travail client chez Arolitec",
     detail: {
       problem: "Le problème",
@@ -135,6 +138,9 @@ export const fr = {
       publisher: "Éditeur",
       nextProject: "Projet suivant",
       caseStudy: "Étude de cas",
+      status: "Statut",
+      screenshots: "Captures d'écran",
+      screenshotAlt: "{name}, capture d'écran {index} sur {total}",
     },
     platform: {
       android: "Android",
@@ -143,7 +149,7 @@ export const fr = {
     },
     status: {
       live: "En production",
-      archived: "Archivé",
+      testing: "En test fermé",
     },
   },
 
@@ -226,12 +232,12 @@ export const fr = {
     home: {
       title: "Moïse Soro · Développeur Full Stack Web & Mobile",
       description:
-        "Développeur full stack à Abidjan : applications bancaires chez Arolitec, schéma PostgreSQL, API NestJS et GraphQL, et trois applications mobiles hors ligne.",
+        "Développeur full stack à Abidjan : applications bancaires chez Arolitec, schéma PostgreSQL, API NestJS et GraphQL, et six applications mobiles hors ligne.",
     },
     about: {
       title: "À propos : développeur à Abidjan",
       description:
-        "Développeur full stack chez Arolitec depuis 2023 : architecture bancaire, PostgreSQL, API GraphQL, RBAC, et des applications mobiles pensées pour Abidjan.",
+        "Développeur full stack chez Arolitec depuis 2023 : architecture bancaire, PostgreSQL, API GraphQL, RBAC, et des applications mobiles pour un public international.",
     },
     stack: {
       title: "Stack technique",
@@ -241,7 +247,7 @@ export const fr = {
     work: {
       title: "Réalisations : applications publiées et projets",
       description:
-        "Trois applications React Native publiées sur Google Play sous Codeur d'Ivoire : détourage IA hors ligne, 170+ devises, codes USSD et Mobile Money.",
+        "Six applications React Native sur Google Play sous Codeur d'Ivoire : détourage IA, débruitage audio, 148 devises, concentration, santé et USSD.",
     },
     experience: {
       title: "Parcours : Arolitec, Master Génie Logiciel",

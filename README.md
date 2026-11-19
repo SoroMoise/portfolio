@@ -60,7 +60,7 @@ prefixes) a leading segment that looks like an unsupported language tag, so
 `/de/work` lands on `/fr/work` instead of `/fr/de/work`.
 
 **Every route is static.** `generateStaticParams` on the locale segment plus
-`dynamicParams = false` prerenders all 27 routes, including one OG image per
+`dynamicParams = false` prerenders all 35 routes, including one OG image per
 locale and one detail page per project per locale. Nothing reads a dynamic API,
 so nothing silently opts out of prerendering.
 
@@ -151,17 +151,27 @@ and no configuration, and it keeps working when mail delivery is broken.
 `public/` and point `profile.portrait.src` at it in `lib/content/site.ts`.
 Setting `available` to `false` falls back to the monogram.
 
-**Adding project screenshots.** Put files in `public/projects/<slug>/` and list
-them in that project's `shots` array. The generated SVG artwork is used
-whenever `shots` is empty.
+**Project icons and screenshots.** Each project has a folder in
+`public/projects/<slug>/` holding `icon.webp` (256 px) and its store
+screenshots as `fr-1.webp`, `en-1.webp`… (720×1280, one set per language, so
+the French pages show the French captions). `media(slug, count)` in
+`lib/content/projects.ts` builds the paths. The cards stage the first three of
+the visitor's language on a backdrop drawn in the site's own palette
+(`project-stage` in `app/globals.css`); the case study shows the whole set.
+Tarifo has no public listing yet, so its six images are composed from the app's
+design screens in its own repository.
 
 **Linking an app's own landing page.** Set `links.website` on that project in
 `lib/content/projects.ts`. One line, nothing else. The secondary button on the
 case study, the "Website" badge on the card and the `sameAs` of the app's
 structured data all appear from it, and disappear again if it is removed.
-`links.github` behaves the same way for a project that is open source. Two of
-the three apps have a site today; Background Eraser has the line ready and
-commented out.
+It is localized (`{ fr, en }`) because each app site serves French under `/fr`.
+`links.github` behaves the same way for a project that is open source.
+
+**A project in closed testing.** Set `status: "testing"` and leave
+`links.googlePlay` out until the listing is public: the card and the case study
+show an "In closed testing" badge instead, and the home page and the hero count
+only `live` projects. Flip it to `"live"` and add the store link on release.
 
 **Adding a language.** Add the code to `lib/i18n/config.ts`, create the
 dictionary next to `fr.ts` and type it as `Dictionary`, then add the language's
@@ -173,7 +183,7 @@ strings to every `Localized<T>` in `lib/content/`. TypeScript will list them.
 
 Verified on the current build:
 
-- `next build`: 27/27 routes prerendered static
+- `next build`: 35/35 routes prerendered static
 - `eslint` and `tsc --noEmit`: clean
 - `axe-core`: zero violations across 10 pages × light and dark
 - Canonical, hreflang (incl. `x-default`), per-locale OG images, JSON-LD
