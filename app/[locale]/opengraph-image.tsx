@@ -3,6 +3,8 @@ import { locales, isLocale, defaultLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n";
 import { profile } from "@/lib/content/site";
 
+export const dynamic = "force-static";
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }

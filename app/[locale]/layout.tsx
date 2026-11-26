@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { Geist_Mono, Instrument_Serif, Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 
 import { isLocale, locales, localeTags, type Locale } from "@/lib/i18n/config";
@@ -158,7 +157,6 @@ export default async function LocaleLayout({
             <Footer locale={locale} dict={dict} year={year} />
           </div>
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   );

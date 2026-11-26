@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/content/site";
 
+export const dynamic = "force-static";
+
 /**
  * Must live at the app root: Next anchors the robots route match to `/robots`,
  * so a copy under `[locale]` would silently produce no /robots.txt at all.

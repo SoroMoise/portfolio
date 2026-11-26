@@ -4,6 +4,8 @@ import { allPaths } from "@/lib/i18n/routes";
 import { projects } from "@/lib/content/projects";
 import { SITE_URL } from "@/lib/content/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [...allPaths(), ...projects.map((p) => `/work/${p.slug}`)];
 
