@@ -206,8 +206,9 @@ language (the `NEXT_LOCALE` cookie the language switcher sets, then
 (`/<locale>/page-not-found`, noindex) with a 404 status. `public/_headers`
 carries the security headers.
 
-Workers Builds settings: root directory `/`, build command
-`pnpm install --frozen-lockfile && pnpm build`, deploy command
+Workers Builds settings: root directory `/`, build command `pnpm build`
+(Workers Builds installs the dependencies itself, with the pnpm that
+`packageManager` pins: its default pnpm 9 rejects this workspace file), deploy command
 `pnpm run deploy`, non-production branch deploy command
 `npx wrangler@4 versions upload`, build variable `NODE_VERSION=22`. Domain:
 `codeurdivoire.com` (and `www`, redirected to it), Custom Domains of the
