@@ -224,6 +224,15 @@ export const fr = {
     builtWith: "Conçu et développé avec Next.js et Tailwind CSS.",
     navTitle: "Navigation",
     contactTitle: "Contact",
+    privacy: "Confidentialité",
+  },
+
+  privacy: {
+    eyebrow: "Confidentialité",
+    title: "Vos données sur ce site et dans Apps Analyser",
+    lead: "Ce que ce site et l'outil Apps Analyser reçoivent, pourquoi, et comment le retirer.",
+    updated: "Mise à jour le",
+    contact: "Pour toute demande :",
   },
 
   meta: {
@@ -253,6 +262,11 @@ export const fr = {
       title: "Parcours : Arolitec, Master Génie Logiciel",
       description:
         "Développeur full stack en CDI chez Arolitec depuis 2023, après un stage BTS. Master Génie Logiciel en cours au Groupe EDHEG-Abidjan, 2024-2026.",
+    },
+    privacy: {
+      title: "Confidentialité",
+      description:
+        "Politique de confidentialité de codeurdivoire.com et d'Apps Analyser : données reçues, usage des API Google, hébergement et droits.",
     },
     contact: {
       title: "Contact · Abidjan",

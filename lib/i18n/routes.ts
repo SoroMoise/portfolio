@@ -8,6 +8,7 @@ export const routeKeys = [
   "work",
   "experience",
   "contact",
+  "privacy",
 ] as const;
 
 export type RouteKey = (typeof routeKeys)[number];
@@ -19,6 +20,7 @@ const segments: Record<RouteKey, string> = {
   work: "/work",
   experience: "/experience",
   contact: "/contact",
+  privacy: "/privacy",
 };
 
 export function href(locale: Locale, key: RouteKey): string {

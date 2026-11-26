@@ -94,7 +94,12 @@ export function Footer({
           <p>
             © {year} {profile.name}. {dict.footer.brandNote}
           </p>
-          <p>{dict.footer.builtWith}</p>
+          <p className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <Link href={href(locale, "privacy")} className="transition-colors hover:text-accent">
+              {dict.footer.privacy}
+            </Link>
+            <span>{dict.footer.builtWith}</span>
+          </p>
         </div>
       </Container>
     </footer>
