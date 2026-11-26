@@ -221,6 +221,15 @@ export const en: Dictionary = {
     builtWith: "Designed and built with Next.js and Tailwind CSS.",
     navTitle: "Navigation",
     contactTitle: "Contact",
+    privacy: "Privacy",
+  },
+
+  privacy: {
+    eyebrow: "Privacy",
+    title: "Your data on this site and in Apps Analyser",
+    lead: "What this site and the Apps Analyser tool receive, why, and how to withdraw it.",
+    updated: "Updated on",
+    contact: "For any request:",
   },
 
   meta: {
@@ -250,6 +259,11 @@ export const en: Dictionary = {
       title: "Experience: Arolitec, MSc Software Engineering",
       description:
         "Full stack developer at Arolitec since 2023 on a permanent contract, hired after a BTS internship. MSc Software Engineering, EDHEG-Abidjan, 2024-2026.",
+    },
+    privacy: {
+      title: "Privacy",
+      description:
+        "Privacy policy of codeurdivoire.com and Apps Analyser: data received, use of Google APIs, hosting and your rights.",
     },
     contact: {
       title: "Contact · Abidjan",
