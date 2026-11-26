@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { profile } from "@/lib/content/site";
 
+export const dynamic = "force-static";
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: `${profile.name} · ${profile.role.fr}`,

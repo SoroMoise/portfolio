@@ -4,6 +4,8 @@ export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = "fr";
 
+export const LOCALE_COOKIE = "NEXT_LOCALE";
+
 export const localeLabels: Record<Locale, { short: string; long: string }> = {
   fr: { short: "FR", long: "Français" },
   en: { short: "EN", long: "English" },

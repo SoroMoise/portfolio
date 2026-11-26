@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { locales, localeLabels, type Locale } from "@/lib/i18n/config";
+import { LOCALE_COOKIE, locales, localeLabels, type Locale } from "@/lib/i18n/config";
 import { swapLocale } from "@/lib/i18n/routes";
 import { cn } from "@/lib/utils";
 
@@ -34,6 +34,9 @@ export function LocaleSwitcher({
             href={swapLocale(pathname, code)}
             hrefLang={code}
             aria-current={active ? "true" : undefined}
+            onClick={() => {
+              document.cookie = `${LOCALE_COOKIE}=${code}; path=/; max-age=31536000; samesite=lax`;
+            }}
             className={cn(
               "rounded-[0.3rem] px-2 py-1 font-mono text-[0.6875rem] font-medium uppercase transition-colors",
               active
