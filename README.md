@@ -101,7 +101,7 @@ pnpm typecheck  # tsc --noEmit
 | Variable               | Purpose                                                       |
 | ---------------------- | ------------------------------------------------------------- |
 | `NEXT_PUBLIC_SITE_URL` | Build time: override the canonical origin (defaults to the live domain) |
-| `CONTACT_FROM`         | Worker variable: sender address, on the verified sending domain (defaults to `portfolio@codeurdivoire.com`) |
+| `CONTACT_FROM`         | Worker variable: sender address, on the verified sending domain (defaults to `portfolio@mail.codeurdivoire.com`) |
 | `CONTACT_EMAIL`        | Worker variable: where enquiries land (defaults to the address in `lib/content/site.ts`) |
 
 ### Contact form delivery
@@ -111,16 +111,17 @@ The site is a static export, so the form posts to the Worker (`worker/index.ts`,
 rate-limits per IP (3 messages per 10 minutes and per isolate), drops the
 honeypot silently and sends through **Cloudflare Email Sending**, the `EMAIL`
 `send_email` binding of `wrangler.jsonc` (`lib/mail.ts`): from
-`portfolio@codeurdivoire.com` to your inbox, with the visitor in `Reply-To`. No
+`portfolio@mail.codeurdivoire.com` to your inbox, with the visitor in `Reply-To`. No
 mailbox password and no API key: the binding is the credential. Workers Paid
 includes 3,000 emails a month.
 
-It needs `codeurdivoire.com` onboarded for sending (Cloudflare dashboard, Email
-Service › Email Sending): that adds an MX, an SPF and a DKIM record on the
-`cf-bounce` subdomain, and leaves the domain's own MX records (OVH's mail
-redirections) untouched. **Add a DMARC record with `p=none` first**: Cloudflare
-creates `p=reject` when none exists, which would bounce the mail you send as
-`contact@codeurdivoire.com` from Gmail.
+Sending is onboarded on the `mail.codeurdivoire.com` subdomain (Cloudflare
+dashboard, Email Service › Email Sending), never on `codeurdivoire.com` itself:
+onboarding writes a `p=reject` DMARC record on the domain it is given, with no
+way to skip it, and on the apex that would bounce the mail you send as
+`contact@codeurdivoire.com` from Gmail. On the subdomain its MX, SPF, DKIM and
+DMARC records all live under `mail.`, and the apex keeps OVH's MX records and
+its own `p=none` DMARC.
 
 Without the binding, or when a send fails, the endpoint returns 502 and the
 form shows an error, on purpose: a form that silently drops messages is worse

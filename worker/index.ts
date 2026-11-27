@@ -83,7 +83,7 @@ async function contact(request: Request, env: Env): Promise<Response> {
   const result = await send({
     payload: parsed.data,
     binding: env.EMAIL,
-    from: env.CONTACT_FROM ?? "portfolio@codeurdivoire.com",
+    from: env.CONTACT_FROM ?? "portfolio@mail.codeurdivoire.com",
     to: env.CONTACT_EMAIL,
   });
   if (!result.ok) {
